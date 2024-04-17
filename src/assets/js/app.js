@@ -1,75 +1,89 @@
+// Portfolio Functionality
 function Portfolio() {
-  // console.log('start portfolio');
-  let items = [];
-  let HTMLitems = undefined;
+    // Variables
+    let items = [];
+    let HTMLitems = null;
+    const portfolioContainer = document.getElementById("portfolio");
 
-  function buildmenu(items) {
-    // console.log('buildmenu');
-    var portfoliomenu = document.getElementById("portfolioMenu");
-    items.forEach(item => {
-      const btn = document.createElement('div');
-      btn.classList.add('portfolioMenu__btn')
-      btn.dataset.itemId = item.id;
-      btn.addEventListener('click', selectItem);
-      btn.innerHTML = `<span> ${item.dataset.title} </span>`;
-      portfoliomenu.appendChild(btn)
-    });
-  }
+    // Build Portfolio Menu
+    function buildMenu(items) {
+        const portfolioMenu = document.getElementById("portfolioMenu");
+        items.forEach(item => {
+            const btn = document.createElement('div');
+            btn.classList.add('portfolioMenu__btn');
+            btn.dataset.itemId = item.id;
+            btn.addEventListener('click', selectItem);
+            btn.innerHTML = `<img src="${item.dataset.src}">`;
+            portfolioMenu.appendChild(btn);
+        });
+    }
 
-  function buildPortfolio() {
-    // console.log('buildPortfolio');
-    var container = document.getElementById("portfolio");
-    HTMLitems = container.children;
-    items = [...HTMLitems];
-    hideAllItems();
-    buildmenu(items);
-  }
+    // Build Portfolio
+    function buildPortfolio() {
+        HTMLitems = portfolioContainer.children;
+        items = [...HTMLitems];
+        hideAllItems();
+        buildMenu(items);
+    }
 
-  function hideAllItems() {
-    // console.log('hideAllItems');
-    items.forEach(item => {
-      item.style.display = 'none'
-    });
-  }
+    // Hide All Portfolio Items
+    function hideAllItems() {
+        items.forEach(item => {
+            item.style.display = 'none';
+        });
+    }
 
-  function selectItem(evt) {
-    chosenId = evt.target.dataset.itemId;
-    hideAllItems();
-    const item = HTMLitems[chosenId];
-    item.style.display = 'block'
-  }
+    // Select Portfolio Item
+    function selectItem(evt) {
+        let target = evt.target;
+        if (target.tagName === 'IMG') {
+            target = target.parentElement;
+        }
+        const chosenId = target.dataset.itemId;
+        hideAllItems();
+        console.log("item" , HTMLitems, chosenId);
+        const item = HTMLitems[chosenId];
+        console.log("item", item);
+        item.style.display = 'block';
+    }
 
-  buildPortfolio();
-
+    // Initialize Portfolio
+    if (portfolioContainer) {
+        buildPortfolio();
+    }
 }
 
-
-
+// Iframe Functionality
 function changeIframeSrc(src) {
-  document.getElementById('iframeContent').src = src;
-  document.querySelectorAll('.selectButton a').forEach(button => {
-    button.classList.remove('disabled');
-  });
-  document.getElementById(`${src.split('/')[1].split('.')[0]}Btn`).classList.add('disabled');
+    document.getElementById('iframeContent').src = src;
+    document.querySelectorAll('.selectButton a').forEach(button => {
+        button.classList.remove('disabled');
+    });
+    document.getElementById(`${src.split('/')[1].split('.')[0]}Btn`).classList.add('disabled');
 }
 
 function adjustIframeHeight() {
-  var iframe = document.getElementById('iframeContent');
-  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    const iframe = document.getElementById('iframeContent');
+    if (iframe) {
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
 }
 
-window.addEventListener('scroll', function () {
-  var button = document.querySelector('.scrollButton');
-  if (window.scrollY < 100) {
-    button.style.opacity = '0';
-  } else {
-    button.style.opacity = '1';
-  }
+// Scroll Button Functionality
+window.addEventListener('scroll', function() {
+    var button = document.querySelector('.scrollButton');
+    if (window.scrollY < 100) {
+        button.style.opacity = '0';
+    } else {
+        button.style.opacity = '1';
+    }
 });
-
 
 document.addEventListener("DOMContentLoaded", Portfolio);
 
-adjustIframeHeight();
-document.getElementById('iframeContent').addEventListener('load', adjustIframeHeight);
-changeIframeSrc('Proj/code.html');
+const iframe = document.getElementById('iframeContent');
+if (iframe) {
+    adjustIframeHeight();
+    changeIframeSrc('Proj/code.html');
+    iframe.addEventListener('load', adjustIframeHeight);
+}
