@@ -1,0 +1,28 @@
+{
+    "remotePath": "/",
+    "host": "drron.lefthandmedia.com",
+    "username": "philip",
+    "password": "hma7chp9zac@AWQ9jcy",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "node_modules",
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ".html", ".js", ".php", ".scss", ".css", ".png", ".jpg", ".gif"
+        ],
+        "path": "/modx"
+    }
+}

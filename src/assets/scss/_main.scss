@@ -2,34 +2,18 @@
   background-color: #2d2d2d;
 }
 
-.codeTheme {
-  background-color: #0298ef;
-  overflow: hidden;
-}
-
-.musicTheme {
-  background-color: #ef8802;
-  overflow: hidden;
-}
-
-.artTheme {
-  background-color: #7102ef;
-  overflow: hidden;
-}
-
 .textIcons {
   transform: translateY(5px);
 }
 
 .container {
-  max-width: 100%;
+  max-width: 70%;
   margin: 0 auto;
   margin-top: 15px;
 }
 
 .projContainer{
   @extend .container;
-  max-width: 80%;
 
   & h1 {
     font-family: 'Outfit', sans-serif;

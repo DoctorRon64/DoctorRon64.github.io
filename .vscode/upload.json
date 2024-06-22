@@ -1,0 +1,20 @@
+{
+    "server": {
+        "host": "drron.lefthandmedia.com",
+        "port": 21,
+        "user": "philip",
+        "password": "hma7chp9zac@AWQ9jcy"
+    },
+    "files": [
+        {
+            "localfile": "/modx",
+            "remotefile": "/"
+        }
+    ],
+    "dirs":[
+        {
+            "localdir":"/modx",
+            "remotedir":"/"
+        }
+    ]
+}
