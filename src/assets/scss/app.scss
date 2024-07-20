@@ -3,11 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import "node_modules/bootstrap/scss/bootstrap";
-@import "main";
-@import "banner";
-@import "textHandle";
-@import "navigateBar";
-@import "projectSelectBar";
-@import "projectPage";
-@import "lightBox";
 @import "new/index";
+@import "new/socialicons";
+
+@import "new/projects";
+@import "new/showoffs";
