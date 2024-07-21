@@ -1,10 +1,5 @@
-﻿body {
-  font-family: Arial, sans-serif;
-}
-
-.showoff-item {
+﻿.showoff-item {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
   padding: 20px;
   border: 1px solid #ccc;
@@ -21,17 +16,15 @@
 }
 
 .showoff-column1 {
-  max-width: 30%;
+  max-width: 10%;
 }
 
 .showoff-column2 {
-  max-width: 30%;
-  text-align: center;
+  max-width: 10%;
 }
 
 .showoff-column3 {
-  max-width: 30%;
-  text-align: right;
+  max-width: 10%;
 }
 
 .showoff-column1 h1 {
