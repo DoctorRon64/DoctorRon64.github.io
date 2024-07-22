@@ -1,72 +1,118 @@
-﻿.showoff-item {
+﻿/* Define the background slide-in animation */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* General styles */
+.showoff-background {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column; /* Stack columns vertically */
+  gap: 20px;
+  margin: 20px;
   padding: 20px;
-  border: 1px solid #ccc;
+  background: #e0e0e0;
   border-radius: 8px;
-  margin: 20px 0;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.showoff-column1,
-.showoff-column2,
-.showoff-column3 {
-  flex: 1;
-}
-
+/* Column 1 styles */
 .showoff-column1 {
-  max-width: 10%;
+  max-width: 20%;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Adjust as needed */
+  order: 1; /* Ensure column1 comes first */
+  animation: slideInFromTop 0.5s forwards;
 }
 
-.showoff-column2 {
-  max-width: 10%;
+/* Apply the background animation */
+.showoff-column1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: slideInFromTop 0.5s forwards;
+  z-index: -1;
 }
 
-.showoff-column3 {
-  max-width: 10%;
+/* Apply the text animation */
+.showoff-column1 h1,
+.showoff-column1 h2,
+.showoff-column1 a {
+  animation: slideInFromLeft 0.5s forwards;
+  opacity: 0;
 }
 
+/* Stagger the text animations */
 .showoff-column1 h1 {
-  font-size: 24px;
-  margin: 0;
-  color: #333;
+  animation-delay: 0.5s;
 }
 
 .showoff-column1 h2 {
-  font-size: 18px;
-  margin: 0;
-  color: #666;
+  animation-delay: 0.7s;
 }
 
 .showoff-column1 a {
-  display: inline-block;
-  margin-top: 10px;
-  text-decoration: none;
-  color: #007BFF;
+  animation-delay: 0.9s;
 }
 
-.showoff-column2 p {
-  margin: 0;
+/* Column 2 styles */
+.showoff-column2 {
+  max-width: 20%;
+  animation: slideInFromRight 0.5s forwards;
+  opacity: 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Adjust as needed */
+  order: 2; /* Ensure column2 comes second */
+  animation-delay: 1.1s; /* Adjust delay to make it appear after column 1 text */
+}
+
+/* Column 3 styles */
+.showoff-column3 {
+  animation: slideInFromLeft 0.5s forwards;
+  opacity: 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Adjust as needed */
+  order: 3; /* Ensure column3 comes last */
+  animation-delay: 1.3s; /* Adjust delay to make it appear after column 2 */
 }
 
 .thumbnail {
-  object-fit: cover;
+  width: 100%;
   border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-}
-
-.social-icons li {
-  margin: 0 10px;
-}
-
-.social-icons a {
-  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
