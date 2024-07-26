@@ -1,0 +1,54 @@
+﻿
+/* Style the main container for skills categories to display as rows */
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Reduce gap between categories */
+  justify-content: space-evenly;
+  padding: 10px; /* Reduce padding around the wrapper */
+}
+
+/* Style each skill category container */
+.skill-category {
+  flex: 1 1 180px; /* Allow containers to shrink to fit smaller widths */
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px; /* Reduce padding inside each container */
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the container for skills to display in columns */
+.skill-category .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Reduce gap between skills */
+}
+
+/* Style individual skill items */
+.skill {
+  display: flex;
+  align-items: center;
+  padding: 8px; /* Reduce padding inside each skill item */
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  width: 120px; /* Reduce width to fit more skills in a row */
+  font-size: 0.9em; /* Reduce font size for better fit */
+}
+
+.skill:hover {
+  transform: scale(1.05);
+}
+
+.skill iconify-icon {
+  margin-right: 8px; /* Reduce margin between icon and text */
+  font-size: 20px; /* Reduce icon size */
+}
+
+.skill span {
+  font-size: 0.9em; /* Reduce font size */
+  font-weight: 400;
+}

@@ -3,8 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import "node_modules/bootstrap/scss/bootstrap";
-@import "new/index";
-@import "new/socialicons";
 
-@import "new/projects";
-@import "new/showoffs";
+@import "index/index";
+@import "index/socialicons";
+@import "index/skills";
+
+@import "explore/projects";
+@import "explore/showoffs";
