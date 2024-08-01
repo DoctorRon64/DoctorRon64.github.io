@@ -1,62 +1,79 @@
-﻿/* Keyframes for sliding in from the left */
-@keyframes slideInFromLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.indexbody {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  background-image: url("/assets/img/background.png");
-  background-size: cover;
-}
-
-.indexheader {
+﻿/* Container for the headers */
+.indexcontainer {
   position: absolute;
   top: 25%;
   left: 15%;
-  color: white;
-  text-align: left;
-  max-width: 40%;
-  opacity: 0; /* Initially hidden */
-  animation: slideInFromLeft 1s forwards;
-  animation-delay: 0.3s;
-   
-  & iconify-icon {
-    transform: translateY(5px);
-  }
+  display: flex;
+  flex-direction: row; /* Arrange headers in a row */
+  gap: 50px; /* Add space between the headers */
 }
 
-.indexheader h1 {
+/* Common styles for the index body */
+.indexbody {
+  background-image: url('/assets/img/background.png');
+  background-size: cover;
+  padding: 20px;
+}
+
+/* Styles for the primary header */
+.indexheader {
+  color: white;
+  text-align: left;
+  max-width: 50%; /* Adjust width to fit two headers */
+  animation: slideInFromLeft 1s forwards;
+  animation-delay: 0.3s;
+}
+
+/* Styles for the secondary header */
+.secondaryheader {
+  color: white;
+  text-align: left;
+  max-width: 50%; /* Adjust width to fit two headers */
+  animation: slideInFromTop 1s forwards;
+  animation-delay: 0.6s;
+}
+
+/* Common styles for header content */
+.indexheader h1, .secondaryheader h1 {
   margin: 0;
-  font-size: 5em;
+  font-size: 4em; /* Adjust font size to fit within the container */
   color: white;
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  opacity: 0; /* Initially hidden */
+}
+
+.indexheader h1 {
   animation: slideInFromLeft 1s forwards;
   animation-delay: 0.5s;
 }
 
-.indexheader h2 {
+.secondaryheader h1 {
+  animation: slideInFromTop 1s forwards;
+  animation-delay: 0.8s;
+}
+
+.indexheader h2, .secondaryheader h2 {
   margin: 0;
   color: white;
   font-size: 1.5em;
   font-weight: 300;
   font-family: 'Questrial', sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  opacity: 0; /* Initially hidden */
+  
+  iconify-icon {
+    transform:translateY(5px);
+  }
+}
+
+.indexheader h2 {
   animation: slideInFromLeft 1s forwards;
   animation-delay: 0.7s;
+}
+
+.secondaryheader h2 {
+  animation: slideInFromTop 1s forwards;
+  animation-delay: 1s;
 }
 
 .explore-button {
@@ -70,9 +87,9 @@
   text-decoration: none;
   box-sizing: border-box;
   transition: background-color 0.3s, color 0.3s, border 0.3s;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   animation: slideInFromLeft 1s forwards;
-  animation-delay: 0.9s;
+  animation-delay: 1.2s;
 }
 
 .explore-button:hover {

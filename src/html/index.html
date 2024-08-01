@@ -14,35 +14,13 @@
         <h2>Game Developer <iconify-icon icon="ion:game-controller-outline"></iconify-icon> & Music Enthusiast <iconify-icon icon="ic:round-headset"></iconify-icon></h2>
         <br>
         <div>
-            Greetings! My name is Philip. I am a Dutch <span>&#x1F1F3;&#x1F1F1;</span> college student following the game development program at the HKU (Utrecht University of the Arts).
+            Greetings! My name is Philip. I am a Dutch college student following the game development program at the HKU (Utrecht University of the Arts).
             I'm incredibly passionate about making games, creating music, drawing art and exploring new skills and knowledge.
         </div>
         <br>
         <br>
         <a href="explore.html" class="explore-button">Explore</a>
 
-        <div class="skills-wrapper">
-            <div class="skill-category primary_skills">
-                <h3>Primary Skills</h3>
-                <div class="skills"></div>
-            </div>
-            <div class="skill-category secondary_skills">
-                <h3>Secondary Skills</h3>
-                <div class="skills"></div>
-            </div>
-            <div class="skill-category art_skills">
-                <h3>Art Skills</h3>
-                <div class="skills"></div>
-            </div>
-            <div class="skill-category web_skills">
-                <h3>Web Dev Skills</h3>
-                <div class="skills"></div>
-            </div>
-            <div class="skill-category languages">
-                <h3>Languages</h3>
-                <div class="skills"></div>
-            </div>
-        </div>
     </header>
 </div>
 
@@ -58,59 +36,5 @@
 
 <script src="/assets/js/app.js"></script>
 <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
-<script>
-    // Function to create a skill element with an icon
-    function createSkillElement(skill) {
-        return `
-        <div class="skill">
-            <iconify-icon icon="${skill.icon}" width="24" height="24"></iconify-icon>
-            <span>${skill.name}</span>
-        </div>`;
-    }
-
-    // Function to create a skill element with an image
-    function createImageElement(skill) {
-        return `
-        <div class="skill">
-            <img src="${skill.icon}" alt="${skill.name}" />
-            <span>${skill.name}</span>
-        </div>`;
-    }
-
-    // Function to render skills into a specified container
-    function renderSkills(skills, containerClass) {
-        const container = document.querySelector(`.${containerClass} .skills`);
-        if (!container) {
-            console.error(`Container with class ${containerClass} not found`);
-            return;
-        }
-        container.innerHTML = ''; // Clear existing content before adding new content
-        skills.forEach(skill => {
-            if (skill.icon.endsWith('.png') || skill.icon.endsWith('.jpg') || skill.icon.endsWith('.jpeg')) {
-                // If the icon is an image (ends with .png, .jpg, or .jpeg), use createImageElement
-                container.innerHTML += createImageElement(skill);
-            } else {
-                // Otherwise, use createSkillElement
-                container.innerHTML += createSkillElement(skill);
-            }
-        });
-    }
-
-    // Function to load JSON and display skills
-    async function loadAndDisplaySkills() {
-        try {
-            const data = await loadJSONResource('/json/skills/skills.json');
-            data.forEach(category => {
-                const containerClass = category.title.toLowerCase().replace(' ', '_');
-                renderSkills(category.skills, containerClass);
-            });
-        } catch (error) {
-            console.error("Error loading or displaying skills:", error);
-        }
-    }
-
-    // Wait for the DOM to load before executing the script
-    document.addEventListener('DOMContentLoaded', loadAndDisplaySkills);
-</script>
 </body>
 </html>

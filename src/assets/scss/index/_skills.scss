@@ -1,54 +1,52 @@
 ﻿
-/* Style the main container for skills categories to display as rows */
-.skills-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* Reduce gap between categories */
-  justify-content: space-evenly;
-  padding: 10px; /* Reduce padding around the wrapper */
-}
-
-/* Style each skill category container */
-.skill-category {
-  flex: 1 1 180px; /* Allow containers to shrink to fit smaller widths */
-  margin: 5px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 10px; /* Reduce padding inside each container */
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Style the container for skills to display in columns */
-.skill-category .skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* Reduce gap between skills */
+/* Define keyframes for animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Start slightly below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
+  }
 }
 
 /* Style individual skill items */
+.skill-category {
+  animation: slideInFromTop 1s forwards;
+  animation-delay: 0.6s;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Gap between items */
+}
+
+/* Style each skill */
 .skill {
+  transform: translateY(-5px);
   display: flex;
   align-items: center;
-  padding: 8px; /* Reduce padding inside each skill item */
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  width: 120px; /* Reduce width to fit more skills in a row */
-  font-size: 0.9em; /* Reduce font size for better fit */
+  justify-content: center;
+  animation: fadeInUp 0.5s ease-out; /* Apply animation */
+  animation-delay: calc(var(--index) * 0.1s); /* Staggered animation for each skill */
+  padding: 1px; /* Increase padding for better spacing */
+  border-radius: 8px; /* Round corners slightly more */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhance shadow for depth */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  font-size: 1em; /* Adjust font size for better readability */
 }
 
 .skill:hover {
-  transform: scale(1.05);
+  transform: scale(1.1); /* Slightly larger on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
 .skill iconify-icon {
-  margin-right: 8px; /* Reduce margin between icon and text */
-  font-size: 20px; /* Reduce icon size */
+  font-size: 24px; /* Slightly larger icon size */
+  margin-right: 8px; /* Space between icon and text */
 }
 
 .skill span {
-  font-size: 0.9em; /* Reduce font size */
-  font-weight: 400;
+  font-size: 1em; /* Adjust font size */
+  font-weight: 500; /* Slightly bolder text */
+  color: #333; /* Darker color for text */
 }
