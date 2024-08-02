@@ -41,8 +41,6 @@
   gap: 20px;
   margin: 20px;
   padding: 20px;
-  background: #e0e0e0;
-  border-radius: 8px;
 }
 
 .showoff-item {
@@ -55,12 +53,7 @@
 .showoff-column1 {
   position: relative;
   overflow: hidden;
-  width: 20%;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: translateY(-100%);
+  width: 30%;
   opacity: 0;
   transition: transform 0.5s, opacity 0.5s;
 }
@@ -74,6 +67,7 @@
 .showoff-column1 h1,
 .showoff-column1 h2,
 .showoff-column1 a {
+  
   opacity: 0;
   transform: translateX(-100%);
   transition: transform 0.5s, opacity 0.5s;
@@ -81,12 +75,16 @@
 
 /* Stagger the text animations */
 .showoff-item.in-view .showoff-column1 h1 {
+  font-family: "Raleway", Arial;
+  font-weight: 600;
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.5s;
 }
 
 .showoff-item.in-view .showoff-column1 h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.7s;
@@ -102,12 +100,11 @@
 .showoff-column2 {
   transform: translateX(100%);
   opacity: 0;
-  width: 20%;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.5s, opacity 0.5s;
+  
+  iconify-icon {
+    transform: translateY(5px);
+  }
 }
 
 .showoff-item.in-view .showoff-column2 {
@@ -120,11 +117,7 @@
 .showoff-column3 {
   transform: translateX(-100%);
   opacity: 0;
-  padding: 20px;
-  max-width: 30%;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 50%;
   flex: 1;
   transition: transform 0.5s, opacity 0.5s;
 }

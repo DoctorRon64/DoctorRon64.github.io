@@ -25,16 +25,17 @@
 }
 
 /* Styles for the secondary header */
-.secondaryheader {
+.skillheader {
   color: white;
   text-align: left;
   max-width: 50%; /* Adjust width to fit two headers */
   animation: slideInFromTop 1s forwards;
   animation-delay: 0.6s;
+  background: #245964;
 }
 
 /* Common styles for header content */
-.indexheader h1, .secondaryheader h1 {
+.indexheader h1, .skillheader h1 {
   margin: 0;
   font-size: 4em; /* Adjust font size to fit within the container */
   color: white;
@@ -48,12 +49,12 @@
   animation-delay: 0.5s;
 }
 
-.secondaryheader h1 {
+.skillheader h1 {
   animation: slideInFromTop 1s forwards;
   animation-delay: 0.8s;
 }
 
-.indexheader h2, .secondaryheader h2 {
+.indexheader h2, .skillheader h2 {
   margin: 0;
   color: white;
   font-size: 1.5em;
@@ -71,7 +72,7 @@
   animation-delay: 0.7s;
 }
 
-.secondaryheader h2 {
+.skillheader h2 {
   animation: slideInFromTop 1s forwards;
   animation-delay: 1s;
 }

@@ -42,48 +42,25 @@ function jsTask(cb) {
 }
 
 const imageminOptions = {
-    maxBuffer: 1024 * 1024 * 10,
     plugins: [
         gifsicle({ interlaced: true }),
-        mozjpeg({ quality: 75, progressive: true }),
-        optipng({ optimizationLevel: 5 }),
+        mozjpeg({ quality: 65, progressive: true }), // Reduce quality for faster processing
+        optipng({ optimizationLevel: 3 }), // Lower optimization level for speed
         svgo({
             plugins: [
-                {
-                    name: 'removeViewBox',
-                    active: true
-                },
-                {
-                    name: 'cleanupIDs',
-                    active: false
-                }
+                { removeViewBox: false },
+                { cleanupIDs: false }
             ]
         })
     ]
 };
 
-
 function imgTask(cb) {
-    return new Promise((resolve, reject) => {
-        const stream = src(files.imgPath, { encoding: false });
-
-        pump(
-            [
-                stream,
-                imagemin(imageminOptions),
-                dest('docs/assets/img/')
-            ],
-            (error) => {
-                if (error) {
-                    console.error(error);
-                    reject(error);
-                } else {
-                    resolve();
-                }
-                cb();
-            }
-        );
-    });
+    return src(files.imgPath)
+        .pipe(changed('docs/assets/img/'))
+        .pipe(imagemin(imageminOptions))
+        .pipe(dest('docs/assets/img/'))
+        .on('end', cb);
 }
 
 gulp.task('images', imgTask);
