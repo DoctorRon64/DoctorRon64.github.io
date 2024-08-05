@@ -9,7 +9,8 @@
     <script src="/assets/js/app.js"></script>
     <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
 </head>
-<body>
+<body id="showoff-body">
+<div class="background"></div>
 <div id="showoff-container" class="showoff-container">
     <!-- Projects will be inserted here dynamically -->
 </div>
@@ -73,18 +74,22 @@
                     <h1>${project.name}</h1>
                     <h2>SubTitle</h2>
                     <br>
-                    <a href="${project.detailsLink}">See more</a>
                     <div class="showoff-column2">
                     <p>
-                        Date: ${formattedDate}<br>
-                        Duration: ${project.duration}<br>
-                        People: ${project.people}<br>
-                        Tech Used: ${techUsedHtml}
+                        <strong><iconify-icon icon="solar:calendar-date-bold-duotone"></iconify-icon>Date:</strong> <span id="project-date">${formattedDate}</span> <br>
+                        <strong><iconify-icon icon="radix-icons:lap-timer"></iconify-icon>Duration:</strong> <span id="project-duration">${project.duration}</span> <br>
+                        <strong>People:</strong> <span id="project-people">${project.people}</span> <br>
+                        <strong>Tech Used:</strong> <span id="project-tech">${techUsedHtml}</span>
+                        <br>
+                        <a href="${project.detailsLink}">See more</a>
                     </p>
                     </div>
                 </div>
                 <div class="showoff-column3">
-                    <img src="/assets/img/thumbnails/${project.staticImage}" alt="Thumbnail" class="thumbnail"/>
+                    <img src="/assets/img/thumbnails/${project.staticImage}" 
+                         data-gif="/assets/img/thumbnails/gifs/${project.gifImage}" 
+                         alt="Thumbnail" 
+                         class="thumbnail"/>
                 </div>
             </div>
         `;
@@ -114,6 +119,7 @@
                 });
 
                 observeShowOffItems();
+                addThumbnailHoverEffect();
             }
         }
 
@@ -121,7 +127,7 @@
             const observerOptions = {
                 root: null, // Use the viewport as the root
                 rootMargin: '0px',
-                threshold: 0.2 // Trigger when 10% of the item is visible
+                threshold: 0.1 // Trigger when 10% of the item is visible
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
@@ -129,7 +135,7 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.add('in-view');
                     } else {
-                        entry.target.classList.remove('in-view');
+                        //entry.target.classList.remove('in-view');
                     }
                 });
             }, observerOptions);
@@ -137,6 +143,23 @@
             const items = document.querySelectorAll('.showoff-item');
             items.forEach(item => {
                 observer.observe(item);
+            });
+        }
+
+        function addThumbnailHoverEffect() {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+
+            thumbnails.forEach(thumbnail => {
+                const gifSrc = thumbnail.getAttribute('data-gif');
+                const staticSrc = thumbnail.src;
+
+                thumbnail.addEventListener('mouseover', () => {
+                    thumbnail.src = gifSrc;
+                });
+
+                thumbnail.addEventListener('mouseout', () => {
+                    thumbnail.src = staticSrc;
+                });
             });
         }
 

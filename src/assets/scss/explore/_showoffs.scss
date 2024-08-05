@@ -35,6 +35,36 @@
   }
 }
 
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+$color1: #307e74;
+$color2: #2f998d;
+$color3: #2f7c73;
+$color4: #245b64;
+$color5: #153e47;
+
+#showoff-body {
+  padding: 20px;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(45deg, $color1, $color2, $color3, $color4, $color5);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  color: var(--main-color);
+  z-index: -1;
+  min-height: 100%;
+  height: auto;
+}
+
 .showoff-container {
   display: flex;
   flex-direction: column;
@@ -76,18 +106,22 @@
 /* Stagger the text animations */
 .showoff-item.in-view .showoff-column1 h1 {
   font-family: "Raleway", Arial;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   font-weight: 600;
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.5s;
+  color: white;
 }
 
 .showoff-item.in-view .showoff-column1 h2 {
   font-family: "Montserrat", sans-serif;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
   font-weight: 400;
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.7s;
+  color: white;
 }
 
 .showoff-item.in-view .showoff-column1 a {
@@ -99,8 +133,9 @@
 /* Column 2 styles */
 .showoff-column2 {
   transform: translateX(100%);
-  opacity: 0;
   transition: transform 0.5s, opacity 0.5s;
+  opacity: 0;
+  color: white;
   
   iconify-icon {
     transform: translateY(5px);
@@ -129,7 +164,12 @@
 }
 
 .thumbnail {
-  width: 100%;
+  width: 70%;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.thumbnail:hover {
+  transform: scale(1.02);
 }

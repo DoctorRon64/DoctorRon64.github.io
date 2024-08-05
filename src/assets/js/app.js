@@ -1,3 +1,4 @@
+/*
 //scrollbutton
 window.addEventListener('scroll', function() {
   var button = document.querySelector('.scrollButton');
@@ -13,4 +14,4 @@ window.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', function() {
   var button = document.querySelector('.scrollButton');
   button.style.opacity = '0';
-});
+});*/
