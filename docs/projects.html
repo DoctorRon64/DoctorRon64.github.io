@@ -70,15 +70,15 @@
             const techUsedHtml = project.techUsed.map(tech => convertTechToIcon(tech)).join(' ');
             const formattedDate = formatDate(project.date);
 
-            const codeSection = project.gitLink
-                ? `<strong><iconify-icon icon="fluent-mdl2:git-hub-logo"></iconify-icon>Code:</strong> <a href="${project.gitLink}">${project.gitLink}</a> <br>`
+            const codeSection = project.code_link
+                ? `<strong><iconify-icon icon="fluent-mdl2:git-hub-logo"></iconify-icon>Code:</strong> <a href="${project.code_link}">${project.code_link}</a> <br>`
                 : '';
 
             return `
                 <div class="showoff-item">
                     <div class="showoff-column1">
                         <h1>${project.name}</h1>
-                        <h3>${project.subtitle}</h3>
+                        <h3>${project.description}</h3>
                         <br>
                         <div class="showoff-column2">
                         <p>
@@ -103,7 +103,7 @@
         function iconString(icon, color = '', width = '24px', height = '24px') {
             const style = color ? ` style="color: ${color}"` : '';
             if (icon.endsWith('.png')) {
-                return `<img src="${icon}" width="${width}" height="${height}" class="mmoveimg" ">`;
+                return `<img src="${icon}" width="${width}" height="${height}">`;
             } else {
                 return `<iconify-icon icon="${icon}" width="${width}" height="${height}" class="textIcons"${style}></iconify-icon>`;
             }
@@ -116,7 +116,7 @@
         }
 
         async function fetchProjects() {
-            const projects = await loadJSONResource('/json/thumb/projects.json');
+            const projects = await loadJSONResource('/json/projects.json');
             if (projects) {
                 const projectsContainer = document.getElementById('showoff-container');
                 projects.forEach(project => {

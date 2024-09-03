@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Graphics Programming",
+    "description": "Project where we had to make a scene with opengl and C++",
+    "image": "graphics.png",
+    "code_link": "https://github.com/DoctorRon64/kern-graphics",
+    "date": "15/04/2024",
+    "duration": "8 Weeks",
+    "people": "Group of 3",
+    "techUsed": ["Unity", "C#", "Animate", "Photoshop", "Illustrator"],
+    "points": [
+      "Learned a lot about how graphics render with buffers and how Framebuffers & PostFX work",
+      "Learned more about C++",
+      "Rendered a Cube, Terrain from a heightmap, made a water shader, Post effect: chromatic aberration and Bloom, and loaded objects with assimp"
+    ]
+  },
+  {
+    "title": "DrRon's Showdowns",
+    "description": "A Project where I made a 2d inspired by Cuphead and Terraria boss fight game",
+    "image": "vrij2.png",
+    "code_link": "",
+    "date": "15/04/2024",
+    "duration": "8 Weeks",
+    "people": "Group of 3",
+    "techUsed": ["Unity", "C#", "Animate", "Photoshop", "Illustrator"],
+    "points": [
+      "I think the concept of our game is very new and it could be a gap in the market!",
+      "I was the main artist of our team! Taking a diffrent roll was very relieving.",
+      "Learn more about how to animate inside of Adobe Animate. Focused on menu and UI design."
+    ]
+  },
+  {
+    "title": "Tune Tap Studio",
+    "description": "Tool production: I made my own Digital Audio Workstation in unity",
+    "image": "tool.png",
+    "code_link": "https://github.com/DoctorRon64/Kernmodule-Production-Tools",
+    "date": "12/02/2024",
+    "duration": "6 Weeks",
+    "people": "Solo",
+    "techUsed": ["Unity", "C#", "Json"],
+    "points": [
+      "Learning how to make visually understandable UI for it's user",
+      "How saving, loading and exporting works with binary and json."
+    ]
+  }
+]
