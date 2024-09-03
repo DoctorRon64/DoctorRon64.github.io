@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore my work!</title>
+    <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16"/>
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script src="/assets/js/app.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
+</head>
+<body>
+<div class="background"></div>
+<div id="showoff-container" classs="showoff-container ">
+    <!-- Projects will be inserted here dynamically -->
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function createProjectHTML(project) {
+            const techIconsMap = {
+                'unity': iconString("skill-icons:unity-light"),
+                'c#': iconString("devicon:csharp"),
+                'processing': iconString("skill-icons:processing-light"),
+                'java': iconString("skill-icons:java-light"),
+                'blender': iconString("logos:blender"),
+                'arduino': iconString("skill-icons:arduino"),
+                'javascript': iconString("ri:javascript-fill", "#f0db4f"),
+                'html': iconString("vscode-icons:file-type-html"),
+                'nodejs': iconString("logos:nodejs-icon"),
+                'git': iconString("devicon:git"),
+                'network': iconString("zondicons:network"),
+                'c++': iconString("vscode-icons:file-type-cpp3"),
+                'sfml': iconString("/assets/img/icons/sfml.png"),
+                'yaml': iconString("devicon:yaml"),
+                'json': iconString("bi:filetype-json"),
+                'mysql': iconString("skill-icons:mysql-dark"),
+                'css': iconString("vscode-icons:file-type-css"),
+                'scss': iconString("vscode-icons:file-type-scss2"),
+                'photoshop': iconString("devicon:photoshop"),
+                'animate': iconString("logos:adobe-animate"),
+                'illustrator': iconString("logos:adobe-illustrator"),
+                'flstudio': iconString("/assets/img/icons/flstudio.png"),
+                'opengl': iconString("devicon:opengl"),
+                'glm': '<img src="/assets/img/icons/glm-logo.svg" width="24px" height="12px" style="transform: translateY(-2px);" alt="Example SVG">',
+                'cmake': iconString("devicon:cmake"),
+                'aseprite': iconString("/assets/img/icons/aseprite.png"),
+                'maui': iconString("skill-icons:dotnet"),
+            };
+
+            function convertTechToIcon(tech) {
+                const lowerTech = tech.trim().toLowerCase();
+                if (techIconsMap[lowerTech]) {
+                    return techIconsMap[lowerTech];
+                }
+                return tech;
+            }
+
+            function formatDate(dateString) {
+                const [day, month, year] = dateString.split('/');
+                const date = new Date(`${year}-${month}-${day}`);
+                return date.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+            }
+
+
+            const techUsedHtml = project.techUsed.map(tech => convertTechToIcon(tech)).join(' ');
+            const formattedDate = formatDate(project.date);
+
+            const codeSection = project.gitLink
+                ? `<strong><iconify-icon icon="fluent-mdl2:git-hub-logo"></iconify-icon>Code:</strong> <a href="${project.gitLink}">${project.gitLink}</a> <br>`
+                : '';
+
+            return `
+                <div class="showoff-item">
+                    <div class="showoff-column1">
+                        <h1>${project.name}</h1>
+                        <h3>${project.subtitle}</h3>
+                        <br>
+                        <div class="showoff-column2">
+                        <p>
+                            ${codeSection}
+                            <strong><iconify-icon icon="solar:calendar-date-bold-duotone"></iconify-icon>Date:</strong> <span id="project-date">${formattedDate}</span> <br>
+                            <strong><iconify-icon icon="radix-icons:lap-timer" ></iconify-icon>Duration:</strong> <span id="project-duration">${project.duration}</span> <br>
+                            <strong><iconify-icon icon="fluent:people-team-16-filled"></iconify-icon>People:</strong> <span id="project-people">${project.people}</span> <br>
+                            <strong><iconify-icon icon="hugeicons:software-license"></iconify-icon>Tech Used:</strong> <span id="project-tech">${techUsedHtml}</span>
+                        </p>
+                        </div>
+                    </div>
+                    <div class="showoff-column3">
+                        <img src="/assets/img/thumbnails/${project.staticImage}" 
+                             data-gif="/assets/img/thumbnails/gifs/${project.gifImage}" 
+                             alt="Thumbnail" 
+                             class="thumbnail"/>
+                    </div>
+                </div>
+                `;
+        }
+
+        function iconString(icon, color = '', width = '24px', height = '24px') {
+            const style = color ? ` style="color: ${color}"` : '';
+            if (icon.endsWith('.png')) {
+                return `<img src="${icon}" width="${width}" height="${height}" class="mmoveimg" ">`;
+            } else {
+                return `<iconify-icon icon="${icon}" width="${width}" height="${height}" class="textIcons"${style}></iconify-icon>`;
+            }
+        }
+
+        async function loadJSONResource(url) {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            return await response.json();
+        }
+
+        async function fetchProjects() {
+            const projects = await loadJSONResource('/json/thumb/projects.json');
+            if (projects) {
+                const projectsContainer = document.getElementById('showoff-container');
+                projects.forEach(project => {
+                    projectsContainer.innerHTML += createProjectHTML(project);
+                });
+
+                observeShowOffItems();
+                addThumbnailHoverEffect();
+            }
+        }
+
+        function observeShowOffItems() {
+            const observerOptions = {
+                root: null, // Use the viewport as the root
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the item is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    } else {
+                        //entry.target.classList.remove('in-view');
+                    }
+                });
+            }, observerOptions);
+
+            const items = document.querySelectorAll('.showoff-item');
+            items.forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        function addThumbnailHoverEffect() {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+
+            thumbnails.forEach(thumbnail => {
+                const gifSrc = thumbnail.getAttribute('data-gif');
+                const staticSrc = thumbnail.src;
+
+                thumbnail.addEventListener('mouseover', () => {
+                    thumbnail.src = gifSrc;
+                });
+
+                thumbnail.addEventListener('mouseout', () => {
+                    thumbnail.src = staticSrc;
+                });
+            });
+        }
+
+        fetchProjects();
+    });
+</script>
+
+
+<footer>
+    <ul class="social-icons">
+        <li><a href="mailto:philip@lefthandmedia.com" title="Email me">
+            <iconify-icon icon="fluent:mail-24-filled" width="40" height="40"></iconify-icon>
+        </a></li>
+        <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn">
+            <iconify-icon icon="devicon:linkedin" width="40" height="40"></iconify-icon>
+        </a></li>
+        <li><a href="https://github.com/DoctorRon64" target="_blank" title="GitHub">
+            <iconify-icon icon="skill-icons:github-dark" width="40" height="40"></iconify-icon>
+        </a></li>
+        <li><a href="https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ" target="_blank"
+               title="Spotify">
+            <iconify-icon icon="logos:spotify-icon" width="40" height="40"></iconify-icon>
+        </a></li>
+        <li><a href="https://doctor-ron.itch.io/" target="_blank" title="Itch.Io">
+            <iconify-icon icon="cib:itch-io" width="40" height="40"></iconify-icon>
+        </a></li>
+    </ul>
+</footer>
+</body>
+</html>
