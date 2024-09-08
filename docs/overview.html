@@ -43,22 +43,37 @@
                     titleDiv.className = 'overview-title';
                     titleDiv.innerHTML = `<h1>${project.title}</h1>`;
 
-                    // Create and append image
+                    // Create and append image container
                     const imgDiv = document.createElement('div');
                     imgDiv.className = 'overview-img';
-                    imgDiv.innerHTML = `<img src="assets/img/thumbnails/${project.image}" alt="${project.title}">`;
+                    imgDiv.innerHTML = `<img src="assets/img/thumbnails/${project.image}" data-gif="assets/img/thumbnails/gifs/${project.gif}" alt="${project.title}">`;
+
+                    // Add hover functionality to switch image and gif
+                    imgDiv.addEventListener('mouseenter', (e) => {
+                        const img = e.currentTarget.querySelector('img');
+                        const gif = img.getAttribute('data-gif');
+                        if (gif) {
+                            img.setAttribute('src', gif);
+                        }
+                    });
+
+                    imgDiv.addEventListener('mouseleave', (e) => {
+                        const img = e.currentTarget.querySelector('img');
+                        const staticImage = `assets/img/thumbnails/${project.image}`;
+                        img.setAttribute('src', staticImage);
+                    });
 
                     // Create and append text content
                     const textDiv = document.createElement('div');
                     textDiv.className = 'overview-text';
                     textDiv.innerHTML = `
-                        <p>${project.description}</p>
-                        <p>Code: <a href="${project.code_link}" target="_blank">${project.code_link}</a></p>
-                        <p>Date: ${formattedDate}</p>
-                        <p>Duration: ${project.duration}</p>
-                        <p>People: ${project.people}</p>
-                        <p>Tech Used: ${project.techUsed.join(', ')}</p>
-                    `;
+                    <p>${project.description}</p>
+                    <p>Code: <a href="${project.code_link}" target="_blank">${project.code_link}</a></p>
+                    <p>Date: ${formattedDate}</p>
+                    <p>Duration: ${project.duration}</p>
+                    <p>People: ${project.people}</p>
+                    <p>Tech Used: ${project.techUsed.join(', ')}</p>
+                `;
 
                     // Create and append list items
                     const ul = document.createElement('ul');
@@ -84,15 +99,6 @@
             .catch(error => console.error('Error loading JSON:', error));
     });
 </script>
-
-<!--
-graphics programming
-doctorrons showdowns
-production tools
-designing and developing for ai
-Planet destroyer
-Deadline droids
--->
 
 <footer>
     <ul class="social-icons">

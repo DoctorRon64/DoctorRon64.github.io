@@ -66,7 +66,6 @@
                 });
             }
 
-
             const techUsedHtml = project.techUsed.map(tech => convertTechToIcon(tech)).join(' ');
             const formattedDate = formatDate(project.date);
 
@@ -77,7 +76,7 @@
             return `
                 <div class="showoff-item">
                     <div class="showoff-column1">
-                        <h1>${project.name}</h1>
+                        <h1>${project.title}</h1>
                         <h3>${project.description}</h3>
                         <br>
                         <div class="showoff-column2">
@@ -91,8 +90,8 @@
                         </div>
                     </div>
                     <div class="showoff-column3">
-                        <img src="/assets/img/thumbnails/${project.staticImage}" 
-                             data-gif="/assets/img/thumbnails/gifs/${project.gifImage}" 
+                        <img src="/assets/img/thumbnails/${project.image}" 
+                             data-gif="/assets/img/thumbnails/gifs/${project.gif}" 
                              alt="Thumbnail" 
                              class="thumbnail"/>
                     </div>

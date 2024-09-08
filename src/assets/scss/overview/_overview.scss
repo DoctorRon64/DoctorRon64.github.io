@@ -1,52 +1,111 @@
-﻿.overview-grid-container {
+﻿// Container for project overview grid
+.overview-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted min-width */
-  gap: 15px; /* Reduced gap between items */
-  padding: 15px; /* Reduced overall padding */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
 }
 
+// Each individual project item
 .overview-item {
-  background-color: #f4f4f4;
-  padding: 10px; /* Reduced padding inside each item */
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Slightly smaller shadow */
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e5e7eb;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
 }
 
+// Title styling
 .overview-title h1 {
-  font-size: 1.2em; /* Reduced font size */
-  margin-bottom: 8px; /* Reduced margin below the title */
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
 
+// Image styling
 .overview-img {
   position: relative;
   width: 100%;
-  padding-top: 72.22%; /* Maintains the 18:13 aspect ratio */
+  padding-top: 72.22%; // Maintain aspect ratio
   overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 8px; /* Reduced margin below the image */
+  border-radius: 10px;
+  margin-bottom: 12px;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease; // Smooth transition when switching images
+  }
+
+  &:hover img {
+    transform: scale(1.05); // Slight zoom effect on hover
+  }
 }
 
-.overview-img img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
-  border-radius: 8px;
+// Text and content styling
+.overview-text {
+  p {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.6;
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
 }
 
-.overview-text p {
-  font-size: 0.9em; /* Smaller font size for text */
-  margin-bottom: 5px; /* Reduced margin below paragraphs */
-}
+// Responsive adjustments for mobile
+@media (max-width: 768px) {
+  .overview-grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
 
-.overview-text ul {
-  list-style-type: disc;
-  padding-left: 18px; /* Slightly reduced left padding */
-  font-size: 0.9em; /* Smaller font size for list items */
-}
+  .overview-title h1 {
+    font-size: 1.1em;
+  }
 
-.overview-text li {
-  margin-bottom: 4px; /* Reduced margin below each list item */
+  .overview-img {
+    margin-bottom: 10px;
+  }
+
+  .overview-text {
+    p, ul {
+      font-size: 0.85em;
+    }
+  }
 }

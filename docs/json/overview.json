@@ -1,46 +1,114 @@
 [
   {
     "title": "Graphics Programming",
-    "description": "Project where we had to make a scene with opengl and C++",
+    "description": "A project focused on developing a 3D scene using OpenGL and C++, where I explored rendering techniques and post-processing effects.",
     "image": "graphics.png",
+    "gif": "graphics.gif",
     "code_link": "https://github.com/DoctorRon64/kern-graphics",
     "date": "15/04/2024",
     "duration": "8 Weeks",
     "people": "Group of 3",
     "techUsed": ["Unity", "C#", "Animate", "Photoshop", "Illustrator"],
     "points": [
-      "Learned a lot about how graphics render with buffers and how Framebuffers & PostFX work",
-      "Learned more about C++",
-      "Rendered a Cube, Terrain from a heightmap, made a water shader, Post effect: chromatic aberration and Bloom, and loaded objects with assimp"
+      "Gained in-depth knowledge of graphics rendering with buffers, and the functionality of Framebuffers and PostFX.",
+      "Enhanced proficiency in C++ programming.",
+      "Successfully implemented features including cube rendering, terrain generation from a heightmap, a custom water shader, post-processing effects such as chromatic aberration and bloom, and object loading using the Assimp library."
     ]
   },
   {
     "title": "DrRon's Showdowns",
-    "description": "A Project where I made a 2d inspired by Cuphead and Terraria boss fight game",
+    "description": "A 2D boss-fight game inspired by Cuphead and Terraria, where I contributed as the lead artist and UI designer.",
     "image": "vrij2.png",
+    "gif": "vrij2.gif",
     "code_link": "",
     "date": "15/04/2024",
     "duration": "8 Weeks",
     "people": "Group of 3",
     "techUsed": ["Unity", "C#", "Animate", "Photoshop", "Illustrator"],
     "points": [
-      "I think the concept of our game is very new and it could be a gap in the market!",
-      "I was the main artist of our team! Taking a diffrent roll was very relieving.",
-      "Learn more about how to animate inside of Adobe Animate. Focused on menu and UI design."
+      "Developed an innovative game concept that could potentially fill a niche in the market.",
+      "Took on the role of the primary artist for the team, providing a refreshing shift from programming responsibilities.",
+      "Deepened expertise in Adobe Animate, focusing on animating menu screens and designing the user interface."
     ]
   },
   {
     "title": "Tune Tap Studio",
-    "description": "Tool production: I made my own Digital Audio Workstation in unity",
+    "description": "A solo project where I created a custom Digital Audio Workstation (DAW) in Unity, focusing on intuitive UI and efficient data handling.",
     "image": "tool.png",
+    "gif": "tool.gif",
     "code_link": "https://github.com/DoctorRon64/Kernmodule-Production-Tools",
     "date": "12/02/2024",
     "duration": "6 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#", "Json"],
     "points": [
-      "Learning how to make visually understandable UI for it's user",
-      "How saving, loading and exporting works with binary and json."
+      "Learned how to design intuitive and visually comprehensible user interfaces.",
+      "Implemented efficient saving, loading, and exporting processes using binary and JSON formats.",
+      "Developed the tool using a single MonoBehaviour with a clean, well-structured codebase."
+    ]
+  },
+  {
+    "title": "Designing A Boss Battle",
+    "description": "A solo project focused on designing a complex boss battle using NodeCanvas, a behavior tree tool, while enhancing my artistic and animation abilities.",
+    "date": "13/11/2023",
+    "duration": "4 Weeks",
+    "people": "Solo",
+    "techUsed": ["Unity", "C#"],
+    "code_link": "https://github.com/DoctorRon64/Keuzemodule-Designing-AI",
+    "image": "keuzeai.png",
+    "gif": "keuzeai.gif",
+    "points": [
+      "Acquired a solid understanding of behavior trees and their application in game development.",
+      "Gained hands-on experience with the NodeCanvas package for behavior tree implementation.",
+      "Explored and refined artistic and animation skills during the design process."
+    ]
+  },
+  {
+    "title": "Coding a Behaviour Tree",
+    "description": "A project focused on coding a custom behavior tree system, strengthening my understanding of AI programming and pixel art.",
+    "date": "13/11/2023",
+    "duration": "4 Weeks",
+    "people": "Solo",
+    "techUsed": ["Unity", "C#", "aseprite"],
+    "code_link": "https://github.com/DoctorRon64/Kernmodule-AI-BehaviourTree",
+    "image": "behaviourtree.png",
+    "gif": "behaviourtree.gif",
+    "points": [
+      "Built a custom behavior tree using composite, decorator, and action nodes, strengthening problem-solving abilities in AI development.",
+      "Expanded knowledge of Unity's 2D AI navigation mesh (NavMesh) system.",
+      "Continued to refine pixel art skills, integrating them into game design."
+    ]
+  },
+  {
+    "title": "Planet Destroyer",
+    "description": "A project focused on code architecture and design patterns, emphasizing clean, maintainable code and system integration.",
+    "date": "04/09/2023",
+    "duration": "5 Weeks",
+    "people": "Group of 2",
+    "techUsed": ["Unity", "C#", "aseprite"],
+    "code_link": "https://github.com/DoctorRon64/GameArchitecture-IntegratedGameplaySystems",
+    "image": "architecture.png",
+    "gif": "architecture.gif",
+    "points": [
+      "Applied various design patterns to create a clean and maintainable codebase.",
+      "Implemented custom event systems alongside observer, object pool, and factory patterns.",
+      "Gained experience in creating UML diagrams to model system architecture."
+    ]
+  },
+  {
+    "title": "Deadline Droids",
+    "description": "A project focused on creating a game to introduce prospective students to our study program, with an emphasis on multiplayer gameplay and networking.",
+    "date": "05/02/2023",
+    "duration": "8 Weeks",
+    "people": "Team of 4",
+    "techUsed": ["Unity", "C#", "Network"],
+    "code_link": "https://github.com/DoctorRon64/Project-Context-1",
+    "image": "context1.png",
+    "gif": "context1.gif",
+    "points": [
+      "Gained experience in developing multiplayer functionality in Unity.",
+      "Utilized Unity's Netcode for GameObjects package to create a local multiplayer prototype.",
+      "Designed an educational game for new students, effectively presenting the study program through an engaging concept."
     ]
   }
 ]

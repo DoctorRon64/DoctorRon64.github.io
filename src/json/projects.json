@@ -1,387 +1,387 @@
 ﻿[
   {
-    "name": "Bubble Machine",
+    "title": "Bubble Machine",
     "description": "Seminar about making a bubble machine in a unique way",
     "date": "18/06/2024",
     "duration": "2 Weeks",
     "people": "Solo",
     "techUsed": ["Arduino"],
     "code_link": "",
-    "staticImage": "bellenblaas.png",
-    "gifImage": "bellenblaas.gif"
+    "image": "bellenblaas.png",
+    "gif": "bellenblaas.gif"
   },
   {
-    "name": "Graphics Programming",
+    "title": "Graphics Programming",
     "description": "Project where we had to make a little scene with opengl and c++",
     "date": "17/04/2024",
     "duration": "8 Weeks",
     "people": "Solo",
     "techUsed": ["C++", "Cmake", "Opengl", "glm", "GLFW", "stbi", "assimp"],
     "code_link": "https://github.com/DoctorRon64/kern-graphics",
-    "staticImage": "graphics.png",
-    "gifImage": "graphics.gif"
+    "image": "graphics.png",
+    "gif": "graphics.gif"
   },
   {
-    "name": "Game Music Composition",
+    "title": "Game Music Composition",
     "description": "Project about making music for games, about looping and orchestration",
     "date": "15/04/2024",
     "duration": "8 Weeks",
     "people": "Solo",
     "techUsed": ["flstudio", "FL Studio"],
     "code_link": "",
-    "staticImage": "sfx.png",
-    "gifImage": "sfx.gif"
+    "image": "sfx.png",
+    "gif": "sfx.gif"
   },
   {
-    "name": "DrRon's Showdowns",
+    "title": "DrRon's Showdowns",
     "description": "A Project where I made a 2d boss battler game inspired, by Cuphead and Terraria boss battles",
     "date": "15/04/2024",
     "duration": "8 Weeks",
     "people": "Group of 3",
     "techUsed": ["Unity", "C#", "Animate", "Photoshop", "Illustrator"],
     "code_link": "",
-    "staticImage": "vrij2.png",
-    "gifImage": "vrij2.gif"
+    "image": "vrij2.png",
+    "gif": "vrij2.gif"
   },
   {
-    "name": "Procedural Art",
+    "title": "Procedural Art",
     "description": "Little project about making art that is procedural",
     "date": "12/02/2024",
     "duration": "6 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#", "aseprite"],
     "code_link": "https://github.com/DoctorRon64/Keuzemodule-Procedural-Art",
-    "staticImage": "proceduralart.png",
-    "gifImage": "proceduralart.gif"
+    "image": "proceduralart.png",
+    "gif": "proceduralart.gif"
   },
   {
-    "name": "Tune Tap Studio",
+    "title": "Tune Tap Studio",
     "description": "Tool production: I made my own Digital Audio Workstation in unity",
     "date": "12/02/2024",
     "duration": "6 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#", "Json"],
     "code_link": "https://github.com/DoctorRon64/Kernmodule-Production-Tools",
-    "staticImage": "tool.png",
-    "gifImage": "tool.gif"
+    "image": "tool.png",
+    "gif": "tool.gif"
   },
   {
-    "name": "Portfolio",
+    "title": "Portfolio",
     "description": "This website is all coded by me with HTML, CSS and a bit of Javascript",
     "date": "09/04/2024",
     "duration": "N/A",
     "people": "Solo",
     "techUsed": ["Html", "css", "scss", "Javascript", "nodejs"],
     "code_link": "",
-    "staticImage": "portfolio.png",
-    "gifImage": "portfolio.gif"
+    "image": "portfolio.png",
+    "gif": "portfolio.gif"
   },
   {
-    "name": "EcoVenture",
+    "title": "EcoVenture",
     "description": "Making a sustainable game with collaboration of the students from Utrecht university",
     "date": "05/02/2024",
     "duration": "8 Weeks",
     "people": "Team of 7, University collaboration <iconify-icon icon=\"hugeicons:university\" width=\"24px\" height=\"24px\" class='textIcons'></iconify-icon>",
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Project-Context-2",
-    "staticImage": "context2.png",
-    "gifImage": "context2.gif"
+    "image": "context2.png",
+    "gif": "context2.gif"
   },
   {
-    "name": "The Beat(les) Game",
+    "title": "The Beat(les) Game",
     "description": "A Seminar where I worked with people from: Music & Technology and Jazz and Pop",
     "date": "22/01/2024",
     "duration": "2 Weeks",
     "people": "Team of 8, Interdisciplinary collaboration",
     "techUsed": ["Unity", "C#", "Live instruments"],
     "code_link": "https://github.com/DoctorRon64/CatLab-beatles-game",
-    "staticImage": "catlab.png",
-    "gifImage": "catlab.gif"
+    "image": "catlab.png",
+    "gif": "catlab.gif"
   },
   {
-    "name": "Call Center Corp",
+    "title": "Call Center Corp",
     "description": "Making a game mixed with a physical object to make it hybrid",
     "date": "11/12/2023",
     "duration": "4 Weeks",
     "people": "Team of 6",
     "techUsed": ["Unity", "C#", "arduino"],
     "code_link": "https://github.com/DoctorRon64/Project-hybrid-Callcenterchaos",
-    "staticImage": "hybrid.png",
-    "gifImage": "/hybrid.gif"
+    "image": "hybrid.png",
+    "gif": "hybrid.gif"
   },
   {
-    "name": "Designing for AI Games ",
-    "description": "Designing a boss with Nodecanvas a behaviourtree tool",
+    "title": "Designing for AI Games",
+    "description": "Designing a boss with Nodecanvas a behaviourtree tool inspired by Cuphead",
     "date": "13/11/2023",
     "duration": "4 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Keuzemodule-Designing-AI",
-    "staticImage": "keuzeai.png",
-    "gifImage": "keuzeai.gif"
+    "image": "keuzeai.png",
+    "gif": "keuzeai.gif"
   },
   {
-    "name": "Developing for AI Games: Behaviour Tree",
+    "title": "Developing for AI Games: Behaviour Tree",
     "description": "Coding my own behaviour tree with code",
     "date": "13/11/2023",
     "duration": "4 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#", "aseprite"],
     "code_link": "https://github.com/DoctorRon64/Kernmodule-AI-BehaviourTree",
-    "staticImage": "behaviourtree.png",
-    "gifImage": "behaviourtree.gif"
+    "image": "behaviourtree.png",
+    "gif": "behaviourtree.gif"
   },
   {
-    "name": "Developing for AI Games: A*",
+    "title": "Developing for AI Games: A*",
     "description": "Making my own pathfinding A star script",
     "date": "13/11/2023",
     "duration": "4 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Kernmodule-AI-AstarPathfinding",
-    "staticImage": "astar.png",
-    "gifImage": "astar.gif"
+    "image": "astar.png",
+    "gif": "astar.gif"
   },
   {
-    "name": "Developing for AI Games: Boids",
+    "title": "Developing for AI Games: Boids",
     "description": "Coding flocking or boids",
     "date": "13/11/2023",
     "duration": "4 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Kernmodule-AI-Games-Boids",
-    "staticImage": "boids.png",
-    "gifImage": "boids.gif"
+    "image": "boids.png",
+    "gif": "boids.gif"
   },
   {
-    "name": "Show Me",
+    "title": "Show Me",
     "description": "Making a crafting system for a design problem for meteor mug",
     "date": "09/10/2023",
     "duration": "5 Weeks",
     "people": "Team of 6",
     "techUsed": ["Unity", "C#"],
     "code_link": "",
-    "staticImage": "showme.png",
-    "gifImage": "showme.gif"
+    "image": "showme.png",
+    "gif": "showme.gif"
   },
   {
-    "name": "App Development",
+    "title": "App Development",
     "description": "Tamagotchi app made with framework MAUI",
     "date": "11/09/2023",
     "duration": "4 Weeks",
     "people": "Solo",
     "techUsed": ["Yaml", "C#", "Json", "MySQL", "MAUI"],
     "code_link": "https://github.com/DoctorRon64/App-Development",
-    "staticImage": "appdev.png",
-    "gifImage": "appdev.gif"
+    "image": "appdev.png",
+    "gif": "appdev.gif"
   },
   {
-    "name": "Planet Destroyer",
+    "title": "Planet Destroyer",
     "description": "Project about code architecture and design patterns",
     "date": "04/09/2023",
     "duration": "5 Weeks",
     "people": "Group of 2",
     "techUsed": ["Unity", "C#", "aseprite"],
     "code_link": "https://github.com/DoctorRon64/GameArchitecture-IntegratedGameplaySystems",
-    "staticImage": "architecture.png",
-    "gifImage": "architecture.gif"
+    "image": "architecture.png",
+    "gif": "architecture.gif"
   },
   {
-    "name": "C++ Basics",
+    "title": "C++ Basics",
     "description": "Making a small game with C++ and the SFML Library",
     "date": "15/04/2023",
     "duration": "8 Weeks",
     "people": "Solo",
     "techUsed": ["C++", "SFML"],
     "code_link": "https://github.com/DoctorRon64/RacingGame",
-    "staticImage": "cppbasics.png",
-    "gifImage": "cppbasics.gif"
+    "image": "cppbasics.png",
+    "gif": "cppbasics.gif"
   },
   {
-    "name": "Somnia",
+    "title": "Somnia",
     "description": "A project where the team had to take inspiration from our trip to berlin",
     "date": "01/04/2023",
     "duration": "10 Weeks",
     "people": "Team of 6",
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/Blade412wild/ProjectVrij_1",
-    "staticImage": "vrij1.png",
-    "gifImage": "vrij1.gif"
+    "image": "vrij1.png",
+    "gif": "vrij1.gif"
   },
   {
-    "name": "If This Then That",
+    "title": "If This Then That",
     "description": "Making a interactive arduino product with finished soldering",
     "date": "05/02/2023",
     "duration": "8 Weeks",
     "people": "Solo",
     "techUsed": ["Arduino"],
     "code_link": "",
-    "staticImage": "ittt.png",
-    "gifImage": "ittt.gif"
+    "image": "ittt.png",
+    "gif": "ittt.gif"
   },
   {
-    "name": "The blue knight",
+    "title": "The blue knight",
     "description": "Building Playful Worlds 2: Making a turned based dungeon generator game",
     "date": "05/02/2023",
     "duration": "8 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#", "aseprite"],
     "code_link": "https://github.com/DoctorRon64/Building-Playful-Worlds-2",
-    "staticImage": "bpw2.png",
-    "gifImage": "bpw2.gif"
+    "image": "bpw2.png",
+    "gif": "bpw2.gif"
   },
   {
-    "name": "Deadline Droids",
+    "title": "Deadline Droids",
     "description": "Making a game to learn new people about our study",
     "date": "05/02/2023",
     "duration": "8 Weeks",
     "people": "Team of 4",
     "techUsed": ["Unity", "C#", "Network"],
     "code_link": "https://github.com/DoctorRon64/Project-Context-1",
-    "staticImage": "context1.png",
-    "gifImage": "context1.gif"
+    "image": "context1.png",
+    "gif": "context1.gif"
   },
   {
-    "name": "Rootlike",
+    "title": "Rootlike",
     "description": "Global Game Jam 2023 with theme Roots and roguelike approuch",
     "date": "03/02/2023",
     "duration": "3 Days",
     "people": "Group of 3",
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Global-GameJam-2023",
-    "staticImage": "roots.png",
-    "gifImage": "roots.gif"
+    "image": "roots.png",
+    "gif": "roots.gif"
   },
   {
-    "name": "Using Arduino For Evil",
+    "title": "Using Arduino For Evil",
     "description": "Making an daily product evil using arduino",
     "date": "22/01/2023",
     "duration": "2 Weeks",
     "people": "Solo",
     "techUsed": ["Arduino"],
     "code_link": "",
-    "staticImage": "evilarduino.png",
-    "gifImage": "evilarduino.gif"
+    "image": "evilarduino.png",
+    "gif": "evilarduino.gif"
   },
   {
-    "name": "Ninja the Game",
+    "title": "Ninja the Game",
     "description": "Building Playful Worlds 1: Making a game using a statemachine AI agent",
     "date": "23/12/2022",
     "duration": "6 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Building-Playful-Worlds-1",
-    "staticImage": "bpw1.png",
-    "gifImage": "bpw1.gif"
+    "image": "bpw1.png",
+    "gif": "bpw1.gif"
   },
   {
-    "name": "Empowering Creative Thinking Through Programming",
+    "title": "Empowering Creative Thinking Through Programming",
     "description": "Making a game with java and processing to learn the basics",
     "date": "11/09/2022",
     "duration": "9 Weeks",
     "people": "Solo",
     "techUsed": ["Processing", "Java"],
     "code_link": "",
-    "staticImage": "ecttp.png",
-    "gifImage": "ecttp.gif"
+    "image": "ecttp.png",
+    "gif": "ecttp.gif"
   },
   {
-    "name": "Probe Sender",
+    "title": "Probe Sender",
     "description": "Project Play: Designing a game trough a creative process and iterating",
     "date": "04/09/2022",
     "duration": "10 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Project-Play",
-    "staticImage": "projectplay.png",
-    "gifImage": "projectplay.gif"
+    "image": "projectplay.png",
+    "gif": "projectplay.gif"
   },
   {
-    "name": "Billy Stickman",
+    "title": "Billy Stickman",
     "description": "Wowie Jam 4.0 with theme 'Collaborate With AI'",
     "date": "12/08/2022",
     "duration": "3 Days",
     "people": "Solo",
     "techUsed": ["Unity", "C#"],
     "code_link": "",
-    "staticImage": "gamejam4.png",
-    "gifImage": "gamejam4.gif"
+    "image": "gamejam4.png",
+    "gif": "gamejam4.gif"
   },
   {
-    "name": "Chaos in the city",
+    "title": "Chaos in the city",
     "description": "Brackeys Game Jam 2021.2 with theme 'let ther be CHAOS'",
     "date": "29/08/2021",
     "duration": "7 Days",
     "people": "Solo",
     "techUsed": ["Unity", "C#"],
     "code_link": "",
-    "staticImage": "gamejam3.png",
-    "gifImage": "gamejam3.gif"
+    "image": "gamejam3.png",
+    "gif": "gamejam3.gif"
   },
   {
-    "name": "Mechanic togheter",
+    "title": "Mechanic togheter",
     "description": "Brackeys Game Jam 2021.1 with theme being: 'Stronger Togheter'",
     "date": "21/02/2021",
     "duration": "7 Days",
     "people": "Solo",
     "techUsed": ["Unity", "C#"],
     "code_link": "",
-    "staticImage": "gamejam2.png",
-    "gifImage": "gamejam2.gif"
+    "image": "gamejam2.png",
+    "gif": "gamejam2.gif"
   },
   {
-    "name": "Waterbottle App",
+    "title": "Waterbottle App",
     "description": "A unity app I made in the summer to remind me to drink water",
     "date": "08/04/2021",
     "duration": "N/A",
     "people": "Solo",
     "techUsed": ["Unity", "C#"],
     "code_link": "",
-    "staticImage": "waterbottle.png",
-    "gifImage": "waterbottle.gif"
+    "image": "waterbottle.png",
+    "gif": "waterbottle.gif"
   },
   {
-    "name": "Tech Clicker",
+    "title": "Tech Clicker",
     "description": "A fun little cookie clicker game I made",
     "date": "21/12/2020",
     "duration": "N/A",
     "people": "Solo",
     "techUsed": ["Unity", "C#"],
     "code_link": "",
-    "staticImage": "techclicker.png",
-    "gifImage": "techclicker.gif"
+    "image": "techclicker.png",
+    "gif": "techclicker.gif"
   },
   {
-    "name": "Rewinded",
+    "title": "Rewinded",
     "description": "Brackey's Jam 2020.2 with theme 'Rewind'. This was my first unity game!",
     "date": "08/08/2020",
     "duration": "7 Days",
     "people": "Group of 2",
     "techUsed": ["Unity", "Blender"],
     "code_link": "",
-    "staticImage": "gamejam1.png",
-    "gifImage": "gamejam1.gif"
+    "image": "gamejam1.png",
+    "gif": "gamejam1.gif"
   },
   {
-    "name": "Minesweeper Website",
+    "title": "Minesweeper Website",
     "description": "Making minesweeper with javascript",
     "date": "15/07/2020",
     "duration": "N/A",
     "people": "Solo",
     "techUsed": ["Javascript", "HTML", "Nodejs"],
     "code_link": "https://github.com/Lefthandmedia/minesweeper",
-    "staticImage": "minesweeperjs.png",
-    "gifImage": "minesweeper.gif"
+    "image": "minesweeperjs.png",
+    "gif": "minesweeper.gif"
   },
   {
-    "name": "Piano Arduino",
+    "title": "Piano Arduino",
     "description": "Making my own piano using buttons, buzzers and arduino",
     "date": "",
     "duration": "N/A",
     "people": "Solo",
     "techUsed": ["Arduino"],
     "code_link": "",
-    "staticImage": "pianoarduino.png",
-    "gifImage": "pianoarduino.gif"
+    "image": "pianoarduino.png",
+    "gif": "pianoarduino.gif"
   }
 ]
