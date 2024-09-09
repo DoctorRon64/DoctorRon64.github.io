@@ -46,7 +46,7 @@
                     // Create and append image container
                     const imgDiv = document.createElement('div');
                     imgDiv.className = 'overview-img';
-                    imgDiv.innerHTML = `<img src="assets/img/thumbnails/${project.image}" data-gif="assets/img/thumbnails/gifs/${project.gif}" alt="${project.title}">`;
+                    imgDiv.innerHTML = `<img src="assets/img/thumbnails/${project.image}" data-gif="assets/img/gifs/${project.gif}" alt="${project.title}">`;
 
                     // Add hover functionality to switch image and gif
                     imgDiv.addEventListener('mouseenter', (e) => {
