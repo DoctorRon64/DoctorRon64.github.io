@@ -1,20 +1,64 @@
-﻿// Container for project overview grid
-.overview-grid-container {
+﻿.overview-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); /* Ensures responsive behavior */
   gap: 20px;
   padding: 20px;
   align-items: start;
+  max-width: 1200px; /* Restrict container width for better layout control */
+  margin: 0 auto; /* Center the grid on larger screens */
 }
 
+.overview-button {
+  display: inline-block;
+  padding: 20px 100px; /* Adjusted padding */
+  margin: 20px;
+  font-size: 1em;
+  border: 2px solid transparent; /* Solid border that can transition */
+  color: #1e1e1e; /* Dark text color */
+  background-color: white; /* White background */
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  border-radius: 8px;
+}
+
+/* Hover effect */
+.overview-button:hover {
+  background-color: transparent; /* Dark background on hover */
+  color: white; /* Text changes to white */
+  border: 2px solid white; /* Border becomes visible */
+}
+
+.overview-button-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+}
+
+.overview-headline {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.4;
+
+  /* Add subtle shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
 // Each individual project item
 .overview-item {
-  background-color: #ffffff;
-  padding: 15px;
+  background-color: #45dece;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #e5e7eb;
+  border: 5px solid #35ab9e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
   &:hover {
     transform: translateY(-5px);
@@ -24,10 +68,11 @@
 
 // Title styling
 .overview-title h1 {
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-weight: 700;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.4;
 }
 
@@ -35,7 +80,7 @@
 .overview-img {
   position: relative;
   width: 100%;
-  padding-top: 72.22%; // Maintain aspect ratio
+  padding-top: 72.22%; /* Maintain aspect ratio */
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 12px;
@@ -48,21 +93,24 @@
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    transition: transform 0.3s ease, opacity 0.3s ease; // Smooth transition when switching images
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
   &:hover img {
-    transform: scale(1.05); // Slight zoom effect on hover
+    transform: scale(1.05); /* Slight zoom effect on hover */
   }
 }
 
 // Text and content styling
 .overview-text {
+  font-family: 'Questrial', sans-serif;
+  color: #555;
+  line-height: 1.6;
+  text-align: left;
+
   p {
-    font-size: 0.95em;
+    font-size: 1em;
     margin-bottom: 8px;
-    color: #555;
-    line-height: 1.6;
 
     a {
       color: #007bff;
@@ -96,7 +144,7 @@
   }
 
   .overview-title h1 {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
 
   .overview-img {
@@ -108,4 +156,14 @@
       font-size: 0.85em;
     }
   }
+}
+
+.overview-footer {
+  position: relative; /* Keep footer in flow of document */
+  bottom: 0;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
 }

@@ -13,9 +13,12 @@
 <div class="background"></div>
 
 <!--title-->
-<h1 class="showoff-column1">Overview off my favorite and impressive Projects</h1>
+<h1 class="overview-headline">Overview of Projects</h1>
 
 <div id="projects-container"></div>
+<div class="overview-button-container">
+    <a href="/explore.html" class="overview-button">Explore All Projects</a>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -48,17 +51,17 @@
                     imgDiv.className = 'overview-img';
                     imgDiv.innerHTML = `<img src="assets/img/thumbnails/${project.image}" data-gif="assets/img/gifs/${project.gif}" alt="${project.title}">`;
 
-                    // Add hover functionality to switch image and gif
-                    imgDiv.addEventListener('mouseenter', (e) => {
-                        const img = e.currentTarget.querySelector('img');
+                    // Add hover functionality to switch image and gif on the whole item
+                    itemDiv.addEventListener('mouseenter', (e) => {
+                        const img = imgDiv.querySelector('img');
                         const gif = img.getAttribute('data-gif');
                         if (gif) {
                             img.setAttribute('src', gif);
                         }
                     });
 
-                    imgDiv.addEventListener('mouseleave', (e) => {
-                        const img = e.currentTarget.querySelector('img');
+                    itemDiv.addEventListener('mouseleave', (e) => {
+                        const img = imgDiv.querySelector('img');
                         const staticImage = `assets/img/thumbnails/${project.image}`;
                         img.setAttribute('src', staticImage);
                     });
@@ -100,7 +103,7 @@
     });
 </script>
 
-<footer>
+<footer class="overview-footer">
     <ul class="social-icons">
         <li><a href="mailto:philip@lefthandmedia.com" title="Email me"><iconify-icon icon="fluent:mail-24-filled" width="40" height="40"></iconify-icon></a></li>
         <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn"><iconify-icon icon="devicon:linkedin" width="40" height="40"></iconify-icon></a></li>
