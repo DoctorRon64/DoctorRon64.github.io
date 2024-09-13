@@ -102,7 +102,7 @@
         function iconString(icon, color = '', width = '24px', height = '24px') {
             const style = color ? ` style="color: ${color}"` : '';
             if (icon.endsWith('.png')) {
-                return `<img src="${icon}" width="${width}" height="${height}">`;
+                return `<img src="${icon}" width="${width}" height="${height}" class="imgIcons">`;
             } else {
                 return `<iconify-icon icon="${icon}" width="${width}" height="${height}" class="textIcons"${style}></iconify-icon>`;
             }

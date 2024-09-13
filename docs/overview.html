@@ -22,6 +22,51 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        function iconString(icon, color = '', width = '24px', height = '24px') {
+            const style = color ? ` style="color: ${color}"` : '';
+            if (icon.endsWith('.png')) {
+                return `<img src="${icon}" width="${width}" height="${height}" class="imgIcons">`;
+            } else {
+                return `<iconify-icon icon="${icon}" width="${width}" height="${height}" class="textIcons"${style}></iconify-icon>`;
+            }
+        }
+        const techIconsMap = {
+            'unity': iconString("skill-icons:unity-light"),
+            'c#': iconString("devicon:csharp"),
+            'processing': iconString("skill-icons:processing-light"),
+            'java': iconString("skill-icons:java-light"),
+            'blender': iconString("logos:blender"),
+            'arduino': iconString("skill-icons:arduino"),
+            'javascript': iconString("ri:javascript-fill", "#f0db4f"),
+            'html': iconString("vscode-icons:file-type-html"),
+            'nodejs': iconString("logos:nodejs-icon"),
+            'git': iconString("devicon:git"),
+            'network': iconString("zondicons:network"),
+            'c++': iconString("vscode-icons:file-type-cpp3"),
+            'sfml': iconString("/assets/img/icons/sfml.png"),
+            'yaml': iconString("devicon:yaml"),
+            'json': iconString("bi:filetype-json"),
+            'mysql': iconString("skill-icons:mysql-dark"),
+            'css': iconString("vscode-icons:file-type-css"),
+            'scss': iconString("vscode-icons:file-type-scss2"),
+            'photoshop': iconString("devicon:photoshop"),
+            'animate': iconString("logos:adobe-animate"),
+            'illustrator': iconString("logos:adobe-illustrator"),
+            'flstudio': iconString("/assets/img/icons/flstudio.png"),
+            'opengl': iconString("devicon:opengl"),
+            'glm': '<img src="/assets/img/icons/glm-logo.svg" width="24px" height="12px" style="transform: translateY(-2px);" alt="Example SVG">',
+            'cmake': iconString("devicon:cmake"),
+            'aseprite': iconString("/assets/img/icons/aseprite.png"),
+            'maui': iconString("skill-icons:dotnet"),
+        };
+        function convertTechToIcon(tech) {
+            const lowerTech = tech.trim().toLowerCase();
+            if (techIconsMap[lowerTech]) {
+                return techIconsMap[lowerTech];
+            }
+            return tech;
+        }
+
         fetch('/json/overview.json')
             .then(response => response.json())
             .then(data => {
@@ -29,7 +74,6 @@
                 container.className = 'overview-grid-container';
 
                 data.forEach(project => {
-                    // Convert date to a more readable format
                     const dateParts = project.date.split('/');
                     const formattedDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]).toLocaleDateString('en-GB', {
                         year: 'numeric',
@@ -37,48 +81,53 @@
                         day: 'numeric'
                     });
 
-                    // Create overview-item div
                     const itemDiv = document.createElement('div');
                     itemDiv.className = 'overview-item';
 
-                    // Create and append title
                     const titleDiv = document.createElement('div');
                     titleDiv.className = 'overview-title';
                     titleDiv.innerHTML = `<h1>${project.title}</h1>`;
 
-                    // Create and append image container
                     const imgDiv = document.createElement('div');
                     imgDiv.className = 'overview-img';
                     imgDiv.innerHTML = `<img src="assets/img/thumbnails/${project.image}" data-gif="assets/img/gifs/${project.gif}" alt="${project.title}">`;
 
-                    // Add hover functionality to switch image and gif on the whole item
-                    itemDiv.addEventListener('mouseenter', (e) => {
+                    itemDiv.addEventListener('mouseenter', () => {
                         const img = imgDiv.querySelector('img');
                         const gif = img.getAttribute('data-gif');
                         if (gif) {
                             img.setAttribute('src', gif);
                         }
+                        itemDiv.classList.add('hovered'); // Add class on hover
                     });
 
-                    itemDiv.addEventListener('mouseleave', (e) => {
+                    itemDiv.addEventListener('mouseleave', () => {
                         const img = imgDiv.querySelector('img');
                         const staticImage = `assets/img/thumbnails/${project.image}`;
                         img.setAttribute('src', staticImage);
+                        itemDiv.classList.remove('hovered'); // Remove class on mouse leave
                     });
 
-                    // Create and append text content
+                    const descriptionDiv = document.createElement('div');
+                    descriptionDiv.className = 'overview-description';
+                    descriptionDiv.innerHTML = `<p>${project.description}</p>`;
+
                     const textDiv = document.createElement('div');
                     textDiv.className = 'overview-text';
+                    const codeSection = project.code_link
+                        ? `<strong><iconify-icon icon="fluent-mdl2:git-hub-logo"></iconify-icon>Code:</strong> <a href="${project.code_link}">${project.code_link}</a> <br>`
+                        : '';
+
+                    const techUsedHtml = project.techUsed.map(tech => convertTechToIcon(tech)).join(' ');
+
                     textDiv.innerHTML = `
-                    <p>${project.description}</p>
-                    <p>Code: <a href="${project.code_link}" target="_blank">${project.code_link}</a></p>
-                    <p>Date: ${formattedDate}</p>
-                    <p>Duration: ${project.duration}</p>
-                    <p>People: ${project.people}</p>
-                    <p>Tech Used: ${project.techUsed.join(', ')}</p>
+                    ${codeSection}
+                    <strong>Date: </strong>${formattedDate}<br>
+                    <strong>Duration: </strong>${project.duration}<br>
+                    <strong>People: </strong>${project.people}<br>
+                    <strong>Tech Used: </strong>${techUsedHtml}<br>
                 `;
 
-                    // Create and append list items
                     const ul = document.createElement('ul');
                     project.points.forEach(point => {
                         const li = document.createElement('li');
@@ -87,20 +136,20 @@
                     });
                     textDiv.appendChild(ul);
 
-                    // Append all elements to the itemDiv
                     itemDiv.appendChild(titleDiv);
                     itemDiv.appendChild(imgDiv);
+                    itemDiv.appendChild(descriptionDiv);
                     itemDiv.appendChild(textDiv);
 
-                    // Append itemDiv to container
                     container.appendChild(itemDiv);
                 });
 
-                // Append the container to the body or a specific section
                 document.getElementById('projects-container').appendChild(container);
             })
             .catch(error => console.error('Error loading JSON:', error));
     });
+</script>
+
 </script>
 
 <footer class="overview-footer">
