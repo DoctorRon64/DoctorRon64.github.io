@@ -7,7 +7,6 @@
     <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16"/>
     <link rel="stylesheet" href="/assets/css/app.css">
     <script src="/assets/js/app.js"></script>
-    <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
 </head>
 <body>
 <div class="background"></div>
@@ -18,34 +17,39 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         function createProjectHTML(project) {
+            function iconString(icon, color = '', width = '24px', height = '24px') {
+                const style = color ? ` style="color: ${color}"` : '';
+                return `<img src="/assets/img/icons/${icon}" width="${width}" height="${height}" class="imgIcons"${style}>`;
+            }
+            
             const techIconsMap = {
-                'unity': iconString("skill-icons:unity-light"),
-                'c#': iconString("devicon:csharp"),
-                'processing': iconString("skill-icons:processing-light"),
-                'java': iconString("skill-icons:java-light"),
-                'blender': iconString("logos:blender"),
-                'arduino': iconString("skill-icons:arduino"),
-                'javascript': iconString("ri:javascript-fill", "#f0db4f"),
-                'html': iconString("vscode-icons:file-type-html"),
-                'nodejs': iconString("logos:nodejs-icon"),
-                'git': iconString("devicon:git"),
-                'network': iconString("zondicons:network"),
-                'c++': iconString("vscode-icons:file-type-cpp3"),
-                'sfml': iconString("/assets/img/icons/sfml.png"),
-                'yaml': iconString("devicon:yaml"),
-                'json': iconString("bi:filetype-json"),
-                'mysql': iconString("skill-icons:mysql-dark"),
-                'css': iconString("vscode-icons:file-type-css"),
-                'scss': iconString("vscode-icons:file-type-scss2"),
-                'photoshop': iconString("devicon:photoshop"),
-                'animate': iconString("logos:adobe-animate"),
-                'illustrator': iconString("logos:adobe-illustrator"),
-                'flstudio': iconString("/assets/img/icons/flstudio.png"),
-                'opengl': iconString("devicon:opengl"),
-                'glm': '<img src="/assets/img/icons/glm-logo.svg" width="24px" height="12px" style="transform: translateY(-2px);" alt="Example SVG">',
-                'cmake': iconString("devicon:cmake"),
-                'aseprite': iconString("/assets/img/icons/aseprite.png"),
-                'maui': iconString("skill-icons:dotnet"),
+                'animate': iconString("logos--adobe-animate.svg"),
+                'arduino': iconString("skill-icons--arduino.svg"),
+                'aseprite': iconString("aseprite.png"),
+                'blender': iconString("logos--blender.svg"),
+                'c#': iconString("devicon--csharp.svg"),
+                'c++': iconString("vscode-icons--file-type-cpp3.svg"),
+                'cmake': iconString("devicon--cmake.svg"),
+                'css': iconString("skill-icons--css.svg"),
+                'flstudio': iconString("flstudio.png"),
+                'git': iconString("skill-icons--git.svg"),
+                'glm': iconString('glm-logo.svg', '', '24px', '12px'),
+                'html': iconString("skill-icons--html.svg"),
+                'illustrator': iconString("skill-icons--illustrator.svg"),
+                'java': iconString("skill-icons--java-light.svg"),
+                'javascript': iconString("skill-icons--javascript.svg"),
+                'json': iconString("bi--filetype-json.svg"),
+                'maui': iconString("skill-icons--dotnet.svg"),
+                'mysql': iconString("skill-icons--mysql-dark.svg"),
+                'network': iconString("fluent-mdl2--network-tower.svg"),
+                'nodejs': iconString("skill-icons--nodejs-dark.svg"),
+                'opengl': iconString("logos--opengl.svg"),
+                'photoshop': iconString("skill-icons--photoshop.svg"),
+                'processing': iconString("skill-icons--processing-light.svg"),
+                'scss': iconString("vscode-icons--file-type-scss2.svg"),
+                'sfml': iconString("sfml.png"),
+                'unity': iconString("skill-icons--unity-light.svg"),
+                'yaml': iconString("devicon--yaml.svg")
             };
 
             function convertTechToIcon(tech) {

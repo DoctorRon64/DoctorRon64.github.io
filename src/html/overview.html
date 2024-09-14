@@ -7,7 +7,6 @@
     <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16"/>
     <link rel="stylesheet" href="/assets/css/app.css">
     <script src="/assets/js/app.js"></script>
-    <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
 </head>
 <body>
 <div class="background"></div>
@@ -24,40 +23,36 @@
     document.addEventListener('DOMContentLoaded', () => {
         function iconString(icon, color = '', width = '24px', height = '24px') {
             const style = color ? ` style="color: ${color}"` : '';
-            if (icon.endsWith('.png')) {
-                return `<img src="${icon}" width="${width}" height="${height}" class="imgIcons">`;
-            } else {
-                return `<iconify-icon icon="${icon}" width="${width}" height="${height}" class="textIcons"${style}></iconify-icon>`;
-            }
+            return `<img src="/assets/img/icons/${icon}" width="${width}" height="${height}" class="imgIcons"${style}>`;
         }
         const techIconsMap = {
-            'unity': iconString("skill-icons:unity-light"),
-            'c#': iconString("devicon:csharp"),
-            'processing': iconString("skill-icons:processing-light"),
-            'java': iconString("skill-icons:java-light"),
-            'blender': iconString("logos:blender"),
-            'arduino': iconString("skill-icons:arduino"),
-            'javascript': iconString("ri:javascript-fill", "#f0db4f"),
-            'html': iconString("vscode-icons:file-type-html"),
-            'nodejs': iconString("logos:nodejs-icon"),
-            'git': iconString("devicon:git"),
-            'network': iconString("zondicons:network"),
-            'c++': iconString("vscode-icons:file-type-cpp3"),
-            'sfml': iconString("/assets/img/icons/sfml.png"),
-            'yaml': iconString("devicon:yaml"),
-            'json': iconString("bi:filetype-json"),
-            'mysql': iconString("skill-icons:mysql-dark"),
-            'css': iconString("vscode-icons:file-type-css"),
-            'scss': iconString("vscode-icons:file-type-scss2"),
-            'photoshop': iconString("devicon:photoshop"),
-            'animate': iconString("logos:adobe-animate"),
-            'illustrator': iconString("logos:adobe-illustrator"),
-            'flstudio': iconString("/assets/img/icons/flstudio.png"),
-            'opengl': iconString("devicon:opengl"),
-            'glm': '<img src="/assets/img/icons/glm-logo.svg" width="24px" height="12px" style="transform: translateY(-2px);" alt="Example SVG">',
-            'cmake': iconString("devicon:cmake"),
-            'aseprite': iconString("/assets/img/icons/aseprite.png"),
-            'maui': iconString("skill-icons:dotnet"),
+            'animate': iconString("logos--adobe-animate.svg"),
+            'arduino': iconString("skill-icons--arduino.svg"),
+            'aseprite': iconString("aseprite.png"),
+            'blender': iconString("logos--blender.svg"),
+            'c#': iconString("devicon--csharp.svg"),
+            'c++': iconString("vscode-icons--file-type-cpp3.svg"),
+            'cmake': iconString("devicon--cmake.svg"),
+            'css': iconString("skill-icons--css.svg"),
+            'flstudio': iconString("flstudio.png"),
+            'git': iconString("skill-icons--git.svg"),
+            'glm': iconString('glm-logo.svg', '', '24px', '12px'),
+            'html': iconString("skill-icons--html.svg"),
+            'illustrator': iconString("skill-icons--illustrator.svg"),
+            'java': iconString("skill-icons--java-light.svg"),
+            'javascript': iconString("skill-icons--javascript.svg"),
+            'json': iconString("bi--filetype-json.svg"),
+            'maui': iconString("skill-icons--dotnet.svg"),
+            'mysql': iconString("skill-icons--mysql-dark.svg"),
+            'network': iconString("fluent-mdl2--network-tower.svg"),
+            'nodejs': iconString("skill-icons--nodejs-dark.svg"),
+            'opengl': iconString("logos--opengl.svg"),
+            'photoshop': iconString("skill-icons--photoshop.svg"),
+            'processing': iconString("skill-icons--processing-light.svg"),
+            'scss': iconString("vscode-icons--file-type-scss2.svg"),
+            'sfml': iconString("sfml.png"),
+            'unity': iconString("skill-icons--unity-light.svg"),
+            'yaml': iconString("devicon--yaml.svg")
         };
         function convertTechToIcon(tech) {
             const lowerTech = tech.trim().toLowerCase();
@@ -128,6 +123,10 @@
                     <strong>Tech Used: </strong>${techUsedHtml}<br>
                 `;
 
+                    const heading = document.createElement('strong');
+                    heading.textContent = 'Learned:';
+                    textDiv.appendChild(heading);
+                    
                     const ul = document.createElement('ul');
                     project.points.forEach(point => {
                         const li = document.createElement('li');
@@ -154,14 +153,13 @@
 
 <footer class="overview-footer">
     <ul class="social-icons">
-        <li><a href="mailto:philip@lefthandmedia.com" title="Email me"><iconify-icon icon="fluent:mail-24-filled" width="40" height="40"></iconify-icon></a></li>
-        <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn"><iconify-icon icon="devicon:linkedin" width="40" height="40"></iconify-icon></a></li>
-        <li><a href="https://github.com/DoctorRon64" target="_blank" title="GitHub"><iconify-icon icon="skill-icons:github-dark" width="40" height="40"></iconify-icon></a></li>
-        <li><a href="https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ" target="_blank" title="Spotify"><iconify-icon icon="logos:spotify-icon" width="40" height="40"></iconify-icon></a></li>
-        <li><a href="https://doctor-ron.itch.io/" target="_blank" title="Itch.Io"><iconify-icon icon="cib:itch-io" width="40" height="40"></iconify-icon></a></li>
+        <li><a href="mailto:philip@lefthandmedia.com" title="Email me"><img src="/assets/img/icons/fxemoji--email.svg" width="40" height="40" class="imgIcons"></a></li>
+        <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn"><img src="/assets/img/icons/devicon--linkedin.svg" width="40" height="40" class="imgIcons"></a></li>
+        <li><a href="https://github.com/DoctorRon64" target="_blank" title="GitHub"><img src="/assets/img/icons/skill-icons--github-dark.svg" width="40" height="40" class="imgIcons"></a></li>
+        <li><a href="https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ" target="_blank" title="Spotify"><img src="/assets/img/icons/logos--spotify-icon.svg" width="40" height="40" class="imgIcons"></iconify-icon></a></li>
+        <li><a href="https://doctor-ron.itch.io/" target="_blank" title="Itch.Io"><img src="/assets/img/icons/cib--itch-io.svg" width="40" height="40" class="imgIcons" style="fill: #fa5c5c;"></a></li>
     </ul>
 </footer>
 <script src="/assets/js/app.js"></script>
-<script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
 </body>
 </html>
