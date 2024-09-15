@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DrRon's Portfolio Website</title>
-    <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16"/>
+    <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16" type="image/gif">
     <link rel="stylesheet" href="/assets/css/app.css">
 </head>
 <body class="indexbody">
@@ -20,45 +20,70 @@
             knowledge.
         </div>
         <br>
+        <div id="skills-container"></div>
         <br>
         <a href="overview.html" class="explore-button">Overview</a>
     </header>
 </div>
-<div id="skills-container"></div>
 
 <script type="module">
     import { techIconsMap } from '../assets/js/app.js';
-    
+
     function convertToIcon(tech) {
         const lowerTech = tech.trim().toLowerCase();
-        if (techIconsMap[lowerTech]) {
-            return techIconsMap[lowerTech];
-        }
-        return `<img src="/assets/img/icons/sfml.png" width="24px" height="24px">`;
+        return techIconsMap[lowerTech];
     }
 
-    function createSkillElement(skill) {
-        const iconHtml = convertToIcon(skill.name);
+    function createLanguageElement(skill) {
+        const iconHtml = convertToIcon(skill.icon);
         return `
-        <div class="skill-item">
+        <div class="skill-item" title="${skill.name}">
             ${iconHtml}
             <span class="skill-name">${skill.name}</span>
         </div>
         `;
     }
 
-    function renderSkills(skills, containerClass) {
+    function createSkillElement(skill) {
+        const iconHtml = convertToIcon(skill.icon);
+        return `
+        <div class="skill-item" title="${skill.name}">
+            ${iconHtml}
+        </div>
+        `;
+    }
+
+    function renderSkills(skills, containerClass, title) {
         const container = document.querySelector(`.${containerClass} .skills`);
         if (!container) {
             console.error(`Container with class ${containerClass} not found`);
             return;
         }
         container.innerHTML = '';
-        skills.forEach(skill => {
-            container.innerHTML += createSkillElement(skill);
-        });
+
+        // Insert the category title
+        const titleElement = document.createElement('span');
+        titleElement.classList.add('category-title');
+        titleElement.textContent = title;
+        container.appendChild(titleElement);
+
+        // Create a container for skills
+        const skillsDiv = document.createElement('div');
+        skillsDiv.classList.add('skills-list');
+        container.appendChild(skillsDiv);
+
+        // Check if the container is for 'Languages' and use the appropriate function
+        if (containerClass === 'languages') {
+            skills.forEach(skill => {
+                skillsDiv.innerHTML += createLanguageElement(skill);
+            });
+        } else {
+            skills.forEach(skill => {
+                skillsDiv.innerHTML += createSkillElement(skill);
+            });
+        }
     }
-    
+
     async function loadAndDisplaySkills() {
         try {
             const response = await fetch('/json/skills.json');
@@ -72,6 +97,7 @@
                 console.error("Skills container not found!");
                 return;
             }
+
             data.forEach(category => {
                 const containerClass = category.title.toLowerCase().replace(/\s+/g, '_'); // Normalize class name
                 const categoryDiv = document.createElement('div');
@@ -82,7 +108,9 @@
                 categoryDiv.appendChild(skillsDiv);
 
                 skillsContainer.appendChild(categoryDiv);
-                renderSkills(category.skills, containerClass);
+
+                // Render the skills for this category and include the title
+                renderSkills(category.skills, containerClass, category.title);
             });
         } catch (error) {
             console.error("Error loading or displaying skills:", error);
