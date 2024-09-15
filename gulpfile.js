@@ -35,7 +35,7 @@ function scssTask(cb) {
 
 function jsTask(cb) {
     return src(files.jsPath, {sourcemaps: true})
-        .pipe(concat('app.js'))
+        //.pipe(concat('app.js'))
         .pipe(terser())
         .pipe(dest('docs/assets/js/', {sourcemaps: '.'}))
         .on('end', cb);

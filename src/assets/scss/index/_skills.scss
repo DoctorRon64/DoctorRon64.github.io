@@ -20,33 +20,39 @@
   gap: 10px; /* Gap between items */
 }
 
-/* Style each skill */
-.skill {
-  transform: translateY(-5px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeInUp 0.5s ease-out; /* Apply animation */
-  animation-delay: calc(var(--index) * 0.1s); /* Staggered animation for each skill */
-  padding: 1px; /* Increase padding for better spacing */
-  border-radius: 8px; /* Round corners slightly more */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhance shadow for depth */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-  font-size: 1em; /* Adjust font size for better readability */
-}
-
 .skill:hover {
   transform: scale(1.1); /* Slightly larger on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
-.skill iconify-icon {
-  font-size: 24px; /* Slightly larger icon size */
-  margin-right: 8px; /* Space between icon and text */
+///////////////////////////////////////////////////
+#skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Spacing between categories */
 }
 
-.skill span {
-  font-size: 1em; /* Adjust font size */
-  font-weight: 500; /* Slightly bolder text */
-  color: #333; /* Darker color for text */
+.skills {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of items into multiple rows */
+  gap: 10px; /* Spacing between skill items */
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  background-color: #f9f9f9;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item img {
+  display: block;
+}
+
+.skill-name {
+  font-size: 16px;
+  color: #333;
 }
