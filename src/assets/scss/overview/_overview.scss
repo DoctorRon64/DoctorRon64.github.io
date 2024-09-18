@@ -1,5 +1,4 @@
-﻿/* Ensure grid items expand independently */
-.overview-grid-container {
+﻿.overview-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); /* Responsive grid */
   gap: 20px;
@@ -7,22 +6,6 @@
   max-width: 1200px;
   margin: 0 auto;
   align-items: start;
-<<<<<<< HEAD
-}
-
-.overview-headline {
-  font-family: 'Raleway', sans-serif;
-  font-size: 3em;
-  font-weight: 700;
-  color: white;
-  text-align: center;
-  margin-bottom: 30px;
-  line-height: 1.4;
-
-  /* Add subtle shadow */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-=======
->>>>>>> 153f43b78b7aca3076e6030c4207078f342d0a8b
 }
 
 .overview-button {
@@ -52,14 +35,6 @@
   justify-content: center; /* Center horizontally */
 }
 
-<<<<<<< HEAD
-.overview-item {
-  background-color: rgba(69, 222, 206, 0.5); /* Transparent background */
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 5px solid rgb(69, 222, 206);
-=======
 .overview-headline {
   font-family: 'Raleway', sans-serif;
   font-size: 3em;
@@ -79,7 +54,6 @@
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 5px solid #35ab9e;
->>>>>>> 153f43b78b7aca3076e6030c4207078f342d0a8b
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,18 +62,6 @@
   overflow: hidden;
   height: auto; /* Ensure the container height grows with content */
   cursor: pointer;
-<<<<<<< HEAD
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, color 0.3s;
-}
-
-.overview-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  background-color: rgba(69, 222, 206, 0.9);
-  border: 5px solid #83e2d9;
-}
-
-=======
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -108,13 +70,12 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   border: 5px solid #50efe5;
   background-color: rgba(69, 222, 206, 0.9);
-  
+
   .overview-title h1 {
     color: white;
   }
 }
 
->>>>>>> 153f43b78b7aca3076e6030c4207078f342d0a8b
 /* Title and image are shown by default */
 .overview-description,
 .overview-text {
@@ -170,19 +131,12 @@
 /* Text and description styling */
 .overview-description {
   transition: opacity 0.3s ease, max-height 0.3s ease;
-<<<<<<< HEAD
-=======
   font-family: "Montserrat", sans-serif;
->>>>>>> 153f43b78b7aca3076e6030c4207078f342d0a8b
 }
 
 .overview-text {
   text-align: left;
-<<<<<<< HEAD
-  font-family: 'Questrial', sans-serif;
-=======
   font-family: "Montserrat", sans-serif;
->>>>>>> 153f43b78b7aca3076e6030c4207078f342d0a8b
   color: #333;
   line-height: 1.6;
   font-size: 1em;

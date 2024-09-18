@@ -27,97 +27,94 @@
 </div>
 
 <script type="module">
-    import { techIconsMap } from '../assets/js/app.js';
+    import { iconString } from '../assets/js/app.js';
 
-    function convertToIcon(tech) {
-        const lowerTech = tech.trim().toLowerCase();
-        return techIconsMap[lowerTech];
-    }
-
-    function createLanguageElement(skill) {
-        const iconHtml = convertToIcon(skill.icon);
-        return `
-        <div class="skill-item" title="${skill.name}">
-            ${iconHtml}
-            <span class="skill-name">${skill.name}</span>
-        </div>
-        `;
-    }
-
-    function createSkillElement(skill) {
-        const iconHtml = convertToIcon(skill.icon);
-        return `
-        <div class="skill-item" title="${skill.name}">
-            ${iconHtml}
-        </div>
-        `;
-    }
-
-    function renderSkills(skills, containerClass, title) {
-        const container = document.querySelector(`.${containerClass} .skills`);
-        if (!container) {
-            console.error(`Container with class ${containerClass} not found`);
-            return;
+    document.addEventListener('DOMContentLoaded', () => {
+        function createLanguageElement(skill) {
+            const iconHtml = iconString(skill.icon);
+            return `
+            <div class="skill-item languageskill" title="${skill.name}">
+                ${iconHtml}
+                <span class="skill-name">${skill.name}</span>
+            </div>
+            `;
         }
-        container.innerHTML = '';
 
-        // Insert the category title
-        const titleElement = document.createElement('span');
-        titleElement.classList.add('category-title');
-        titleElement.textContent = title;
-        container.appendChild(titleElement);
-
-        // Create a container for skills
-        const skillsDiv = document.createElement('div');
-        skillsDiv.classList.add('skills-list');
-        container.appendChild(skillsDiv);
-
-        // Check if the container is for 'Languages' and use the appropriate function
-        if (containerClass === 'languages') {
-            skills.forEach(skill => {
-                skillsDiv.innerHTML += createLanguageElement(skill);
-            });
-        } else {
-            skills.forEach(skill => {
-                skillsDiv.innerHTML += createSkillElement(skill);
-            });
+        function createSkillElement(skill) {
+            const iconHtml = iconString(skill.icon);
+            return `
+            <div class="skill-item" title="${skill.name}">
+                ${iconHtml}
+            </div>
+            `;
         }
-    }
 
-    async function loadAndDisplaySkills() {
-        try {
-            const response = await fetch('/json/skills.json');
-            if (!response.ok) {
-                throw new Error(`Failed to fetch skills.json: ${response.statusText}`);
-            }
-            const data = await response.json();
-
-            const skillsContainer = document.getElementById('skills-container');
-            if (!skillsContainer) {
-                console.error("Skills container not found!");
+        function renderSkills(skills, containerClass, title) {
+            const container = document.querySelector(`.${containerClass} .skills`);
+            if (!container) {
+                console.error(`Container with class ${containerClass} not found`);
                 return;
             }
+            container.innerHTML = '';
 
-            data.forEach(category => {
-                const containerClass = category.title.toLowerCase().replace(/\s+/g, '_'); // Normalize class name
-                const categoryDiv = document.createElement('div');
-                categoryDiv.classList.add(containerClass);
+            // Insert the category title
+            const titleElement = document.createElement('span');
+            titleElement.classList.add('category-title');
+            titleElement.textContent = title;
+            container.appendChild(titleElement);
 
-                const skillsDiv = document.createElement('div');
-                skillsDiv.classList.add('skills');
-                categoryDiv.appendChild(skillsDiv);
+            // Create a container for skills
+            const skillsDiv = document.createElement('div');
+            skillsDiv.classList.add('skills-list');
+            container.appendChild(skillsDiv);
 
-                skillsContainer.appendChild(categoryDiv);
-
-                // Render the skills for this category and include the title
-                renderSkills(category.skills, containerClass, category.title);
-            });
-        } catch (error) {
-            console.error("Error loading or displaying skills:", error);
+            // Check if the container is for 'Languages' and use the appropriate function
+            if (containerClass === 'languages') {
+                skills.forEach(skill => {
+                    skillsDiv.innerHTML += createLanguageElement(skill);
+                });
+            } else {
+                skills.forEach(skill => {
+                    skillsDiv.innerHTML += createSkillElement(skill);
+                });
+            }
         }
-    }
 
-    document.addEventListener('DOMContentLoaded', loadAndDisplaySkills);
+        async function loadAndDisplaySkills() {
+            try {
+                const response = await fetch('/json/skills.json');
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch skills.json: ${response.statusText}`);
+                }
+                const data = await response.json();
+
+                const skillsContainer = document.getElementById('skills-container');
+                if (!skillsContainer) {
+                    console.error("Skills container not found!");
+                    return;
+                }
+
+                data.forEach(category => {
+                    const containerClass = category.title.toLowerCase().replace(/\s+/g, '_'); // Normalize class name
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.classList.add(containerClass);
+
+                    const skillsDiv = document.createElement('div');
+                    skillsDiv.classList.add('skills');
+                    categoryDiv.appendChild(skillsDiv);
+
+                    skillsContainer.appendChild(categoryDiv);
+
+                    // Render the skills for this category and include the title
+                    renderSkills(category.skills, containerClass, category.title);
+                });
+            } catch (error) {
+                console.error("Error loading or displaying skills:", error);
+            }
+        }
+
+        loadAndDisplaySkills();
+    });
 </script>
 
 <footer class="index-footer">
