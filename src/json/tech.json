@@ -1,25 +1,41 @@
 ﻿[
   {
     "title": "Bubble Machine",
-    "description": "Seminar about making a bubble machine in a unique way",
+    "description": "Seminar focused on designing and creating an innovative bubble machine using advanced techniques.",
+    "image": "bellenblaas.png",
+    "gif": "bellenblaas.gif",
+    "code_link": "",
     "date": "18/06/2024",
     "duration": "2 Weeks",
     "people": "Solo",
-    "techUsed": ["Arduino"],
-    "code_link": "",
-    "image": "bellenblaas.png",
-    "gif": "bellenblaas.gif"
+    "techUsed": [
+      "Arduino"
+    ],
+    "points": []
   },
   {
     "title": "Graphics Programming",
-    "description": "Project where we had to make a little scene with opengl and c++",
-    "date": "17/04/2024",
-    "duration": "8 Weeks",
-    "people": "Solo",
-    "techUsed": ["C++", "Cmake", "Opengl", "glm", "GLFW", "stbi", "assimp"],
-    "code_link": "https://github.com/DoctorRon64/kern-graphics",
+    "description": "A project focused on developing a 3D scene using OpenGL and C++, where I explored rendering techniques and post-processing effects.",
     "image": "graphics.png",
-    "gif": "graphics.gif"
+    "gif": "graphics.gif",
+    "code_link": "https://github.com/DoctorRon64/kern-graphics",
+    "date": "15/04/2024",
+    "duration": "8 Weeks",
+    "people": "Group of 3",
+    "techUsed": [
+      "C++",
+      "Cmake",
+      "Opengl",
+      "glm",
+      "GLFW",
+      "stbi",
+      "assimp"
+    ],
+    "points": [
+      "Gained in-depth knowledge of graphics rendering with buffers, and the functionality of Framebuffers and PostFX.",
+      "Enhanced proficiency in C++ programming.",
+      "Successfully implemented features including cube rendering, terrain generation from a heightmap, a custom water shader, post-processing effects such as chromatic aberration and bloom, and object loading using the Assimp library."
+    ]
   },
   {
     "title": "Game Music Composition",
@@ -27,21 +43,35 @@
     "date": "15/04/2024",
     "duration": "8 Weeks",
     "people": "Solo",
-    "techUsed": ["flstudio", "FL Studio"],
+    "techUsed": [
+      "flstudio"
+    ],
     "code_link": "",
     "image": "sfx.png",
-    "gif": "sfx.gif"
+    "gif": "sfx.gif",
+    "points": []
   },
   {
     "title": "DrRon's Showdowns",
-    "description": "A Project where I made a 2d boss battler game inspired, by Cuphead and Terraria boss battles",
+    "description": "A 2D boss-fight game inspired by Cuphead and Terraria, where I contributed as the lead artist and UI designer.",
+    "image": "vrij2.png",
+    "gif": "vrij2.gif",
+    "code_link": "",
     "date": "15/04/2024",
     "duration": "8 Weeks",
     "people": "Group of 3",
-    "techUsed": ["Unity", "C#", "Animate", "Photoshop", "Illustrator"],
-    "code_link": "",
-    "image": "vrij2.png",
-    "gif": "vrij2.gif"
+    "techUsed": [
+      "Unity",
+      "C#",
+      "Animate",
+      "Photoshop",
+      "Illustrator"
+    ],
+    "points": [
+      "Developed an innovative game concept that could potentially fill a niche in the market.",
+      "Took on the role of the primary artist for the team, providing a refreshing shift from programming responsibilities.",
+      "Deepened expertise in Adobe Animate, focusing on animating menu screens and designing the user interface."
+    ]
   },
   {
     "title": "Procedural Art",
@@ -49,21 +79,35 @@
     "date": "12/02/2024",
     "duration": "6 Weeks",
     "people": "Solo",
-    "techUsed": ["Unity", "C#", "aseprite"],
+    "techUsed": [
+      "Unity",
+      "C#",
+      "aseprite"
+    ],
     "code_link": "https://github.com/DoctorRon64/Keuzemodule-Procedural-Art",
     "image": "proceduralart.png",
-    "gif": "proceduralart.gif"
+    "gif": "proceduralart.gif",
+    "points": []
   },
   {
     "title": "Tune Tap Studio",
-    "description": "Tool production: I made my own Digital Audio Workstation in unity",
+    "description": "A solo project where I created a custom Digital Audio Workstation (DAW) in Unity, focusing on intuitive UI and efficient data handling.",
+    "image": "tool.png",
+    "gif": "tool.gif",
+    "code_link": "https://github.com/DoctorRon64/Kernmodule-Production-Tools",
     "date": "12/02/2024",
     "duration": "6 Weeks",
     "people": "Solo",
-    "techUsed": ["Unity", "C#", "Json"],
-    "code_link": "https://github.com/DoctorRon64/Kernmodule-Production-Tools",
-    "image": "tool.png",
-    "gif": "tool.gif"
+    "techUsed": [
+      "Unity",
+      "C#",
+      "Json"
+    ],
+    "points": [
+      "Learned how to design intuitive and visually comprehensible user interfaces.",
+      "Implemented efficient saving, loading, and exporting processes using binary and JSON formats.",
+      "Developed the tool using a single MonoBehaviour with a clean, well-structured codebase."
+    ]
   },
   {
     "title": "Portfolio",
@@ -74,7 +118,8 @@
     "techUsed": ["Html", "css", "scss", "Javascript", "nodejs"],
     "code_link": "",
     "image": "portfolio.png",
-    "gif": "portfolio.gif"
+    "gif": "portfolio.gif",
+    "points": []
   },
   {
     "title": "EcoVenture",
@@ -85,7 +130,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Project-Context-2",
     "image": "context2.png",
-    "gif": "context2.gif"
+    "gif": "context2.gif",
+    "points": []
   },
   {
     "title": "The Beat(les) Game",
@@ -96,7 +142,8 @@
     "techUsed": ["Unity", "C#", "Live instruments"],
     "code_link": "https://github.com/DoctorRon64/CatLab-beatles-game",
     "image": "catlab.png",
-    "gif": "catlab.gif"
+    "gif": "catlab.gif",
+    "points": []
   },
   {
     "title": "Call Center Corp",
@@ -107,43 +154,54 @@
     "techUsed": ["Unity", "C#", "arduino"],
     "code_link": "https://github.com/DoctorRon64/Project-hybrid-Callcenterchaos",
     "image": "hybrid.png",
-    "gif": "hybrid.gif"
+    "gif": "hybrid.gif",
+    "points": []
   },
   {
-    "title": "Designing for AI Games",
-    "description": "Designing a boss with Nodecanvas a behaviourtree tool inspired by Cuphead",
+    "title": "Designing A Boss Battle",
+    "description": "A solo project focused on designing a complex boss battle using NodeCanvas, a behavior tree tool, while enhancing my artistic and animation abilities.",
     "date": "13/11/2023",
     "duration": "4 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Keuzemodule-Designing-AI",
     "image": "keuzeai.png",
-    "gif": "keuzeai.gif"
+    "gif": "keuzeai.gif",
+    "points": [
+      "Acquired a solid understanding of behavior trees and their application in game development.",
+      "Gained hands-on experience with the NodeCanvas package for behavior tree implementation.",
+      "Explored and refined artistic and animation skills during the design process."
+    ]
   },
   {
-    "title": "Developing for AI Games: Behaviour Tree",
-    "description": "Coding my own behaviour tree with code",
+    "title": "Coding a Behaviour Tree",
+    "description": "A project focused on coding a custom behavior tree system, strengthening my understanding of AI programming and pixel art.",
     "date": "13/11/2023",
     "duration": "4 Weeks",
     "people": "Solo",
     "techUsed": ["Unity", "C#", "aseprite"],
     "code_link": "https://github.com/DoctorRon64/Kernmodule-AI-BehaviourTree",
     "image": "behaviourtree.png",
-    "gif": "behaviourtree.gif"
-  },
+    "gif": "behaviourtree.gif",
+    "points": [
+      "Built a custom behavior tree using composite, decorator, and action nodes, strengthening problem-solving abilities in AI development.",
+      "Expanded knowledge of Unity's 2D AI navigation mesh (NavMesh) system.",
+      "Continued to refine pixel art skills, integrating them into game design."
+    ]
+  },{
+  "title": "Coding A*",
+  "description": "Making my own pathfinding A star script",
+  "date": "13/11/2023",
+  "duration": "4 Weeks",
+  "people": "Solo",
+  "techUsed": ["Unity", "C#"],
+  "code_link": "https://github.com/DoctorRon64/Kernmodule-AI-AstarPathfinding",
+  "image": "astar.png",
+  "gif": "astar.gif",
+  "points" : []
+},
   {
-    "title": "Developing for AI Games: A*",
-    "description": "Making my own pathfinding A star script",
-    "date": "13/11/2023",
-    "duration": "4 Weeks",
-    "people": "Solo",
-    "techUsed": ["Unity", "C#"],
-    "code_link": "https://github.com/DoctorRon64/Kernmodule-AI-AstarPathfinding",
-    "image": "astar.png",
-    "gif": "astar.gif"
-  },
-  {
-    "title": "Developing for AI Games: Boids",
+    "title": "Coding Boids",
     "description": "Coding flocking or boids",
     "date": "13/11/2023",
     "duration": "4 Weeks",
@@ -151,7 +209,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Kernmodule-AI-Games-Boids",
     "image": "boids.png",
-    "gif": "boids.gif"
+    "gif": "boids.gif",
+    "points" : []
   },
   {
     "title": "Show Me",
@@ -162,7 +221,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "",
     "image": "showme.png",
-    "gif": "showme.gif"
+    "gif": "showme.gif",
+    "points" : []
   },
   {
     "title": "App Development",
@@ -173,18 +233,24 @@
     "techUsed": ["Yaml", "C#", "Json", "MySQL", "MAUI"],
     "code_link": "https://github.com/DoctorRon64/App-Development",
     "image": "appdev.png",
-    "gif": "appdev.gif"
+    "gif": "appdev.gif",
+    "points" : []
   },
   {
     "title": "Planet Destroyer",
-    "description": "Project about code architecture and design patterns",
+    "description": "A project focused on code architecture and design patterns, emphasizing clean, maintainable code and system integration.",
     "date": "04/09/2023",
     "duration": "5 Weeks",
     "people": "Group of 2",
     "techUsed": ["Unity", "C#", "aseprite"],
     "code_link": "https://github.com/DoctorRon64/GameArchitecture-IntegratedGameplaySystems",
     "image": "architecture.png",
-    "gif": "architecture.gif"
+    "gif": "architecture.gif",
+    "points": [
+      "Applied various design patterns to create a clean and maintainable codebase.",
+      "Implemented custom event systems alongside observer, object pool, and factory patterns.",
+      "Gained experience in creating UML diagrams to model system architecture."
+    ]
   },
   {
     "title": "C++ Basics",
@@ -195,7 +261,8 @@
     "techUsed": ["C++", "SFML"],
     "code_link": "https://github.com/DoctorRon64/RacingGame",
     "image": "cppbasics.png",
-    "gif": "cppbasics.gif"
+    "gif": "cppbasics.gif",
+    "points" : []
   },
   {
     "title": "Somnia",
@@ -206,7 +273,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/Blade412wild/ProjectVrij_1",
     "image": "vrij1.png",
-    "gif": "vrij1.gif"
+    "gif": "vrij1.gif",
+    "points" : []
   },
   {
     "title": "If This Then That",
@@ -217,7 +285,8 @@
     "techUsed": ["Arduino"],
     "code_link": "",
     "image": "ittt.png",
-    "gif": "ittt.gif"
+    "gif": "ittt.gif",
+    "points" : []
   },
   {
     "title": "The blue knight",
@@ -228,18 +297,24 @@
     "techUsed": ["Unity", "C#", "aseprite"],
     "code_link": "https://github.com/DoctorRon64/Building-Playful-Worlds-2",
     "image": "bpw2.png",
-    "gif": "bpw2.gif"
+    "gif": "bpw2.gif",
+    "points" : []
   },
   {
     "title": "Deadline Droids",
-    "description": "Making a game to learn new people about our study",
+    "description": "A project focused on creating a game to introduce prospective students to our study program, with an emphasis on multiplayer gameplay and networking.",
     "date": "05/02/2023",
     "duration": "8 Weeks",
     "people": "Team of 4",
     "techUsed": ["Unity", "C#", "Network"],
     "code_link": "https://github.com/DoctorRon64/Project-Context-1",
     "image": "context1.png",
-    "gif": "context1.gif"
+    "gif": "context1.gif",
+    "points": [
+      "Gained experience in developing multiplayer functionality in Unity.",
+      "Utilized Unity's Netcode for GameObjects package to create a local multiplayer prototype.",
+      "Designed an educational game for new students, effectively presenting the study program through an engaging concept."
+    ]
   },
   {
     "title": "Rootlike",
@@ -250,7 +325,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Global-GameJam-2023",
     "image": "roots.png",
-    "gif": "roots.gif"
+    "gif": "roots.gif",
+    "points" : []
   },
   {
     "title": "Using Arduino For Evil",
@@ -261,7 +337,8 @@
     "techUsed": ["Arduino"],
     "code_link": "",
     "image": "evilarduino.png",
-    "gif": "evilarduino.gif"
+    "gif": "evilarduino.gif",
+    "points" : []
   },
   {
     "title": "Ninja the Game",
@@ -272,7 +349,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Building-Playful-Worlds-1",
     "image": "bpw1.png",
-    "gif": "bpw1.gif"
+    "gif": "bpw1.gif",
+    "points" : []
   },
   {
     "title": "Empowering Creative Thinking Through Programming",
@@ -283,7 +361,8 @@
     "techUsed": ["Processing", "Java"],
     "code_link": "",
     "image": "ecttp.png",
-    "gif": "ecttp.gif"
+    "gif": "ecttp.gif",
+    "points" : []
   },
   {
     "title": "Probe Sender",
@@ -294,7 +373,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "https://github.com/DoctorRon64/Project-Play",
     "image": "projectplay.png",
-    "gif": "projectplay.gif"
+    "gif": "projectplay.gif",
+    "points" : []
   },
   {
     "title": "Billy Stickman",
@@ -305,7 +385,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "",
     "image": "gamejam4.png",
-    "gif": "gamejam4.gif"
+    "gif": "gamejam4.gif",
+    "points" : []
   },
   {
     "title": "Chaos in the city",
@@ -316,7 +397,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "",
     "image": "gamejam3.png",
-    "gif": "gamejam3.gif"
+    "gif": "gamejam3.gif",
+    "points" : []
   },
   {
     "title": "Mechanic togheter",
@@ -327,7 +409,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "",
     "image": "gamejam2.png",
-    "gif": "gamejam2.gif"
+    "gif": "gamejam2.gif",
+    "points" : []
   },
   {
     "title": "Waterbottle App",
@@ -338,7 +421,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "",
     "image": "waterbottle.png",
-    "gif": "waterbottle.gif"
+    "gif": "waterbottle.gif",
+    "points" : []
   },
   {
     "title": "Tech Clicker",
@@ -349,7 +433,8 @@
     "techUsed": ["Unity", "C#"],
     "code_link": "",
     "image": "techclicker.png",
-    "gif": "techclicker.gif"
+    "gif": "techclicker.gif",
+    "points" : []
   },
   {
     "title": "Rewinded",
@@ -360,7 +445,8 @@
     "techUsed": ["Unity", "Blender"],
     "code_link": "",
     "image": "gamejam1.png",
-    "gif": "gamejam1.gif"
+    "gif": "gamejam1.gif",
+    "points" : []
   },
   {
     "title": "Minesweeper Website",
@@ -371,7 +457,8 @@
     "techUsed": ["Javascript", "HTML", "Nodejs"],
     "code_link": "https://github.com/Lefthandmedia/minesweeper",
     "image": "minesweeperjs.png",
-    "gif": "minesweeper.gif"
+    "gif": "minesweeper.gif",
+    "points" : []
   },
   {
     "title": "Piano Arduino",
@@ -382,6 +469,7 @@
     "techUsed": ["Arduino"],
     "code_link": "",
     "image": "pianoarduino.png",
-    "gif": "pianoarduino.gif"
+    "gif": "pianoarduino.gif",
+    "points" : []
   }
 ]

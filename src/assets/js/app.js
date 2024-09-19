@@ -55,14 +55,14 @@ export function iconString(tech, color = '', width = '24px', height = '24px') {
     const iconSrc = techIconsMap[iconKey]; // get corresponding icon from the map
 
     if (iconSrc && typeof iconSrc === 'string') {
-        return `<img src="/assets/img/icons/${iconSrc}" width="${width}" height="${height}" class="imgIcons"${style}>`;
+        return `<img src="/assets/img/icons/${iconSrc}" width="${width}" title="${tech}" height="${height}" class="imgIcons"${style}>`;
     }
-    return getDefaultIcon();
+    return getDefaultIcon(tech);
 }
 
-function getDefaultIcon() {
+function getDefaultIcon(name) {
     return `
-        <svg width="24" height="24" viewBox="0 0 32 32">
+        <svg title="${name}" width="24" height="24" viewBox="0 0 32 32">
             <rect x="0" y="0" width="32" height="32" fill="#fb3ef9"/>
             <rect x="0" y="16" width="16" height="16" fill="#000"/>
             <rect x="16" y="0" width="16" height="16" fill="#000"/>

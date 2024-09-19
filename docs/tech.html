@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,19 +12,15 @@
 <div class="background"></div>
 
 <!--title-->
-<h1 class="overview-headline">Overview of Projects</h1>
-
+<h1 class="overview-headline">All Projects</h1>
 <div id="projects-container"></div>
-<div class="overview-button-container">
-    <a href="/tech.html" class="overview-button">Explore All Projects</a>
-</div>
 
 <script type="module">
     import { iconString } from '../assets/js/app.js';
 
     document.addEventListener('DOMContentLoaded', () => {
 
-        fetch('/json/overview.json')
+        fetch('/json/tech.json')
             .then(response => response.json())
             .then(data => {
                 const container = document.createElement('div');

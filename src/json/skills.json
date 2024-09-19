@@ -1,5 +1,13 @@
 ﻿[
   {
+    "title": "Languages",
+    "skills": [
+      {"icon": "dutch", "name": "Dutch: Native", "color": "#21468B"},
+      {"icon": "en", "name": "English: Fluent", "color": "#00247D"},
+      {"icon": "spain", "name": "Spanish: Novice", "color": "#C60B1E"}
+    ]
+  },
+  {
     "title": "Primary Skills",
     "skills": [
       {"icon": "c#", "name": "C#", "color": "#178600"},
@@ -55,14 +63,6 @@
       {"icon": "css", "name": "CSS", "color": "#1572B6"},
       {"icon": "scss", "name": "SCSS", "color": "#CF649A"},
       {"icon": "nodejs", "name": "Node.js", "color": "#339933"}
-    ]
-  },
-  {
-    "title": "Languages",
-    "skills": [
-      {"icon": "dutch", "name": "Dutch: Native", "color": "#21468B"},
-      {"icon": "en", "name": "English: Fluent", "color": "#00247D"},
-      {"icon": "spain", "name": "Spanish: Novice", "color": "#C60B1E"}
     ]
   }
 ]
