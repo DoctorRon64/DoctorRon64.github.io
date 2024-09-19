@@ -20,33 +20,69 @@
   gap: 10px; /* Gap between items */
 }
 
-/* Style each skill */
-.skill {
-  transform: translateY(-5px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeInUp 0.5s ease-out; /* Apply animation */
-  animation-delay: calc(var(--index) * 0.1s); /* Staggered animation for each skill */
-  padding: 1px; /* Increase padding for better spacing */
-  border-radius: 8px; /* Round corners slightly more */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhance shadow for depth */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-  font-size: 1em; /* Adjust font size for better readability */
-}
-
 .skill:hover {
   transform: scale(1.1); /* Slightly larger on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
-.skill iconify-icon {
-  font-size: 24px; /* Slightly larger icon size */
-  margin-right: 8px; /* Space between icon and text */
+///////////////////////////////////////////////////
+#skills-container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.skill span {
-  font-size: 1em; /* Adjust font size */
-  font-weight: 500; /* Slightly bolder text */
-  color: #333; /* Darker color for text */
+.skills {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of items into multiple rows */
+  gap: 10px; /* Spacing between skill items */
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  padding: 3ulp
+  px;
+  margin: 4px;
+
+  color: white;
+  background-color: #36aa9f;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.languageskill {
+  padding: 5px 10px;
+  
+  background-color: #36aa9f;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+  
+  font-size: 16px;
+}
+
+.languageskill:hover {
+  background-color: #2f7c73;
+  color: white;
+}
+
+.skill-item img {
+  display: block;
+}
+
+.skill-name {
+  font-size: 16px;
+}
+
+.category-title {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
 }

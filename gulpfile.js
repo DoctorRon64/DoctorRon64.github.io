@@ -20,7 +20,7 @@ const files = {
     scssPath: 'src/assets/scss/**/*.scss',
     jsPath: 'src/assets/js/**/*.js',
     htmlPath: 'src/html/**/*.html',
-    imgPath: 'src/assets/img/**/*.{jpg,jpeg,png,svg,gif}',
+    imgPath: 'src/assets/img/**/*.{jpg,jpeg,png,svg,gifgg}',
     audioPath: 'src/assets/audio/**/*.{mp3,ogg,wav,flac}',
     jsonPath: 'src/json/**/*.json'
 };
@@ -35,7 +35,7 @@ function scssTask(cb) {
 
 function jsTask(cb) {
     return src(files.jsPath, {sourcemaps: true})
-        .pipe(concat('app.js'))
+        //.pipe(concat('app.js'))
         .pipe(terser())
         .pipe(dest('docs/assets/js/', {sourcemaps: '.'}))
         .on('end', cb);

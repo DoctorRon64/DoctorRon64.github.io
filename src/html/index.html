@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DrRon's Portfolio Website</title>
-    <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16"/>
+    <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16" type="image/gif">
     <link rel="stylesheet" href="/assets/css/app.css">
 </head>
 <body class="indexbody">
@@ -14,84 +14,119 @@
         <h2>Game Developer & Music Enthusiast</h2>
         <br>
         <div>
-            Greetings! My name is Philip. I am a Dutch college student following the game development program at the HKU (Utrecht University of the Arts).
-            I'm incredibly passionate about making games, creating music, drawing art and exploring new skills and knowledge.
+            Greetings! My name is Philip. I am a Dutch college student following the game development program at the HKU
+            (Utrecht University of the Arts).
+            I'm incredibly passionate about making games, creating music, drawing art and exploring new skills and
+            knowledge.
         </div>
         <br>
+        <div id="skills-container"></div>
         <br>
-        <a href="projects.html" class="explore-button">Explore</a>
-
-    </header>
-    <header class="skillheader">
-        
+        <a href="overview.html" class="explore-button">Overview</a>
     </header>
 </div>
 
-<script>
-    // Function to create a skill element with an icon
-    function createSkillElement(skill) {
-        return `
-        <div class="skill">
-            <iconify-icon icon="${skill.icon}" width="24" height="24"></iconify-icon>
-            <span>${skill.name}</span>
-        </div>`;
-    }
+<script type="module">
+    import { iconString } from '../assets/js/app.js';
 
-    // Function to create a skill element with an image
-    function createImageElement(skill) {
-        return `
-        <div class="skill">
-            <img src="${skill.icon}" alt="${skill.name}" />
-            <span>${skill.name}</span>
-        </div>`;
-    }
-
-    // Function to render skills into a specified container
-    function renderSkills(skills, containerClass) {
-        const container = document.querySelector(`.${containerClass} .skills`);
-        if (!container) {
-            console.error(`Container with class ${containerClass} not found`);
-            return;
+    document.addEventListener('DOMContentLoaded', () => {
+        function createLanguageElement(skill) {
+            const iconHtml = iconString(skill.icon);
+            return `
+            <div class="skill-item languageskill" title="${skill.name}">
+                ${iconHtml}
+                <span class="skill-name">${skill.name}</span>
+            </div>
+            `;
         }
-        container.innerHTML = ''; // Clear existing content before adding new content
-        skills.forEach(skill => {
-            if (skill.icon.endsWith('.png') || skill.icon.endsWith('.jpg') || skill.icon.endsWith('.jpeg')) {
-                // If the icon is an image (ends with .png, .jpg, or .jpeg), use createImageElement
-                container.innerHTML += createImageElement(skill);
-            } else {
-                // Otherwise, use createSkillElement
-                container.innerHTML += createSkillElement(skill);
+
+        function createSkillElement(skill) {
+            const iconHtml = iconString(skill.icon);
+            return `
+            <div class="skill-item" title="${skill.name}">
+                ${iconHtml}
+            </div>
+            `;
+        }
+
+        function renderSkills(skills, containerClass, title) {
+            const container = document.querySelector(`.${containerClass} .skills`);
+            if (!container) {
+                console.error(`Container with class ${containerClass} not found`);
+                return;
             }
-        });
-    }
+            container.innerHTML = '';
 
-    // Function to load JSON and display skills
-    async function loadAndDisplaySkills() {
-        try {
-            const data = await loadJSONResource('/json/skills/skills.json');
-            data.forEach(category => {
-                const containerClass = category.title.toLowerCase().replace(' ', '_');
-                renderSkills(category.skills, containerClass);
-            });
-        } catch (error) {
-            console.error("Error loading or displaying skills:", error);
+            // Insert the category title
+/*            const titleElement = document.createElement('span');
+            titleElement.classList.add('category-title');
+            titleElement.textContent = title;
+            container.appendChild(titleElement);*/
+
+            // Create a container for skills
+            const skillsDiv = document.createElement('div');
+            skillsDiv.classList.add('skills-list');
+            container.appendChild(skillsDiv);
+
+            // Check if the container is for 'Languages' and use the appropriate function
+            if (containerClass === 'languages') {
+                skills.forEach(skill => {
+                    skillsDiv.innerHTML += createLanguageElement(skill);
+                });
+            } else {
+                skills.forEach(skill => {
+                    skillsDiv.innerHTML += createSkillElement(skill);
+                });
+            }
         }
-    }
 
-    // Wait for the DOM to load before executing the script
-    document.addEventListener('DOMContentLoaded', loadAndDisplaySkills);
+        async function loadAndDisplaySkills() {
+            try {
+                const response = await fetch('/json/skills.json');
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch skills.json: ${response.statusText}`);
+                }
+                const data = await response.json();
+
+                const skillsContainer = document.getElementById('skills-container');
+                if (!skillsContainer) {
+                    console.error("Skills container not found!");
+                    return;
+                }
+
+                data.forEach(category => {
+                    const containerClass = category.title.toLowerCase().replace(/\s+/g, '_'); // Normalize class name
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.classList.add(containerClass);
+
+                    const skillsDiv = document.createElement('div');
+                    skillsDiv.classList.add('skills');
+                    categoryDiv.appendChild(skillsDiv);
+
+                    skillsContainer.appendChild(categoryDiv);
+
+                    // Render the skills for this category and include the title
+                    renderSkills(category.skills, containerClass, category.title);
+                });
+            } catch (error) {
+                console.error("Error loading or displaying skills:", error);
+            }
+        }
+
+        loadAndDisplaySkills();
+    });
 </script>
-<footer>
+
+<footer class="index-footer">
     <ul class="social-icons">
-        <li><a href="mailto:philip@lefthandmedia.com" title="Email me"><iconify-icon icon="fluent:mail-24-filled" width="40" height="40"></iconify-icon></a></li>
-        <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn"><iconify-icon icon="devicon:linkedin" width="40" height="40"></iconify-icon></a></li>
-        <li><a href="https://github.com/DoctorRon64" target="_blank" title="GitHub"><iconify-icon icon="skill-icons:github-dark" width="40" height="40"></iconify-icon></a></li>
-        <li><a href="https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ" target="_blank" title="Spotify"><iconify-icon icon="logos:spotify-icon" width="40" height="40"></iconify-icon></a></li>
-        <li><a href="https://doctor-ron.itch.io/" target="_blank" title="Itch.Io"><iconify-icon icon="cib:itch-io" width="40" height="40"></iconify-icon></a></li>
+        <li><a href="mailto:philip@lefthandmedia.com" title="Email me"><img src="/assets/img/icons/fxemoji--email.svg" width="40" height="40" class="imgIcons"></a></li>
+        <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn"><img src="/assets/img/icons/devicon--linkedin.svg" width="40" height="40" class="imgIcons"></a></li>
+        <li><a href="https://github.com/DoctorRon64" target="_blank" title="GitHub"><img src="/assets/img/icons/skill-icons--github-dark.svg" width="40" height="40" class="imgIcons"></a></li>
+        <li><a href="https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ" target="_blank" title="Spotify"><img src="/assets/img/icons/logos--spotify-icon.svg" width="40" height="40" class="imgIcons"></iconify-icon></a></li>
+        <li><a href="https://doctor-ron.itch.io/" target="_blank" title="Itch.Io"><img src="/assets/img/icons/cib--itch-io.svg" width="40" height="40" class="imgIcons" style="fill: #fa5c5c;"></a></li>
     </ul>
 </footer>
 
 <script src="/assets/js/app.js"></script>
-<script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
 </body>
 </html>

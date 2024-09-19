@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Languages",
+    "skills": [
+      {"icon": "dutch", "name": "Dutch: Native", "color": "#21468B"},
+      {"icon": "en", "name": "English: Fluent", "color": "#00247D"},
+      {"icon": "spain", "name": "Spanish: Novice", "color": "#C60B1E"}
+    ]
+  },
+  {
+    "title": "Primary Skills",
+    "skills": [
+      {"icon": "c#", "name": "C#", "color": "#178600"},
+      {"icon": "unity", "name": "Unity", "color": "#222C37"},
+      {"icon": "git", "name": "Git", "color": "#F34F29"},
+      {"icon": "github", "name": "GitHub", "color": "#181717"},
+      {"icon": "vs", "name": "Visual Studio", "color": "#5C2D91"},
+      {"icon": "rider", "name": "Rider", "color": "#C51A4A"},
+      {"icon": "fork", "name": "Fork", "color": "#7261A3"}
+    ]
+  },
+  {
+    "title": "Secondary Skills",
+    "skills": [
+      {"icon": "c++", "name": "C++", "color": "#00599C"},
+      {"icon": "sfml", "name": "SFML", "color": "#8CC445"},
+      {"icon": "opengl", "name": "OpenGL", "color": "#5586A4"},
+      {"icon": "cmake", "name": "CMake", "color": "#064F8C"},
+      {"icon": "arduino", "name": "Arduino", "color": "#00979D"},
+      {"icon": "java", "name": "Java", "color": "#007396"},
+      {"icon": "processing", "name": "Processing", "color": "#0096D0"},
+      {"icon": "drawio", "name": "Draw.io", "color": "#F08705"},
+      {"icon": "plantuml", "name": "plant UML", "color": "#75911E"},
+      {"icon": "windows", "name": "Windows", "color": "#00A4EF"},
+      {"icon": "linux", "name": "Linux", "color": "#FCC624"},
+      {"icon": "batch", "name": "Batch", "color": "#4EAA25"},
+      {"icon": "eclipse", "name": "Eclipse", "color": "#2C2255"},
+      {"icon": "lua", "name": "Lua", "color": "#000080"},
+      {"icon": "python", "name": "Python", "color": "#3776AB"}
+    ]
+  },
+  {
+    "title": "Art Skills",
+    "skills": [
+      {"icon": "photoshop", "name": "Photoshop", "color": "#31A8FF"},
+      {"icon": "illustrator", "name": "Illustrator", "color": "#FF9A00"},
+      {"icon": "animate", "name": "Animate", "color": "#FF4F00"},
+      {"icon": "premierepro", "name": "Premiere Pro", "color": "#9999FF"},
+      {"icon": "aftereffects", "name": "After Effects", "color": "#AE58F2"},
+      {"icon": "paintnet", "name": "Paint.NET", "color": "#0037C0"},
+      {"icon": "krita", "name": "Krita", "color": "#3BABFF"},
+      {"icon": "aseprite", "name": "Aseprite", "color": "#7D929E"},
+      {"icon": "flstudio", "name": "FL Studio", "color": "#F47920"},
+      {"icon": "blender", "name": "Blender", "color": "#F5792A"}
+    ]
+  },
+  {
+    "title": "Web Dev Skills",
+    "skills": [
+      {"icon": "vscode", "name": "VS Code", "color": "#007ACC"},
+      {"icon": "javascript", "name": "JavaScript", "color": "#F7DF1E"},
+      {"icon": "html", "name": "HTML", "color": "#E34F26"},
+      {"icon": "css", "name": "CSS", "color": "#1572B6"},
+      {"icon": "scss", "name": "SCSS", "color": "#CF649A"},
+      {"icon": "nodejs", "name": "Node.js", "color": "#339933"}
+    ]
+  }
+]

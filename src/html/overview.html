@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16"/>
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script src="/assets/js/app.js"></script>
+</head>
+<body>
+<div class="background"></div>
+
+<!--title-->
+<h1 class="overview-headline">Overview of Projects</h1>
+
+<div id="projects-container"></div>
+<div class="overview-button-container">
+    <a href="/tech.html" class="overview-button">Explore All Projects</a>
+</div>
+
+<script type="module">
+    import { iconString } from '../assets/js/app.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        fetch('/json/overview.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.createElement('div');
+                container.className = 'overview-grid-container';
+
+                data.forEach(project => {
+                    // Convert date to a more readable format
+                    const dateParts = project.date.split('/');
+                    const formattedDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]).toLocaleDateString('en-GB', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    // Create overview-item div
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'overview-item';
+
+                    // Create and append image container
+                    const imgDiv = document.createElement('div');
+                    imgDiv.className = 'overview-img';
+                    imgDiv.innerHTML = `<img src="assets/img/thumbnails/${project.image}" data-gif="assets/img/gifs/${project.gif}" alt="${project.title}">`;
+
+                    // Create and append title
+                    const titleDiv = document.createElement('div');
+                    titleDiv.className = 'overview-title';
+                    titleDiv.innerHTML = `<h1>${project.title}</h1>`;
+
+                    // Create and append Tech Used section (always visible)
+                    const techUsedDiv = document.createElement('div');
+                    techUsedDiv.className = 'overview-tech';
+                    const techUsedHtml = project.techUsed.map(tech => iconString(tech)).join(' ');
+                    techUsedDiv.innerHTML = `${techUsedHtml}`;
+
+                    // Add hover functionality to switch image and gif on hover
+                    itemDiv.addEventListener('mouseenter', () => {
+                        const img = imgDiv.querySelector('img');
+                        const gif = img.getAttribute('data-gif');
+                        if (gif) {
+                            img.setAttribute('src', gif);
+                        }
+                    });
+
+                    itemDiv.addEventListener('mouseleave', () => {
+                        const img = imgDiv.querySelector('img');
+                        const staticImage = `assets/img/thumbnails/${project.image}`;
+                        img.setAttribute('src', staticImage);
+                    });
+
+                    // Create and append description text
+                    const descriptionDiv = document.createElement('div');
+                    descriptionDiv.className = 'overview-description';
+                    descriptionDiv.innerHTML = `<p>${project.description}</p>`;
+
+                    // Create and append extra text content (hidden details)
+                    const textDiv = document.createElement('div');
+                    textDiv.className = 'overview-text';
+                    const codeSection = project.code_link
+                        ? `<strong><iconify-icon icon="fluent-mdl2:git-hub-logo"></iconify-icon>Code:</strong> <a href="${project.code_link}" target="_blank">${project.code_link}</a> <br>`
+                        : '';
+
+                    textDiv.innerHTML = `
+                        ${codeSection}
+                        <strong>Date:</strong> ${formattedDate}<br>
+                        <strong>Duration:</strong> ${project.duration}<br>
+                        <strong>People:</strong> ${project.people}<br>
+                    `;
+
+                    // Create and append list of points
+                    const ul = document.createElement('ul');
+                    project.points.forEach(point => {
+                        const li = document.createElement('li');
+                        li.textContent = point;
+                        ul.appendChild(li);
+                    });
+                    textDiv.appendChild(ul);
+
+                    // Append all elements to the itemDiv
+                    itemDiv.appendChild(imgDiv);
+                    itemDiv.appendChild(titleDiv);
+                    itemDiv.appendChild(techUsedDiv); // Append techUsedDiv to always display Tech Used
+                    itemDiv.appendChild(descriptionDiv);
+                    itemDiv.appendChild(textDiv);
+
+                    // Append itemDiv to container
+                    container.appendChild(itemDiv);
+                });
+
+                // Append the container to the body or a specific section
+                document.getElementById('projects-container').appendChild(container);
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+    });
+</script>
+
+
+<footer class="overview-footer">
+    <ul class="social-icons">
+        <li><a href="mailto:philip@lefthandmedia.com" title="Email me"><img src="/assets/img/icons/fxemoji--email.svg" width="40" height="40" class="imgIcons"></a></li>
+        <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn"><img src="/assets/img/icons/devicon--linkedin.svg" width="40" height="40" class="imgIcons"></a></li>
+        <li><a href="https://github.com/DoctorRon64" target="_blank" title="GitHub"><img src="/assets/img/icons/skill-icons--github-dark.svg" width="40" height="40" class="imgIcons"></a></li>
+        <li><a href="https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ" target="_blank" title="Spotify"><img src="/assets/img/icons/logos--spotify-icon.svg" width="40" height="40" class="imgIcons"></iconify-icon></a></li>
+        <li><a href="https://doctor-ron.itch.io/" target="_blank" title="Itch.Io"><img src="/assets/img/icons/cib--itch-io.svg" width="40" height="40" class="imgIcons" style="fill: #fa5c5c;"></a></li>
+    </ul>
+</footer>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>
