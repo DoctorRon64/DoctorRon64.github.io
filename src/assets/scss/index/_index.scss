@@ -12,6 +12,7 @@
 .indexbody {
   background-image: url('/assets/img/background.png');
   background-size: cover;
+  //background-repeat: no-repeat;
   padding: 20px;
 }
 
@@ -110,12 +111,8 @@
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 700px){
+@media (max-width: 800px){
   .indexheader {
     max-width: 80%;
-  }
-
-  .indexcontainer {
-    top: 0%;
   }
 }

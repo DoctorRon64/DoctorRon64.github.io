@@ -3,13 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrRon's Portfolio Website</title>
+    <title>Philip's Portfolio Website</title>
     <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16" type="image/gif">
     <link rel="stylesheet" href="/assets/css/app.css">
 </head>
 <body class="indexbody">
+
+<nav>
+    <ul class="sidebar">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/overview.html">Overview</a></li>
+        <li><a href="/tech.html">Technical Projects</a></li>
+        <li><a href="/art.html">Art Projects</a></li>
+        <li><a href="/music.html">Music Projects</a></li>
+        <li class="menu-button" onclick=hideSidebar()><a href=""><img src="/assets/img/icons/zondicons--close-outline.svg"></a></li>
+    </ul>
+    <ul class="navbar">
+        <li><h1>Logo and title</h1></li>
+        <li><a href="/index.html" class="hideOnMobile">Home</a></li>
+        <li><a href="/overview.html" class="hideOnMobile">Overview</a></li>
+        <li><a href="/tech.html" class="hideOnMobile">Technical Projects</a></li>
+        <li><a href="/art.html" class="hideOnMobile">Art Projects</a></li>
+        <li><a href="/music.html" class="hideOnMobile"> Music Projects </a></li>
+        <li><a href="/about.html" class="hideOnMobile">About me]</a></li>
+        <li class="menu-button" onclick=showSidebar()><a href=""><img src="/assets/img/icons/gg--menu.svg"></a></li>
+    </ul>
+</nav>
+
 <div class="indexcontainer">
-    <header class="indexheader">
+    <div class="indexheader">
         <h1>Portfolio Philip</h1>
         <h2>Game Developer & Music Enthusiast</h2>
         <br>
@@ -23,11 +45,10 @@
         <div id="skills-container"></div>
         <br>
         <a href="overview.html" class="explore-button">Overview</a>
-    </header>
+    </div>
 </div>
-
 <script type="module">
-    import { iconString } from '../assets/js/app.js';
+    import {iconString} from '../assets/js/app.js';
 
     document.addEventListener('DOMContentLoaded', () => {
         function createLanguageElement(skill) {
@@ -58,10 +79,10 @@
             container.innerHTML = '';
 
             // Insert the category title
-/*            const titleElement = document.createElement('span');
-            titleElement.classList.add('category-title');
-            titleElement.textContent = title;
-            container.appendChild(titleElement);*/
+            /*            const titleElement = document.createElement('span');
+                        titleElement.classList.add('category-title');
+                        titleElement.textContent = title;
+                        container.appendChild(titleElement);*/
 
             // Create a container for skills
             const skillsDiv = document.createElement('div');
@@ -119,14 +140,33 @@
 
 <footer class="index-footer">
     <ul class="social-icons">
-        <li><a href="mailto:philip@lefthandmedia.com" title="Email me"><img src="/assets/img/icons/fxemoji--email.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn"><img src="/assets/img/icons/devicon--linkedin.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://github.com/DoctorRon64" target="_blank" title="GitHub"><img src="/assets/img/icons/skill-icons--github-dark.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ" target="_blank" title="Spotify"><img src="/assets/img/icons/logos--spotify-icon.svg" width="40" height="40" class="imgIcons"></iconify-icon></a></li>
-        <li><a href="https://doctor-ron.itch.io/" target="_blank" title="Itch.Io"><img src="/assets/img/icons/cib--itch-io.svg" width="40" height="40" class="imgIcons" style="fill: #fa5c5c;"></a></li>
+        <li><a href="mailto:philip@lefthandmedia.com" title="Email me"><img src="/assets/img/icons/fxemoji--email.svg"
+                                                                            width="40" height="40" class="imgIcons"></a>
+        </li>
+        <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn"><img
+                src="/assets/img/icons/devicon--linkedin.svg" width="40" height="40" class="imgIcons"></a></li>
+        <li><a href="https://github.com/DoctorRon64" target="_blank" title="GitHub"><img
+                src="/assets/img/icons/skill-icons--github-dark.svg" width="40" height="40" class="imgIcons"></a></li>
+        <li><a href="https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ" target="_blank"
+               title="Spotify"><img src="/assets/img/icons/logos--spotify-icon.svg" width="40" height="40"
+                                    class="imgIcons"></iconify-icon></a></li>
+        <li><a href="https://doctor-ron.itch.io/" target="_blank" title="Itch.Io"><img
+                src="/assets/img/icons/cib--itch-io.svg" width="40" height="40" class="imgIcons" style="fill: #fa5c5c;"></a>
+        </li>
     </ul>
 </footer>
 
 <script src="/assets/js/app.js"></script>
+<script>
+    function showSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.style.display = 'flex';
+    }
+
+    function hideSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.style.display = 'none';
+    }
+</script>
 </body>
 </html>
