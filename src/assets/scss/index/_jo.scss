@@ -1,0 +1,95 @@
+﻿/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+indebody {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: red;
+  color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #333;
+  padding: 15px 0;
+  color: #fff;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar .nav-links {
+  list-style: none;
+}
+
+.navbar .nav-links li {
+  display: inline;
+  margin-left: 20px;
+}
+
+.navbar .nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar .nav-links li a:hover {
+  color: #f4f4f4;
+}
+
+/* Home Section Styles */
+.home {
+  padding: 100px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.home .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.home .intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.intro-text {
+  text-align: center;
+}
+
+.intro-text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.intro-text p {
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+  color: #666;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script src="../assets/js/app.js"></script>
+</head>
+<body class="indebody">
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="container">
+        <h1 class="logo">Philip Portfolio</h1>
+        <ul class="nav-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="/overview.html">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Home Section -->
+<section class="home" id="home">
+    <div class="container">
+        <div class="intro">
+            <img src="assets/img/drron_home.png" alt="Your Image" class="profile-img">
+            <div class="intro-text">
+                <h2>Hello, I'm Philip de Groot</h2>
+                <p> I am a Dutch college student following the game development program at the
+                    HKU (Utrecht University of the Arts). I'm incredibly passionate about making games, creating music,
+                    drawing art and exploring new skills and knowledge.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills" id="skills">
+    <div class="container">
+        <h2>Skills</h2>
+        <div id="skillsContainer"></div> <!-- Dynamic Skills Section -->
+    </div>
+</section>
+
+<script type="module">
+    // Function to load JSON data and populate the skills section
+    import { iconString } from '../assets/js/app.js';
+    async function loadSkills() {
+        try {
+            // Fetch the skills data from the JSON file
+            const response = await fetch('/json/skills.json');
+            const skillsData = await response.json();
+
+            // Get the container element where the skills will be injected
+            const skillsContainer = document.getElementById('skillsContainer');
+
+            skillsData.forEach(section => {
+                // Create a section for each category (e.g., Languages, Primary Skills, etc.)
+                const sectionDiv = document.createElement('div');
+                sectionDiv.classList.add('skill-section');
+
+                // Create and append the title of the section
+                const sectionTitle = document.createElement('h3');
+                sectionTitle.textContent = section.title;
+                sectionDiv.appendChild(sectionTitle);
+
+                const skillsList = document.createElement('div');
+                skillsList.classList.add('skills-list');
+
+                // Loop through skills and create skill blocks with icons and names
+                section.skills.forEach(skill => {
+                    const skillDiv = document.createElement('div');
+                    skillDiv.classList.add('skill-item');
+
+                    // Use the iconString function from app.js to generate the HTML for the icon
+                    const iconHtml = iconString(skill.icon, skill.color);
+                    skillDiv.innerHTML = `${iconHtml} <span>${skill.name}</span>`;
+
+                    // Append the skill to the skill list
+                    skillsList.appendChild(skillDiv);
+                });
+
+                // Append the skill list to the section
+                sectionDiv.appendChild(skillsList);
+                // Append the section to the skills container
+                skillsContainer.appendChild(sectionDiv);
+            });
+        } catch (error) {
+            console.error("Error loading skills data:", error);
+        }
+    }
+
+    // Load the skills when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', loadSkills);
+</script>
+</body>
+</html>
