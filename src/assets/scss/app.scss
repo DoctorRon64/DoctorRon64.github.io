@@ -1,32 +1,20 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
+//index
 @import "index/index";
-@import "index/socialicons";
-@import "index/test";
 @import "index/skills";
-//@import "navbar";
 
+//explore
 @import "explore/projects";
 @import "explore/showoffs";
+
+//overview
 @import "overview/overview";
+
+//all
 @import "fonts";
+@import "navbar";
+@import "background";
+@import "socialicons";
 
-$color1: #016764;
-$color2: #005958;
-$color3: #014848;
-$color4: #00312F;
-$color5: #001E1E;
-
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #282c34;
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
-  color: var(--main-color);
-  z-index: -1;
-  min-height: 100%;
-  height: auto;
-}
+@import "uc";

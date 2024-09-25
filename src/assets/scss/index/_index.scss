@@ -1,118 +1,49 @@
-﻿/* Container for the headers */
-.indexcontainer {
-  position: absolute;
-  top: 25%;
-  left: 15%;
-  display: flex;
-  flex-direction: row; /* Arrange headers in a row */
-  gap: 50px; /* Add space between the headers */
+﻿/* Navbar Styles */
+.homebody {
+  background-color: #282c34;
 }
 
-/* Common styles for the index body */
-.indexbody {
-  background-image: url('/assets/img/background.png');
-  background-size: cover;
-  //background-repeat: no-repeat;
-  padding: 20px;
-}
-
-/* Styles for the primary header */
-.indexheader {
-  color: white;
-  text-align: left;
-  max-width: 50%; /* Adjust width to fit two headers */
-  animation: slideInFromLeft 1s forwards;
-  animation-delay: 0.3s;
-}
-
-/* Styles for the secondary header */
-.skillheader {
-  color: white;
-  text-align: left;
-  max-width: 50%; /* Adjust width to fit two headers */
-  animation: slideInFromTop 1s forwards;
-  animation-delay: 0.6s;
-  background: #245964;
-}
-
-/* Common styles for header content */
-.indexheader h1, .skillheader h1 {
-  margin: 0;
-  font-size: 4em; /* Adjust font size to fit within the container */
-  color: white;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.indexheader h1 {
-  animation: slideInFromLeft 1s forwards;
-  animation-delay: 0.5s;
-}
-
-.skillheader h1 {
-  animation: slideInFromTop 1s forwards;
-  animation-delay: 0.8s;
-}
-
-.indexheader h2, .skillheader h2 {
-  margin: 0;
-  color: white;
-  font-size: 1.5em;
-  font-weight: 300;
-  font-family: 'Questrial', sans-serif;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  
-  iconify-icon {
-    transform:translateY(5px);
-  }
-}
-
-.indexheader h2 {
-  animation: slideInFromLeft 1s forwards;
-  animation-delay: 0.7s;
-}
-
-.skillheader h2 {
-  animation: slideInFromTop 1s forwards;
-  animation-delay: 1s;
-}
-
-.explore-button {
-  margin-top: 20px;
-  padding: 10px 50px;
-  font-size: 1em;
-  border: 2px solid transparent;
-  color: #1e1e1e;
-  background-color: white;
-  cursor: pointer;
-  text-decoration: none;
-  box-sizing: border-box;
-  transition: background-color 0.3s, color 0.3s, border 0.3s;
-  opacity: 0;
-  animation: slideInFromLeft 1s forwards;
-  animation-delay: 1.2s;
-}
-
-.explore-button:hover {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.index-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: white;
+/* Home Section Styles */
+.home {
+  padding: 100px 0;
+  background-color: #282c34;
   text-align: center;
-  padding: 10px 0;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 800px){
-  .indexheader {
-    max-width: 80%;
-  }
+.home .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.home .intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.intro-text {
+  color: #e9f4ff;
+  text-align: center;
+}
+
+.intro-text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.intro-text p {
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+  color: #abb2bf;
 }
