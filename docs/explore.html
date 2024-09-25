@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore my work!</title>
-    <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16"/>
+    <link rel="icon" href="/assets/img/websiteicon.gif" type="image/x-icon"/>
     <link rel="stylesheet" href="/assets/css/app.css">
-    <script src="/assets/js/app.js"></script>
 </head>
 <body>
 <div class="background"></div>
@@ -44,10 +43,10 @@
                         <div class="showoff-column2">
                         <p>
                             ${codeSection}
-                            <strong><iconify-icon icon="solar:calendar-date-bold-duotone"></iconify-icon>Date:</strong> <span id="project-date">${formattedDate}</span> <br>
-                            <strong><iconify-icon icon="radix-icons:lap-timer" ></iconify-icon>Duration:</strong> <span id="project-duration">${project.duration}</span> <br>
-                            <strong><iconify-icon icon="fluent:people-team-16-filled"></iconify-icon>People:</strong> <span id="project-people">${project.people}</span> <br>
-                            <strong><iconify-icon icon="hugeicons:software-license"></iconify-icon>Tech Used:</strong> <span id="project-tech">${techUsedHtml}</span>
+                            <strong>Date:</strong> <span id="project-date">${formattedDate}</span> <br>
+                            <strong>Duration:</strong> <span id="project-duration">${project.duration}</span> <br>
+                            <strong>People:</strong> <span id="project-people">${project.people}</span> <br>
+                            <strong>Tech Used:</strong> <span id="project-tech">${techUsedHtml}</span>
                         </p>
                         </div>
                     </div>
@@ -134,14 +133,6 @@
 </script>
 
 
-<footer class="overview-footer">
-    <ul class="social-icons">
-        <li><a href="mailto:philip@lefthandmedia.com" title="Email me"><img src="/assets/img/icons/fxemoji--email.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn"><img src="/assets/img/icons/devicon--linkedin.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://github.com/DoctorRon64" target="_blank" title="GitHub"><img src="/assets/img/icons/skill-icons--github-dark.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ" target="_blank" title="Spotify"><img src="/assets/img/icons/logos--spotify-icon.svg" width="40" height="40" class="imgIcons"></iconify-icon></a></li>
-        <li><a href="https://doctor-ron.itch.io/" target="_blank" title="Itch.Io"><img src="/assets/img/icons/cib--itch-io.svg" width="40" height="40" class="imgIcons" style="fill: #fa5c5c;"></a></li>
-    </ul>
-</footer>
+<script src="/assets/js/contact.js" footerclass="true"></script>
 </body>
 </html>

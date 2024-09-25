@@ -1,41 +1,24 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
+//index
 @import "index/index";
-@import "index/socialicons";
 @import "index/skills";
 
+//explore
 @import "explore/projects";
 @import "explore/showoffs";
 
+//overview
 @import "overview/overview";
 
+//uc
+@import "uc/uc";
+
+@import "about/about";
+
+//all
 @import "fonts";
+@import "navbar";
+@import "background";
+@import "socialicons";
 
-.imgIcons {
-  //transform: translateY(-5px);
-}
-
-$color1: #016764;
-$color2: #005958;
-$color3: #014848;
-$color4: #00312F;
-$color5: #001E1E;
-
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(45deg, $color1, $color2, $color3, $color4, $color5);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
-  color: var(--main-color);
-  z-index: -1;
-  min-height: 100%;
-  height: auto;
-}
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}

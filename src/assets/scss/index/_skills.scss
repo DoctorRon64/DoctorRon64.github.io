@@ -52,19 +52,11 @@
 
 .languageskill {
   padding: 5px 10px;
-  
   background-color: #36aa9f;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  border: 1px solid #e0e0e0;
   transition: background-color 0.3s ease;
-  
   font-size: 16px;
-}
-
-.languageskill:hover {
-  background-color: #2f7c73;
-  color: white;
 }
 
 .skill-item img {

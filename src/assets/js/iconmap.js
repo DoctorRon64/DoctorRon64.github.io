@@ -45,7 +45,9 @@ export const techIconsMap = {
     'dutch': 'dutch.svg',
     'en': 'en.svg',
     'spain': 'spain.svg',
-    'python': 'python.svg'
+    'python': 'python.svg',
+    'menu' : 'gg--menu.svg',
+    'close' : 'zondicons--close-outline.svg',
 };
 
 export function iconString(tech, color = '', width = '24px', height = '24px') {

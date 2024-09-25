@@ -3,130 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrRon's Portfolio Website</title>
-    <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16" type="image/gif">
+    <title>Philip Portfolio</title>
+    <link rel="icon" href="/assets/img/websiteicon.gif" type="image/x-icon"/>
     <link rel="stylesheet" href="/assets/css/app.css">
 </head>
-<body class="indexbody">
-<div class="indexcontainer">
-    <header class="indexheader">
-        <h1>Portfolio Philip</h1>
-        <h2>Game Developer & Music Enthusiast</h2>
-        <br>
-        <div>
-            Greetings! My name is Philip. I am a Dutch college student following the game development program at the HKU
-            (Utrecht University of the Arts).
-            I'm incredibly passionate about making games, creating music, drawing art and exploring new skills and
-            knowledge.
+<body class="homebody">
+<script src="/assets/js/navbar.js"></script>
+
+<!-- Home Section -->
+<section class="home" id="home">
+    <div class="container">
+        <div class="intro">
+            <img src="assets/img/drron_home.png" alt="Your Image" class="profile-img">
+            <div class="intro-text">
+                <h2>Hello, I am Philip </h2>
+                <!-- <h3>こんにちは、私はフィリップです。</h3> -->
+                <h3>Game Developer & Music Enthusiast</h3>
+                <p> I am a Dutch college student following the game development program at the
+                    HKU (Utrecht University of the Arts). I'm incredibly passionate about  <u>coding games</u>🎮, <u>composing music</u>&#127911;,
+                    <u>drawing art</u>&#127912; and <u>exploring new skills and knowledge</u>🎓. On this selfcoded website you can explore my work and get in contact with me.
+                </p>
+            </div>
         </div>
-        <br>
-        <div id="skills-container"></div>
-        <br>
-        <a href="overview.html" class="explore-button">Overview</a>
-    </header>
-</div>
-
-<script type="module">
-    import { iconString } from '../assets/js/app.js';
-
-    document.addEventListener('DOMContentLoaded', () => {
-        function createLanguageElement(skill) {
-            const iconHtml = iconString(skill.icon);
-            return `
-            <div class="skill-item languageskill" title="${skill.name}">
-                ${iconHtml}
-                <span class="skill-name">${skill.name}</span>
-            </div>
-            `;
-        }
-
-        function createSkillElement(skill) {
-            const iconHtml = iconString(skill.icon);
-            return `
-            <div class="skill-item" title="${skill.name}">
-                ${iconHtml}
-            </div>
-            `;
-        }
-
-        function renderSkills(skills, containerClass, title) {
-            const container = document.querySelector(`.${containerClass} .skills`);
-            if (!container) {
-                console.error(`Container with class ${containerClass} not found`);
-                return;
-            }
-            container.innerHTML = '';
-
-            // Insert the category title
-/*            const titleElement = document.createElement('span');
-            titleElement.classList.add('category-title');
-            titleElement.textContent = title;
-            container.appendChild(titleElement);*/
-
-            // Create a container for skills
-            const skillsDiv = document.createElement('div');
-            skillsDiv.classList.add('skills-list');
-            container.appendChild(skillsDiv);
-
-            // Check if the container is for 'Languages' and use the appropriate function
-            if (containerClass === 'languages') {
-                skills.forEach(skill => {
-                    skillsDiv.innerHTML += createLanguageElement(skill);
-                });
-            } else {
-                skills.forEach(skill => {
-                    skillsDiv.innerHTML += createSkillElement(skill);
-                });
-            }
-        }
-
-        async function loadAndDisplaySkills() {
-            try {
-                const response = await fetch('/json/skills.json');
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch skills.json: ${response.statusText}`);
-                }
-                const data = await response.json();
-
-                const skillsContainer = document.getElementById('skills-container');
-                if (!skillsContainer) {
-                    console.error("Skills container not found!");
-                    return;
-                }
-
-                data.forEach(category => {
-                    const containerClass = category.title.toLowerCase().replace(/\s+/g, '_'); // Normalize class name
-                    const categoryDiv = document.createElement('div');
-                    categoryDiv.classList.add(containerClass);
-
-                    const skillsDiv = document.createElement('div');
-                    skillsDiv.classList.add('skills');
-                    categoryDiv.appendChild(skillsDiv);
-
-                    skillsContainer.appendChild(categoryDiv);
-
-                    // Render the skills for this category and include the title
-                    renderSkills(category.skills, containerClass, category.title);
-                });
-            } catch (error) {
-                console.error("Error loading or displaying skills:", error);
-            }
-        }
-
-        loadAndDisplaySkills();
-    });
-</script>
-
-<footer class="index-footer">
-    <ul class="social-icons">
-        <li><a href="mailto:philip@lefthandmedia.com" title="Email me"><img src="/assets/img/icons/fxemoji--email.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn"><img src="/assets/img/icons/devicon--linkedin.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://github.com/DoctorRon64" target="_blank" title="GitHub"><img src="/assets/img/icons/skill-icons--github-dark.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ" target="_blank" title="Spotify"><img src="/assets/img/icons/logos--spotify-icon.svg" width="40" height="40" class="imgIcons"></iconify-icon></a></li>
-        <li><a href="https://doctor-ron.itch.io/" target="_blank" title="Itch.Io"><img src="/assets/img/icons/cib--itch-io.svg" width="40" height="40" class="imgIcons" style="fill: #fa5c5c;"></a></li>
-    </ul>
-</footer>
-
-<script src="/assets/js/app.js"></script>
+    </div>
+</section>
+<script src="/assets/js/contact.js" footerclass="false"></script>
 </body>
 </html>

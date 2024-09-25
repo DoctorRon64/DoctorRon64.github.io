@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me</title>
-    <link rel="icon" href="https://i.gifer.com/6oa.gif" sizes="16x16"/>
+    <title>Overview of work</title>
+    <link rel="icon" href="/assets/img/websiteicon.gif" type="image/x-icon"/>
     <link rel="stylesheet" href="/assets/css/app.css">
-    <script src="/assets/js/app.js"></script>
 </head>
 <body>
 <div class="background"></div>
 
-<!--title-->
-<h1 class="overview-headline">Overview of Projects</h1>
+<script src="/assets/js/navbar.js"></script>
 
 <div id="projects-container"></div>
-<div class="overview-button-container">
-    <a href="/tech.html" class="overview-button">Explore All Projects</a>
-</div>
 
 <script type="module">
-    import { iconString } from '../assets/js/app.js';
+    import { iconString } from '../assets/js/iconmap.js';
 
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -120,16 +115,6 @@
     });
 </script>
 
-
-<footer class="overview-footer">
-    <ul class="social-icons">
-        <li><a href="mailto:philip@lefthandmedia.com" title="Email me"><img src="/assets/img/icons/fxemoji--email.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://www.linkedin.com/in/philip-de-groot-84272130b/" target="_blank" title="LinkedIn"><img src="/assets/img/icons/devicon--linkedin.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://github.com/DoctorRon64" target="_blank" title="GitHub"><img src="/assets/img/icons/skill-icons--github-dark.svg" width="40" height="40" class="imgIcons"></a></li>
-        <li><a href="https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ" target="_blank" title="Spotify"><img src="/assets/img/icons/logos--spotify-icon.svg" width="40" height="40" class="imgIcons"></iconify-icon></a></li>
-        <li><a href="https://doctor-ron.itch.io/" target="_blank" title="Itch.Io"><img src="/assets/img/icons/cib--itch-io.svg" width="40" height="40" class="imgIcons" style="fill: #fa5c5c;"></a></li>
-    </ul>
-</footer>
-<script src="/assets/js/app.js"></script>
+<script src="/assets/js/contact.js" footerclass="true" defer></script>
 </body>
 </html>
