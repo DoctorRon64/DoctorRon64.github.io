@@ -1,28 +1,32 @@
+$primary-color: #a200ff;
+$text-color: #e9f4ff;
+$background-color: #21252b;
+
 .aboutbody {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Light gray background */
     color: #333; /* Dark gray text */
 }
 
 .aboutheader {
-    background-color: #21252b; /* Dark background for the navbar */
-    color: #fff; /* White text */
+    background-color: $background-color; /* Dark background for the navbar */
+    color: $text-color; /* White text */
 }
 
 .about-container {
     max-width: 800px; /* Center content */
     margin: 40px auto; /* Center horizontally and add top margin */
     padding: 20px;
-    background-color: #fff; /* White background for the content area */
+    background-color: $background-color; /* White background for the content area */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: $text-color;
 }
 
 .about-container h1 {
     font-size: 2.5em; /* Large heading size */
-    color: #21252b; /* Dark color for the heading */
+    color: $text-color; /* Dark color for the heading */
     margin-bottom: 20px; /* Space below heading */
 }
 
@@ -39,19 +43,18 @@
 .content-section h2 {
     font-size: 2em; /* Section heading size */
     margin-top: 20px; /* Space above section heading */
-    color: #ffcc00; /* Highlight color */
+    color: $primary-color; /* Highlight color */
 }
 
 .quote-section {
-    margin-top: 40px; /* Space above the quote */
     padding: 10px;
-    background-color: #f9f9f9; /* Light gray background for the quote */
-    border-left: 4px solid #ffcc00; /* Left border for emphasis */
+    background-color: rgba(136, 136, 136, 0.5); /* Light gray background for the quote */
+    border-left: 4px solid $primary-color; /* Left border for emphasis */
 }
 
 blockquote {
     font-style: italic; /* Italic style for the quote */
-    color: #555; /* Darker gray for the quote text */
+    color: rgb(195, 195, 195); /* Darker gray for the quote text */
 }
 
 .aboutfooter {
