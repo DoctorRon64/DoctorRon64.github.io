@@ -1,0 +1,80 @@
+.aboutbody {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark gray text */
+}
+
+.aboutheader {
+    background-color: #21252b; /* Dark background for the navbar */
+    color: #fff; /* White text */
+}
+
+.about-container {
+    max-width: 800px; /* Center content */
+    margin: 40px auto; /* Center horizontally and add top margin */
+    padding: 20px;
+    background-color: #fff; /* White background for the content area */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.about-container h1 {
+    font-size: 2.5em; /* Large heading size */
+    color: #21252b; /* Dark color for the heading */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    border-radius: 50%; /* Circular image */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.content-section h2 {
+    font-size: 2em; /* Section heading size */
+    margin-top: 20px; /* Space above section heading */
+    color: #ffcc00; /* Highlight color */
+}
+
+.quote-section {
+    margin-top: 40px; /* Space above the quote */
+    padding: 10px;
+    background-color: #f9f9f9; /* Light gray background for the quote */
+    border-left: 4px solid #ffcc00; /* Left border for emphasis */
+}
+
+blockquote {
+    font-style: italic; /* Italic style for the quote */
+    color: #555; /* Darker gray for the quote text */
+}
+
+.aboutfooter {
+    text-align: center; /* Center the footer text */
+    padding: 20px 0; /* Padding around footer */
+    background-color: #21252b; /* Dark background for footer */
+    color: #ffffff; /* White text in footer */
+    position: relative; /* Ensure footer stays at the bottom */
+    bottom: 0;
+    width: 100%; /* Full width */
+}
+
+@media (max-width: 600px) {
+    .about-container {
+        padding: 15px; /* Smaller padding for mobile */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Stack links on mobile */
+    }
+
+    .navbar li {
+        margin-left: 0; /* Remove left margin */
+        margin-bottom: 10px; /* Space between links */
+    }
+}
