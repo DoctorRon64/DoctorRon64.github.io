@@ -9,27 +9,6 @@
 </head>
 <body class="indexbody">
 
-<nav>
-    <ul class="sidebar">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/overview.html">Overview</a></li>
-        <li><a href="/tech.html">Technical Projects</a></li>
-        <li><a href="/art.html">Art Projects</a></li>
-        <li><a href="/music.html">Music Projects</a></li>
-        <li class="menu-button" onclick=hideSidebar()><a href=""><img src="/assets/img/icons/zondicons--close-outline.svg"></a></li>
-    </ul>
-    <ul class="navbar">
-        <li><h1>Portfolio Philip</h1></li>
-        <li><a href="/index.html" class="hideOnMobile">Home</a></li>
-        <li><a href="/overview.html" class="hideOnMobile">Overview</a></li>
-        <li><a href="/tech.html" class="hideOnMobile">Technical Projects</a></li>
-        <li><a href="/art.html" class="hideOnMobile">Art Projects</a></li>
-        <li><a href="/music.html" class="hideOnMobile"> Music Projects </a></li>
-        <li><a href="/about.html" class="hideOnMobile">About me]</a></li>
-        <li class="menu-button" onclick=showSidebar()><a href=""><img src="/assets/img/icons/gg--menu.svg"></a></li>
-    </ul>
-</nav>
-
 <div class="indexcontainer">
     <div class="indexheader">
         <h1>Portfolio Philip</h1>
@@ -155,18 +134,5 @@
         </li>
     </ul>
 </footer>
-
-<script src="/assets/js/app.js"></script>
-<script>
-    function showSidebar() {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.style.display = 'flex';
-    }
-
-    function hideSidebar() {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.style.display = 'none';
-    }
-</script>
 </body>
 </html>

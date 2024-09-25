@@ -2,18 +2,14 @@
 
 @import "index/index";
 @import "index/socialicons";
-//@import "index/skills";
-@import "index/skillstest";
+@import "index/test";
+@import "index/skills";
+//@import "navbar";
+
 @import "explore/projects";
 @import "explore/showoffs";
 @import "overview/overview";
 @import "fonts";
-@import "navbar";
-@import "index/jo";
-
-.imgIcons {
-  //transform: translateY(-5px);
-}
 
 $color1: #016764;
 $color2: #005958;
@@ -26,16 +22,11 @@ $color5: #001E1E;
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(45deg, $color1, $color2, $color3, $color4, $color5);
+  background: #282c34;
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
   color: var(--main-color);
   z-index: -1;
   min-height: 100%;
   height: auto;
-}
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }

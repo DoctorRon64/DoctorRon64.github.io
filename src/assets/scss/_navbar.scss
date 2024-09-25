@@ -1,36 +1,56 @@
-﻿.navbar{
-  background-color: rgba(255,255,255,0.2);
+﻿/* Navbar Styles */
+.navbar {
+  background-color: rgba(39, 39, 39, 0.2);
   backdrop-filter: blur(10px);
-  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
-  
-  & ul {
-    width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  & li {
-    height: 50px;
-  }
-  
-  & a {
-    height: 100%;
-    padding: 0 30px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: white
-  }
-  
-  & a:hover {
-    background-color: white;
-  }
-  
-  & li:first-child{
-    margin-right: auto;
-  }
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  color: #fff;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar li {
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar li:first-child {
+  margin-right: auto;
+}
+
+.navbar a {
+  padding: 0 30px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar a:hover {
+  color: #f4f4f4;
+  background-color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Additional style for logo or first link (optional) */
+.navbar .logo {
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .sidebar {

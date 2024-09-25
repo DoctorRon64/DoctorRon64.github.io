@@ -1,20 +1,13 @@
-﻿/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+﻿/* Navbar Styles */
+.homebody {
+  background-color: #282c34;
 }
 
-indebody {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: red;
-  color: #333;
-}
 
-/* Navbar Styles */
 .navbar {
-  background-color: #333;
+  background-color: rgb(15, 15, 15);
+  backdrop-filter: blur(10px);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   padding: 15px 0;
   color: #fff;
 }
@@ -25,35 +18,51 @@ indebody {
   align-items: center;
 }
 
-.navbar .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.navbar .nav-links {
+.navbar ul {
   list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin: 0;
 }
 
-.navbar .nav-links li {
-  display: inline;
-  margin-left: 20px;
+.navbar li {
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
 }
 
-.navbar .nav-links li a {
+.navbar li:first-child {
+  margin-right: auto;
+}
+
+.navbar a {
+  padding: 0 30px;
   color: #fff;
   text-decoration: none;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
-.navbar .nav-links li a:hover {
-  color: #f4f4f4;
+.navbar a:hover {
+  color: rgb(192, 192, 192);
+  background-color: rgb(59, 59, 59);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Optional Style for Logo or First Link */
+.navbar .logo {
+  font-size: 22px;
+  font-weight: bold;
 }
 
 /* Home Section Styles */
 .home {
   padding: 100px 0;
-  background-color: #fff;
+  background-color: #282c34;
   text-align: center;
 }
 
@@ -79,6 +88,7 @@ indebody {
 }
 
 .intro-text {
+  color: #e9f4ff;
   text-align: center;
 }
 
@@ -91,5 +101,5 @@ indebody {
 .intro-text p {
   font-family: 'Questrial', sans-serif;
   font-size: 18px;
-  color: #666;
+  color: #abb2bf;
 }
