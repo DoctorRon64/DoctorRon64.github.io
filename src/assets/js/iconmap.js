@@ -1,6 +1,7 @@
 export const techIconsMap = {
     'animate': 'logos--adobe-animate.svg',
     'arduino': 'skill-icons--arduino.svg',
+    'assimp': 'header.svg',
     'aseprite': 'aseprite.png',
     'blender': 'logos--blender.svg',
     'c#': 'devicon--csharp.svg',
@@ -11,6 +12,8 @@ export const techIconsMap = {
     'git': 'skill-icons--git.svg',
     'github': 'skill-icons--github-dark.svg',
     'glm': 'glm-logo.svg',
+    'glfw': 'header.svg',
+    'stbi': 'header.svg',
     'html': 'skill-icons--html.svg',
     'illustrator': 'skill-icons--illustrator.svg',
     'java': 'skill-icons--java-light.svg',
