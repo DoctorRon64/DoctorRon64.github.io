@@ -12,7 +12,7 @@ export const techIconsMap = {
     'git': 'skill-icons--git.svg',
     'github': 'skill-icons--github-dark.svg',
     'glm': 'glm-logo.svg',
-    'glfw': 'glfw.jpg',
+    'glfw': 'header.svg',
     'stbi': 'header.svg',
     'html': 'skill-icons--html.svg',
     'illustrator': 'skill-icons--illustrator.svg',
