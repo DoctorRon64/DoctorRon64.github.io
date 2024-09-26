@@ -1,120 +1,140 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Overview of work</title>
-    <link rel="icon" href="/assets/img/websiteicon.gif" type="image/x-icon"/>
-    <link rel="stylesheet" href="/assets/css/app.css">
-</head>
-<body>
-<div class="background"></div>
+    <link rel="icon" href="/assets/img/websiteicon.gif" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/css/app.css" />
+  </head>
+  <body>
+    <div class="background"></div>
 
-<script src="/assets/js/navbar.js"></script>
+    <script src="/assets/js/navbar.js"></script>
 
-<div id="projects-container"></div>
+    <div id="projects-container"></div>
 
-<script type="module">
-    import { iconString } from '../assets/js/iconmap.js';
+    <script type="module">
+      import { iconString } from "../assets/js/iconmap.js";
 
-    document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch("/json/overview.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const container = document.createElement("div");
+            container.className = "overview-grid-container";
 
-        fetch('/json/overview.json')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.createElement('div');
-                container.className = 'overview-grid-container';
+            data.forEach((project) => {
+              // Convert date to a more readable format
+              const dateParts = project.date.split("/");
+              const formattedDate = new Date(
+                dateParts[2],
+                dateParts[1] - 1,
+                dateParts[0]
+              ).toLocaleDateString("en-GB", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              });
 
-                data.forEach(project => {
-                    // Convert date to a more readable format
-                    const dateParts = project.date.split('/');
-                    const formattedDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]).toLocaleDateString('en-GB', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
+              // Create overview-item div
+              const itemDiv = document.createElement("div");
+              itemDiv.className = "overview-item";
 
-                    // Create overview-item div
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'overview-item';
+              // Create and append image container
+              const imgDiv = document.createElement("div");
+              imgDiv.className = "overview-img";
+              imgDiv.innerHTML = `<img src="assets/img/thumbnails/${project.image}" data-gif="assets/img/gifs/${project.gif}" alt="${project.title}">`;
 
-                    // Create and append image container
-                    const imgDiv = document.createElement('div');
-                    imgDiv.className = 'overview-img';
-                    imgDiv.innerHTML = `<img src="assets/img/thumbnails/${project.image}" data-gif="assets/img/gifs/${project.gif}" alt="${project.title}">`;
+              // Create and append title
+              const titleDiv = document.createElement("div");
+              titleDiv.className = "overview-title";
+              titleDiv.innerHTML = `<h1>${project.title}</h1>`;
 
-                    // Create and append title
-                    const titleDiv = document.createElement('div');
-                    titleDiv.className = 'overview-title';
-                    titleDiv.innerHTML = `<h1>${project.title}</h1>`;
+              // Create and append Tech Used section (always visible)
+              const techUsedDiv = document.createElement("div");
+              techUsedDiv.className = "overview-tech";
+              const techUsedHtml = project.techUsed
+                .map((tech) => iconString(tech))
+                .join(" ");
+              techUsedDiv.innerHTML = `${techUsedHtml}`;
 
-                    // Create and append Tech Used section (always visible)
-                    const techUsedDiv = document.createElement('div');
-                    techUsedDiv.className = 'overview-tech';
-                    const techUsedHtml = project.techUsed.map(tech => iconString(tech)).join(' ');
-                    techUsedDiv.innerHTML = `${techUsedHtml}`;
+              // Add hover functionality to switch image and gif on hover
+              itemDiv.addEventListener("mouseenter", () => {
+                const img = imgDiv.querySelector("img");
+                const gif = img.getAttribute("data-gif");
 
-                    // Add hover functionality to switch image and gif on hover
-                    itemDiv.addEventListener('mouseenter', () => {
-                        const img = imgDiv.querySelector('img');
-                        const gif = img.getAttribute('data-gif');
-                        if (gif) {
-                            img.setAttribute('src', gif);
-                        }
-                    });
+                // Try to switch to gif only if it exists
+                if (gif && gif.trim()) {
+                  const tempImg = new Image(); // Create a new image to test the gif loading
+                  tempImg.src = gif;
 
-                    itemDiv.addEventListener('mouseleave', () => {
-                        const img = imgDiv.querySelector('img');
-                        const staticImage = `assets/img/thumbnails/${project.image}`;
-                        img.setAttribute('src', staticImage);
-                    });
+                  // If the gif loads successfully, set the image source to the gif
+                  tempImg.onload = () => {
+                    img.setAttribute("src", gif);
+                  };
 
-                    // Create and append description text
-                    const descriptionDiv = document.createElement('div');
-                    descriptionDiv.className = 'overview-description';
-                    descriptionDiv.innerHTML = `<p>${project.description}</p>`;
+                  // If the gif fails to load, keep the original image
+                  tempImg.onerror = () => {
+                    console.warn("Gif not found, keeping original image.");
+                  };
+                }
+              });
 
-                    // Create and append extra text content (hidden details)
-                    const textDiv = document.createElement('div');
-                    textDiv.className = 'overview-text';
-                    const codeSection = project.code_link
-                        ? `<strong><iconify-icon icon="fluent-mdl2:git-hub-logo"></iconify-icon>Code:</strong> <a href="${project.code_link}" target="_blank">${project.code_link}</a> <br>`
-                        : '';
+              itemDiv.addEventListener("mouseleave", () => {
+                const img = imgDiv.querySelector("img");
+                const staticImage = `assets/img/thumbnails/${project.image}`;
+                img.setAttribute("src", staticImage);
+              });
 
-                    textDiv.innerHTML = `
+              // Create and append description text
+              const descriptionDiv = document.createElement("div");
+              descriptionDiv.className = "overview-description";
+              descriptionDiv.innerHTML = `<p>${project.description}</p>`;
+
+              // Create and append extra text content (hidden details)
+              const textDiv = document.createElement("div");
+              textDiv.className = "overview-text";
+              const codeSection = project.code_link
+                ? `<strong><iconify-icon icon="fluent-mdl2:git-hub-logo"></iconify-icon>Code:</strong> <a href="${project.code_link}" target="_blank">${project.code_link}</a> <br>`
+                : "";
+
+              textDiv.innerHTML = `
                         ${codeSection}
                         <strong>Date:</strong> ${formattedDate}<br>
                         <strong>Duration:</strong> ${project.duration}<br>
                         <strong>People:</strong> ${project.people}<br>
                     `;
 
-                    // Create and append list of points
-                    const ul = document.createElement('ul');
-                    project.points.forEach(point => {
-                        const li = document.createElement('li');
-                        li.textContent = point;
-                        ul.appendChild(li);
-                    });
-                    textDiv.appendChild(ul);
+              // Create and append list of points
+              const ul = document.createElement("ul");
+              project.points.forEach((point) => {
+                const li = document.createElement("li");
+                li.textContent = point;
+                ul.appendChild(li);
+              });
+              textDiv.appendChild(ul);
 
-                    // Append all elements to the itemDiv
-                    itemDiv.appendChild(imgDiv);
-                    itemDiv.appendChild(titleDiv);
-                    itemDiv.appendChild(techUsedDiv); // Append techUsedDiv to always display Tech Used
-                    itemDiv.appendChild(descriptionDiv);
-                    itemDiv.appendChild(textDiv);
+              // Append all elements to the itemDiv
+              itemDiv.appendChild(imgDiv);
+              itemDiv.appendChild(titleDiv);
+              itemDiv.appendChild(techUsedDiv); // Append techUsedDiv to always display Tech Used
+              itemDiv.appendChild(descriptionDiv);
+              itemDiv.appendChild(textDiv);
 
-                    // Append itemDiv to container
-                    container.appendChild(itemDiv);
-                });
+              // Append itemDiv to container
+              container.appendChild(itemDiv);
+            });
 
-                // Append the container to the body or a specific section
-                document.getElementById('projects-container').appendChild(container);
-            })
-            .catch(error => console.error('Error loading JSON:', error));
-    });
-</script>
+            // Append the container to the body or a specific section
+            document
+              .getElementById("projects-container")
+              .appendChild(container);
+          })
+          .catch((error) => console.error("Error loading JSON:", error));
+      });
+    </script>
 
-<script src="/assets/js/contact.js" footerclass="true" defer></script>
-</body>
+    <script src="/assets/js/contact.js" footerclass="true" defer></script>
+  </body>
 </html>
