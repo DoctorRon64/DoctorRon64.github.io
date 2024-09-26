@@ -1,4 +1,19 @@
-﻿.overview-grid-container {
+﻿// Define variables for easy customization
+$primary-color: rgb(68, 77, 95); // Background color for items
+$secondary-color: #abb2bf; // Text color
+$hover-bg-color: #596275; // Hover background color
+$hover-border-color: #4c5362; // Hover border color
+$border-color: #30353f; // Default border color
+$title-color: white; // Title color on hover
+$text-shadow-color: rgba(0, 0, 0, 0.3); // Text shadow color for titles
+$font-family: 'Montserrat', sans-serif; // Font family for text
+$font-size-title: 1.4em; // Font size for titles
+$font-size-title-mobile: 1.2em; // Font size for titles on mobile
+$font-size-text: 1em; // Font size for text
+$font-size-text-mobile: 0.85em; // Font size for text on mobile
+$link-color-text: #770fff; // Link text color
+
+.overview-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); /* Responsive grid */
   gap: 20px;
@@ -9,19 +24,19 @@
 }
 
 .overview-item {
-  background-color: rgb(68, 77, 95);
-  color: #abb2bf;
+  background-color: $primary-color;
+  color: $secondary-color;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 5px solid #30353f;
+  border: 5px solid $border-color;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   position: relative;
   overflow: hidden;
-  height: auto; /* Ensure the container height grows with content */
+  height: auto;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -29,11 +44,11 @@
 .overview-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  border: 5px solid #4c5362;
-  background-color: #596275;
+  border: 5px solid $hover-border-color;
+  background-color: $hover-bg-color;
 
   .overview-title h1 {
-    color: white;
+    color: $title-color;
   }
 }
 
@@ -41,25 +56,24 @@
 .overview-description,
 .overview-text {
   opacity: 0;
-  max-height: 0; /* Collapse content initially */
+  max-height: 0;
   overflow: hidden;
   transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
-/* Ensure only the hovered item expands */
 .overview-item:hover .overview-description,
 .overview-item:hover .overview-text {
   opacity: 1;
-  max-height: 500px; /* Expand the content to a reasonable size */
+  max-height: 500px;
 }
 
 /* Title styling */
 .overview-title h1 {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  font-size: 1.4em;
+  text-shadow: 1px 1px 1px $text-shadow-color;
+  font-size: $font-size-title;
   font-weight: 700;
   margin-bottom: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-family;
   line-height: 1.4;
 }
 
@@ -91,14 +105,14 @@
 /* Text and description styling */
 .overview-description {
   transition: opacity 0.3s ease, max-height 0.3s ease;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-family;
 }
 
 .overview-text {
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-family;
   line-height: 1.6;
-  font-size: 1em;
+  font-size: $font-size-text;
   margin-top: 10px;
   transition: opacity 0.3s ease, max-height 0.3s ease;
 }
@@ -114,6 +128,18 @@
   margin-bottom: 6px;
 }
 
+/* Add link styling */
+.overview-text a {
+  color: $link-color-text;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken($link-color-text, 10%);
+    text-decoration: underline;
+  }
+}
+
 /* Ensure responsive behavior on smaller screens */
 @media (max-width: 768px) {
   .overview-grid-container {
@@ -123,7 +149,7 @@
   }
 
   .overview-title h1 {
-    font-size: 1.2em;
+    font-size: $font-size-title-mobile;
   }
 
   .overview-img {
@@ -132,6 +158,6 @@
 
   .overview-text p,
   .overview-text ul {
-    font-size: 0.85em;
+    font-size: $font-size-text-mobile;
   }
 }

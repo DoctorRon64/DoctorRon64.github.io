@@ -55,11 +55,24 @@
                     techUsedDiv.innerHTML = `${techUsedHtml}`;
 
                     // Add hover functionality to switch image and gif on hover
-                    itemDiv.addEventListener('mouseenter', () => {
-                        const img = imgDiv.querySelector('img');
-                        const gif = img.getAttribute('data-gif');
-                        if (gif) {
-                            img.setAttribute('src', gif);
+                    itemDiv.addEventListener("mouseenter", () => {
+                        const img = imgDiv.querySelector("img");
+                        const gif = img.getAttribute("data-gif");
+
+                        // Try to switch to gif only if it exists
+                        if (gif && gif.trim()) {
+                          const tempImg = new Image(); // Create a new image to test the gif loading
+                          tempImg.src = gif;
+                        
+                          // If the gif loads successfully, set the image source to the gif
+                          tempImg.onload = () => {
+                            img.setAttribute("src", gif);
+                          };
+                      
+                          // If the gif fails to load, keep the original image
+                          tempImg.onerror = () => {
+                            console.warn("Gif not found, keeping original image.");
+                          };
                         }
                     });
 
