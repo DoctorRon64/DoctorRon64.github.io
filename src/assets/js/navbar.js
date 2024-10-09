@@ -20,7 +20,7 @@ function createNavbar() {
                 { href: '/overview.html', text: 'Overview' },
                 { href: '/games.html', text: 'Games' },
                 { href: '/uc.html', text: 'Art' },
-                { href: '/uc.html', text: 'Music' }
+                { href: '/music.html', text: 'Music' }
             ]
         },
         { href: '/contact.html', text: 'Contact' }
