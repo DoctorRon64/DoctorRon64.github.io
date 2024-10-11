@@ -1,33 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Projects</title>
-    <link rel="icon" href="/assets/img/websiteicon.gif" type="image/x-icon"/>
+    <link rel="icon" href="/assets/img/websiteicon.gif" type="image/x-icon" />
     <link rel="stylesheet" href="/assets/css/app.css">
 </head>
+
 <body>
-<div class="background"></div>
-<script src="/assets/js/navbar.js"></script>
+    <div class="background"></div>
+    <script src="/assets/js/navbar.js"></script>
 
+    <h1>Audio Files</h1>
+    <div id="audio-list"></div>
 
+    <script>
+        // Audio files array (can add more formats if available)
+        const audioFiles = [
+            'franka_funk',
+            'grimcy_inst',
+            'mii_battle_song',
+            'funky_loop_groove',
+            'Insane Remix Work In Progress',
+            'insane_remix_wip',
+            'rerun_song_wip'
+        ];
 
+        // Target element where audio elements will be appended
+        const audioListDiv = document.getElementById('audio-list');
 
+        // Loop through each audio file and create the elements
+        audioFiles.forEach(file => {
+            const audioWrapper = document.createElement('div');
+            audioWrapper.style.marginBottom = '20px'; // Add some space between audio players
 
+            // Create a title element for each audio
+            const title = document.createElement('p');
+            title.textContent = file.replace('_', ' ').toUpperCase(); // Format title
+            title.style.fontWeight = 'bold';
+            title.style.marginBottom = '5px'; // Space between title and player
 
+            // Create the audio element
+            const audioElement = document.createElement('audio');
+            audioElement.controls = true;
 
+            // Add multiple sources for different formats
+            const formats = ['mp3', 'ogg', 'wav']; // You can add 'flac' if available
+            formats.forEach(format => {
+                const sourceElement = document.createElement('source');
+                sourceElement.src = `/assets/audio/${file}.${format}`;
+                sourceElement.type = `audio/${format}`;
+                audioElement.appendChild(sourceElement);
+            });
 
+            // Error handling if the audio file doesn't load
+            audioElement.onerror = function() {
+                const errorMsg = document.createElement('p');
+                errorMsg.textContent = `Error loading: ${file}`;
+                errorMsg.style.color = 'red';
+                audioWrapper.appendChild(errorMsg);
+            };
 
+            // Append title and audio element to the wrapper div
+            audioWrapper.appendChild(title);
+            audioWrapper.appendChild(audioElement);
 
+            // Append the wrapper div to the main audio list container
+            audioListDiv.appendChild(audioWrapper);
+        });
+    </script>
 
-
-
-
-
-
-
-
-<script src="/assets/js/contact.js" footerclass="true"></script>
+    <script src="/assets/js/contact.js" footerclass="true"></script>
 </body>
+
 </html>
