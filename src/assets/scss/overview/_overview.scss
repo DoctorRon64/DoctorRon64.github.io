@@ -1,9 +1,9 @@
 ﻿// Define variables for easy customization
-$primary-color: rgb(68, 77, 95); // Background color for items
-$secondary-color: #abb2bf; // Text color
-$hover-bg-color: #596275; // Hover background color
-$hover-border-color: #4c5362; // Hover border color
-$border-color: #30353f; // Default border color
+$primary-color: #8e523a; // Background color for items
+$secondary-color: #fbf1e0; // Text color
+$hover-bg-color: #ff966d7e; // Hover background color
+$hover-border-color: #ff966c81; // Hover border color
+$border-color: #da7e59; // Default border color
 $title-color: white; // Title color on hover
 $text-shadow-color: rgba(0, 0, 0, 0.3); // Text shadow color for titles
 $font-family: 'Montserrat', sans-serif; // Font family for text
@@ -11,7 +11,7 @@ $font-size-title: 1.4em; // Font size for titles
 $font-size-title-mobile: 1.2em; // Font size for titles on mobile
 $font-size-text: 1em; // Font size for text
 $font-size-text-mobile: 0.85em; // Font size for text on mobile
-$link-color-text: #770fff; // Link text color
+$link-color-text: #ffae00; // Link text color
 
 .overview-grid-container {
   display: grid;

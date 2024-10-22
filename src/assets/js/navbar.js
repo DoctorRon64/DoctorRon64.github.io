@@ -20,10 +20,9 @@ function createNavbar() {
                 { href: '/overview.html', text: 'Overview' },
                 { href: '/games.html', text: 'Games' },
                 { href: '/uc.html', text: 'Art' },
-                { href: '/music.html', text: 'Music' }
+                { href: '/uc.html', text: 'Music' }
             ]
         },
-        { href: '/contact.html', text: 'Contact' }
     ];
 
     // Create <li> elements with <a> links and append them to the <ul>

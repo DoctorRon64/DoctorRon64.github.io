@@ -1,16 +1,18 @@
-$primary-color: #a200ff;
-$text-color: #e9f4ff;
-$background-color: #21252b;
+$primary-color: rgb(248, 214, 154);
+$text-color: #fff6e7;
+$background-color: #42261b;
+$backdrop-color: #361d13;
 
 .aboutbody {
     font-family: 'Arial', sans-serif;
+    background-color: $background-color;
     margin: 0;
     padding: 0;
-    color: #333; /* Dark gray text */
+    color: $text-color; /* Dark gray text */
 }
 
 .aboutheader {
-    background-color: $background-color; /* Dark background for the navbar */
+    background-color: $backdrop-color; /* Dark background for the navbar */
     color: $text-color; /* White text */
 }
 
@@ -18,7 +20,7 @@ $background-color: #21252b;
     max-width: 800px; /* Center content */
     margin: 40px auto; /* Center horizontally and add top margin */
     padding: 20px;
-    background-color: $background-color; /* White background for the content area */
+    background-color: $backdrop-color; /* White background for the content area */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     color: $text-color;
@@ -48,7 +50,7 @@ $background-color: #21252b;
 
 .quote-section {
     padding: 10px;
-    background-color: rgba(136, 136, 136, 0.5); /* Light gray background for the quote */
+    background-color: $background-color; /* Light gray background for the quote */
     border-left: 4px solid $primary-color; /* Left border for emphasis */
 }
 
@@ -60,7 +62,7 @@ blockquote {
 .aboutfooter {
     text-align: center; /* Center the footer text */
     padding: 20px 0; /* Padding around footer */
-    background-color: #21252b; /* Dark background for footer */
+    background-color: $background-color; /* Dark background for footer */
     color: #ffffff; /* White text in footer */
     position: relative; /* Ensure footer stays at the bottom */
     bottom: 0;

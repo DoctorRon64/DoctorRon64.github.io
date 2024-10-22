@@ -1,12 +1,16 @@
-﻿/* Navbar Styles */
+﻿$background-color-index: #42261b;
+$intro-text: #fff6e7;
+$intro-text-p: rgb(248, 214, 154);
+
+/* Navbar Styles */
 .homebody {
-  background-color: #282c34;
+  background-color: $background-color-index;
 }
 
 /* Home Section Styles */
 .home {
   padding: 100px 0;
-  background-color: #282c34;
+  background-color: $background-color-index;
   text-align: center;
 }
 
@@ -32,7 +36,7 @@
 }
 
 .intro-text {
-  color: #e9f4ff;
+  color: $intro-text;
   text-align: center;
 }
 
@@ -51,5 +55,5 @@
 .intro-text p {
   font-family: 'Questrial', sans-serif;
   font-size: 18px;
-  color: #abb2bf;
+  color: $intro-text-p;
 }
