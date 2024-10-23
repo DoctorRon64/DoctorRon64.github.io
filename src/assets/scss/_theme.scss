@@ -1,0 +1,31 @@
+//backgrounds
+$background-color: purple;
+$secundary-background-color: #f700ff;
+
+//navbar
+$navbar-background-color: green;
+$dropdown-background-color: #30df10;
+
+//text
+$text-color: #00aeff;
+$hover-text-color: #3700ff;
+$secondary-text-color: rgb(90, 32, 68); // Title text color
+$link-color: #ffae00;
+//$text-color: #fff6e7;
+//$hover-text-color: #fffffff;
+//$secondary-text-color: rgb(248, 214, 154);
+
+$border-color: #da7e59;
+$hover-bg-color: #ff966d7e;
+$hover-background: #5e382a;
+$hover-border-color: #ff966c81;
+
+//text
+$text-shadow-color:rgb(0,0,0,0.5);
+$primary-color: #8e523a;
+
+//fonts
+@import "fonts";
+$font-family-primary: 'Montserrat', sans-serif;
+$font-family-secondary: 'Outfit', sans-serif;
+$font-size-large: 25px;

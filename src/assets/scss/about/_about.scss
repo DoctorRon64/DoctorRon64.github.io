@@ -1,7 +1,4 @@
-$primary-color: rgb(248, 214, 154);
-$text-color: #fff6e7;
-$background-color: #42261b;
-$backdrop-color: #361d13;
+@import "../theme";
 
 .aboutbody {
     font-family: 'Arial', sans-serif;
@@ -12,7 +9,7 @@ $backdrop-color: #361d13;
 }
 
 .aboutheader {
-    background-color: $backdrop-color; /* Dark background for the navbar */
+    background-color: $secundary-background-color; /* Dark background for the navbar */
     color: $text-color; /* White text */
 }
 
@@ -20,7 +17,7 @@ $backdrop-color: #361d13;
     max-width: 800px; /* Center content */
     margin: 40px auto; /* Center horizontally and add top margin */
     padding: 20px;
-    background-color: $backdrop-color; /* White background for the content area */
+    background-color: $secundary-background-color; /* White background for the content area */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     color: $text-color;
@@ -45,13 +42,13 @@ $backdrop-color: #361d13;
 .content-section h2 {
     font-size: 2em; /* Section heading size */
     margin-top: 20px; /* Space above section heading */
-    color: $primary-color; /* Highlight color */
+    color: $secondary-text-color; /* Highlight color */
 }
 
 .quote-section {
     padding: 10px;
     background-color: $background-color; /* Light gray background for the quote */
-    border-left: 4px solid $primary-color; /* Left border for emphasis */
+    border-left: 4px solid $secondary-text-color; /* Left border for emphasis */
 }
 
 blockquote {

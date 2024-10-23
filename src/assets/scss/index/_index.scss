@@ -1,16 +1,13 @@
-﻿$background-color-index: #42261b;
-$intro-text: #fff6e7;
-$intro-text-p: rgb(248, 214, 154);
+﻿@import "../theme";
 
-/* Navbar Styles */
 .homebody {
-  background-color: $background-color-index;
+  background-color: $background-color;
 }
 
 /* Home Section Styles */
 .home {
   padding: 100px 0;
-  background-color: $background-color-index;
+  background-color: $background-color;
   text-align: center;
 }
 
@@ -36,7 +33,7 @@ $intro-text-p: rgb(248, 214, 154);
 }
 
 .intro-text {
-  color: $intro-text;
+  color: $text-color;
   text-align: center;
 }
 
@@ -55,5 +52,5 @@ $intro-text-p: rgb(248, 214, 154);
 .intro-text p {
   font-family: 'Questrial', sans-serif;
   font-size: 18px;
-  color: $intro-text-p;
+  color: $secondary-text-color;
 }

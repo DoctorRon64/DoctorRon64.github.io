@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "express": "^4.21.1",
     "gulp-cli": "^3.0.0",
     "pump": "^3.0.0"
   },
