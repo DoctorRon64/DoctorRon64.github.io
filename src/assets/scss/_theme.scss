@@ -1,0 +1,25 @@
+// Backgrounds
+$background-color: #161920;
+$secondary-background-color: #1f232e;
+
+// Navbar
+$navbar-background-color: #000000;
+$dropdown-background-color: #111111;
+
+// Text Colors
+$text-color: #d8faff;
+$hover-text-color: #ffffff;
+$secondary-text-color: #89dae3;
+$link-color: #0c8fea;
+
+// Templates
+$template-background-color: #292e3b;
+$template-border-color: #292e3b;
+$template-hover-background-color: #4c5963;
+$template-hover-border-color: #4c5963;
+
+// Fonts
+@import "fonts";
+$font-family-primary: 'Montserrat', sans-serif;
+$font-family-secondary: 'Outfit', sans-serif;
+$font-size-large: 25px;

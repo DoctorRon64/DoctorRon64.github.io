@@ -1,17 +1,13 @@
-﻿// Define variables for easy customization
-$primary-color: rgb(68, 77, 95); // Background color for items
-$secondary-color: #abb2bf; // Text color
-$hover-bg-color: #596275; // Hover background color
-$hover-border-color: #4c5362; // Hover border color
-$border-color: #30353f; // Default border color
-$title-color: white; // Title color on hover
-$text-shadow-color: rgba(0, 0, 0, 0.3); // Text shadow color for titles
-$font-family: 'Montserrat', sans-serif; // Font family for text
-$font-size-title: 1.4em; // Font size for titles
-$font-size-title-mobile: 1.2em; // Font size for titles on mobile
-$font-size-text: 1em; // Font size for text
-$font-size-text-mobile: 0.85em; // Font size for text on mobile
-$link-color-text: #770fff; // Link text color
+﻿@import "../theme";
+
+ $font-size-title: 1.4em; // Font size for titles
+ $font-size-title-mobile: 1.2em; // Font size for titles on mobile
+ $font-size-text: 1em; // Font size for text
+ $font-size-text-mobile: 0.85em; // Font size for text on mobile
+
+.labody{
+  background-color: $background-color;
+}
 
 .overview-grid-container {
   display: grid;
@@ -24,12 +20,12 @@ $link-color-text: #770fff; // Link text color
 }
 
 .overview-item {
-  background-color: $primary-color;
-  color: $secondary-color;
+  background-color: $template-background-color;
+  color: $text-color;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 5px solid $border-color;
+  border: 5px solid $template-border-color;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,11 +40,11 @@ $link-color-text: #770fff; // Link text color
 .overview-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  border: 5px solid $hover-border-color;
-  background-color: $hover-bg-color;
+  border: 5px solid $template-hover-border-color;
+  background-color: $template-hover-background-color;
 
   .overview-title h1 {
-    color: $title-color;
+    color: $secondary-text-color;
   }
 }
 
@@ -69,11 +65,11 @@ $link-color-text: #770fff; // Link text color
 
 /* Title styling */
 .overview-title h1 {
-  text-shadow: 1px 1px 1px $text-shadow-color;
+  text-shadow: 1px 1px 1px rgb(0,0,0,0.5);
   font-size: $font-size-title;
   font-weight: 700;
   margin-bottom: 15px;
-  font-family: $font-family;
+  font-family: $font-family-primary;
   line-height: 1.4;
 }
 
@@ -105,12 +101,12 @@ $link-color-text: #770fff; // Link text color
 /* Text and description styling */
 .overview-description {
   transition: opacity 0.3s ease, max-height 0.3s ease;
-  font-family: $font-family;
+  font-family: $font-family-primary;
 }
 
 .overview-text {
   text-align: left;
-  font-family: $font-family;
+  font-family: $font-family-primary;
   line-height: 1.6;
   font-size: $font-size-text;
   margin-top: 10px;
@@ -130,12 +126,12 @@ $link-color-text: #770fff; // Link text color
 
 /* Add link styling */
 .overview-text a {
-  color: $link-color-text;
+  color: $link-color;
   text-decoration: none;
   transition: color 0.3s ease;
 
   &:hover {
-    color: darken($link-color-text, 10%);
+    color: darken($link-color, 10%);
     text-decoration: underline;
   }
 }

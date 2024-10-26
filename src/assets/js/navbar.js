@@ -23,7 +23,6 @@ function createNavbar() {
                 { href: '/uc.html', text: 'Music' }
             ]
         },
-        { href: '/contact.html', text: 'Contact' }
     ];
 
     // Create <li> elements with <a> links and append them to the <ul>

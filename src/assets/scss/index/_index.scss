@@ -1,12 +1,13 @@
-﻿/* Navbar Styles */
+﻿@import "../theme";
+
 .homebody {
-  background-color: #282c34;
+  background-color: $background-color;
 }
 
 /* Home Section Styles */
 .home {
   padding: 100px 0;
-  background-color: #282c34;
+  background-color: $background-color;
   text-align: center;
 }
 
@@ -32,7 +33,7 @@
 }
 
 .intro-text {
-  color: #e9f4ff;
+  color: $text-color;
   text-align: center;
 }
 
@@ -51,5 +52,5 @@
 .intro-text p {
   font-family: 'Questrial', sans-serif;
   font-size: 18px;
-  color: #abb2bf;
+  color: $secondary-text-color;
 }
