@@ -19,8 +19,8 @@ function createNavbar() {
             dropdown: [
                 { href: '/overview.html', text: 'Overview' },
                 { href: '/games.html', text: 'Games' },
-                { href: '/uc.html', text: 'Art' },
-                { href: '/uc.html', text: 'Music' }
+                { href: '/music.html', text: 'Music' },
+                { href: '/uc.html', text: 'Art' }
             ]
         },
     ];
