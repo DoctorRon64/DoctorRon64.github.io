@@ -45,5 +45,15 @@
             "Electronic"
         ],
         "audio_file_name": "Insane Remix First draft.mp3"
+    },
+    {
+        "title": "Electro Golem Battle Theme",
+        "description": "I made this song for one of my games called:<br>'doctor ron's showdown'!",
+        "genre": [
+            "Big Band",
+            "Jazz",
+            "Swing"
+        ],
+        "audio_file_name": "Electro Golem Song.mp3"
     }
 ]
