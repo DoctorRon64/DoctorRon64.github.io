@@ -56,10 +56,10 @@ function createNavbar() {
             // Show dropdown on hover
             li.addEventListener('mouseenter', () => {
                 dropdown.style.display = 'block'; // Show dropdown
-            });
-            li.addEventListener('mouseleave', () => {
+              });
+              li.addEventListener('mouseleave', () => {
                 dropdown.style.display = 'none'; // Hide dropdown
-            });
+              });
         } else {
             const a = document.createElement('a');
             a.href = item.href;

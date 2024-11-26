@@ -1,11 +1,10 @@
-﻿@import "theme";
-
-.navbar {
+﻿.navbar {
   background-color: $navbar-background-color;
   backdrop-filter: blur(10px);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   padding: 15px 0;
   color: $text-color;
+  z-index: 1000;
 
   & .container {
     display: flex;
@@ -21,12 +20,6 @@
     width: 100%;
     margin: 0;
     position: relative; // Position for dropdown
-
-    @media (max-width: 600px) {
-      & li {
-        height: 20px;        
-      }
-    }
   }
 
   & li {
@@ -60,27 +53,25 @@
 
   & .dropdown {
     display: none; // Hide dropdown initially
-    position: absolute; // Position the dropdown
-    top: 100%; // Position below the parent
+    position: absolute; // Position the dropdown relative to the parent <li>
+    top: 100%; // Position the dropdown directly below the parent
     left: 0;
-    padding:0;
-    background-color: $dropdown-background-color; // Match navbar background
-    backdrop-filter: blur(10px); // Optional border
-    z-index: 999999; // Ensure it appears above other content
+    padding: 0;
+    background-color: $dropdown-background-color;
+    backdrop-filter: blur(10px); // Optional blur effect
+  }
 
-    li {
-      width: 100%; // Full width of dropdown
-    }
+  & .dropdown li {
+    width: 100%; // Full width of dropdown
+  }
 
+  & .dropdown a {
+    padding: 10px 30px;
+  }
 
-    & a {
-      padding: 10px 30px; // Padding for dropdown items
-    }
-
-    & a:hover {
-      background-color: transparent; // Change background on hover
-      color: $hover-text-color; // Change text color on hover
-    }
+  & .dropdown a:hover {
+    background-color: transparent;
+    color: $hover-text-color;
   }
 
   & .logo {
@@ -88,4 +79,3 @@
     font-weight: bold;
   }
 }
-
