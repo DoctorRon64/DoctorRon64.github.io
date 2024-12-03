@@ -1,0 +1,59 @@
+[
+    {
+        "title": "Franka Funk",
+        "description": "A song I am going to put in my funk album",
+        "genre": [
+            "Funk",
+            "Soul",
+            "Electronic"
+        ],
+        "audio_file_name": "franka_funk.mp3"
+    },
+    {
+        "title": "The Rerun Song",
+        "description": "An amazing jazz, bigband and swing instrumental for game mod I am doing!",
+        "genre": [
+            "Jazz",
+            "Swing",
+            "Big Band"
+        ],
+        "audio_file_name": "Rerons Instrumental new Wip including 193bpm with 36tuned.mp3"
+    },
+    {
+        "title": "Mii Battle Theme",
+        "description": "Something I made for a friend for his game.",
+        "genre": [
+            "Orchestrial"
+        ],
+        "audio_file_name": "mii_battle_song.mp3"
+    },
+    {
+        "title": "Wearhouse Song",
+        "description": "A little melody I made for my school project: <br> 'Coding a Behaviour Tree'",
+        "genre": [
+            "Funk",
+            "Electronic"
+        ],
+        "audio_file_name": "wearhouse_song.wav"
+    },
+    {
+        "title": "Insane Remix",
+        "description": "A Hazbin Hotel Remix I made with someone I know online.",
+        "genre": [
+            "Big Band",
+            "Jazz",
+            "Electronic"
+        ],
+        "audio_file_name": "Insane Remix First draft.mp3"
+    },
+    {
+        "title": "Electro Golem Battle Theme",
+        "description": "I made this song for one of my games called:<br>'doctor ron's showdown'!",
+        "genre": [
+            "Big Band",
+            "Jazz",
+            "Swing"
+        ],
+        "audio_file_name": "Electro Golem Song.mp3"
+    }
+]
