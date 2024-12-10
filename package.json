@@ -6,7 +6,7 @@
   "author": "5t3ph",
   "scripts": {
     "build:sass": "sass --no-source-map src/assets/scss:docs/assets/css",
-    "copy:assets": "copyfiles -u 1 './src/assets/**/*' '!src/assets/scss/**' docs",
+    "copy:assets": "copyfiles -u 1 './src/assets/**/*' '!src/assets/scss/*.*' docs",
     "copy:html": "copyfiles -u 2 ./src/html/*.html docs",
     "copy:json": "copyfiles -u 1 ./src/json/* docs",
     "copy:txt": "copyfiles -u 2 ./src/txt/* docs",

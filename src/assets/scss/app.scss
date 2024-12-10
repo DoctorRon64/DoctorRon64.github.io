@@ -1,17 +1,16 @@
-//@import "node_modules/bootstrap/scss/bootstrap";
+@forward "./index/index";
 
 //index
-@import "index/index";
-@import "index/skills";
+// @forward "index/skills";
 
-//diffrent pages
-@import "overview/overview";
-@import "music/music";
-@import "uc/uc";
-@import "about/about";
+// //diffrent pages
+// @forward "overview/overview";
+// @forward "music/music";
+//@forward "uc/uc";
+// @forward "about/about";
 
-//all
-@import "fonts";
-@import "navbar";
-@import "socialicons";
-@import "rainbowtext";
+// //all
+// @forward "fonts";
+// @forward "navbar";
+// @forward "socialicons";
+// @forward "rainbowtext";
