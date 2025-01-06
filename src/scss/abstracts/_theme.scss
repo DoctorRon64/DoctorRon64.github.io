@@ -1,0 +1,32 @@
+// Backgrounds
+$background-color: #0D1117;
+$secondary-background-color: #151B23;
+
+// Navbar
+$navbar-background-color: #010409;
+$dropdown-background-color: #010409;
+
+// Text Colors
+$text-color: #d8faff;
+$hover-text-color: #ffffff;
+$secondary-text-color: #89dae3;
+$link-color: #0c8fea;
+
+// Templates
+$template-background-color: #292e3b;
+$template-border-color: #292e3b;
+$template-hover-background-color: #4c5963;
+$template-hover-border-color: #4c5963;
+
+// Fonts
+@use "./fonts";
+$font-family-primary: 'Montserrat', sans-serif;
+$font-family-secondary: 'Outfit', sans-serif;
+$font-family-thridly: 'Questrial', sans-serif;
+$font-size-large: 25px;
+
+//Fontsizes
+$font-size-title: 1.4em; // Font size for titles
+$font-size-title-mobile: 1.2em; // Font size for titles on mobile
+$font-size-text: 1em; // Font size for text
+$font-size-text-mobile: 0.85em; // Font size for text on mobile

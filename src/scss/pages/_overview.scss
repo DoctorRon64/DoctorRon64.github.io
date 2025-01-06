@@ -1,0 +1,154 @@
+﻿@use "../abstracts/theme" as tm;
+
+.labody{
+  background-color: tm.$background-color;
+}
+
+.overview-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); /* Responsive grid */
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.overview-item {
+  background-color: tm.$template-background-color;
+  color: tm.$text-color;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 5px solid tm.$template-border-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border: 5px solid tm.$template-hover-border-color;
+  background-color: tm.$template-hover-background-color;
+
+  .overview-title h1 {
+    color: tm.$secondary-text-color;
+  }
+}
+
+/* Title and image are shown by default */
+.overview-description,
+.overview-text {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.overview-item:hover .overview-description,
+.overview-item:hover .overview-text {
+  opacity: 1;
+  max-height: 500px;
+}
+
+/* Title styling */
+.overview-title h1 {
+  text-shadow: 1px 1px 1px rgb(0,0,0,0.5);
+  font-size: tm.$font-size-title;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-family: tm.$font-family-primary;
+  line-height: 1.4;
+}
+
+/* Image container */
+.overview-img {
+  position: relative;
+  width: 100%;
+  padding-top: 72.22%; /* Maintain aspect ratio */
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.overview-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.overview-img:hover img {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Text and description styling */
+.overview-description {
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  font-family: tm.$font-family-primary;
+}
+
+.overview-text {
+  text-align: left;
+  font-family: tm.$font-family-primary;
+  line-height: 1.6;
+  font-size: tm.$font-size-text;
+  margin-top: 10px;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.overview-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.overview-text li {
+  margin-bottom: 6px;
+}
+
+/* Add link styling */
+.overview-text a {
+  color: tm.$link-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken(tm.$link-color, 10%);
+    text-decoration: underline;
+  }
+}
+
+/* Ensure responsive behavior on smaller screens */
+@media (max-width: 768px) {
+  .overview-grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .overview-title h1 {
+    font-size: tm.$font-size-title-mobile;
+  }
+
+  .overview-img {
+    margin-bottom: 10px;
+  }
+
+  .overview-text p,
+  .overview-text ul {
+    font-size: tm.$font-size-text-mobile;
+  }
+}
