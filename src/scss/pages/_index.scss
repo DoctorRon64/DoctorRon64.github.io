@@ -35,22 +35,26 @@
 .intro-text {
   color: tm.$text-color;
   text-align: center;
+  line-height: 27px;
 }
 
 .intro-text h3 {
   font-family: tm.$font-family-secondary, sans-serif;
   font-weight: 200;
+  margin-bottom: calc(0.5rem + 6px);
+  font-size: 28px;
 }
 
 .intro-text h2 {
   font-family: tm.$font-family-primary, sans-serif;
   font-weight: 500;
   font-size: 46px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  line-height: 55px;
 }
 
 .intro-text p {
   font-family: tm.$font-family-thridly, sans-serif;
-  font-size: 18px;
+  font-size: 18.7px;
   color: tm.$secondary-text-color;
 }

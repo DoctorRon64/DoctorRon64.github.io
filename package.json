@@ -24,6 +24,7 @@
     "postbuild": "postcss docs/assets/css/*.css -u autoprefixer -r --no-map"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "browser-sync": "^2.27.7",
     "copyfiles": "^2.4.1",
     "onchange": "^7.1.0",

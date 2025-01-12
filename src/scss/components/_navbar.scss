@@ -7,11 +7,21 @@
   padding: 15px 0;
   color: tm.$text-color;
   z-index: 1000;
+  position: relative;
 
   & .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1300px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: 576px) {
+      .container-sm, .container {
+        max-width: 540px;
+      }
+    }
   }
 
   & ul {
