@@ -8,7 +8,6 @@
 .home {
   padding: 100px 0;
   background-color: tm.$background-color;
-  text-align: center;
 }
 
 .home .container {
@@ -18,8 +17,7 @@
 
 .home .intro {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
 }
 
@@ -28,29 +26,29 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .intro-text {
   color: tm.$text-color;
-  text-align: center;
   line-height: 27px;
 }
 
-.intro-text h3 {
+.intro-text .subtext {
   font-family: tm.$font-family-secondary, sans-serif;
   font-weight: 200;
   margin-bottom: calc(0.5rem + 6px);
-  font-size: 28px;
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 
-.intro-text h2 {
+.intro-text .titletext {
   font-family: tm.$font-family-primary, sans-serif;
   font-weight: 500;
-  font-size: 46px;
+  font-size: 60px;
   margin-bottom: 15px;
-  line-height: 55px;
+  line-height: 70px;
 }
 
 .intro-text p {
