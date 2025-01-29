@@ -1,79 +1,70 @@
-function createNavbar() {
-    // Create <nav> element with class 'navbar'
-    const nav = document.createElement('nav');
-    nav.className = 'navbar';
+class Navbar {
+    constructor(menuItems) {
+        this.menuItems = menuItems;
+    }
 
-    // Create <div> element with class 'container'
-    const container = document.createElement('div');
-    container.className = 'container';
+    async fetchSvg(url) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            return await response.text();
+        } catch (error) {
+            console.error(`Error loading SVG: ${url}`, error);
+            return ''; // Return empty if SVG fails to load
+        }
+    }
 
-    // Create <ul> element
-    const ul = document.createElement('ul');
+    async createNav() {
+        // Create <nav> element
+        const nav = document.createElement('nav');
+        nav.className = 'navbar';
 
-    // Define the list items and links
-    const navItems = [
-        { href: '/about.html', text: 'About' },
-        { href: '/index.html', text: 'Home' },
-        {
-            text: 'Projects',
-            dropdown: [
-                { href: '/overview.html', text: 'Overview' },
-                { href: '/games.html', text: 'Games' },
-                { href: '/music.html', text: 'Music' },
-                { href: '/uc.html', text: 'Art' }
-            ]
-        },
-    ];
+        // Create <ul> element
+        const ul = document.createElement('ul');
+        ul.className = 'navbar-nav';
 
-    // Create <li> elements with <a> links and append them to the <ul>
-    navItems.forEach(item => {
-        const li = document.createElement('li');
+        // Loop through menuItems and generate nav items
+        for (const item of this.menuItems) {
+            const li = document.createElement('li');
+            li.className = 'nav-item';
 
-        if (item.dropdown) {
-            // Create main link for dropdown
-            const a = document.createElement('a');
-            a.textContent = item.text;
-            a.href = '#'; // Prevent navigation
-
-            // Create dropdown
-            const dropdown = document.createElement('ul');
-            dropdown.className = 'dropdown'; // Class for styling
-
-            // Create dropdown items
-            item.dropdown.forEach(dropItem => {
-                const dropLi = document.createElement('li');
-                const dropA = document.createElement('a');
-                dropA.href = dropItem.href;
-                dropA.textContent = dropItem.text;
-                dropLi.appendChild(dropA);
-                dropdown.appendChild(dropLi);
-            });
-
-            // Append the dropdown to the main list item
-            li.appendChild(a);
-            li.appendChild(dropdown);
-
-            // Show dropdown on hover
-            li.addEventListener('mouseenter', () => {
-                dropdown.style.display = 'block'; // Show dropdown
-              });
-              li.addEventListener('mouseleave', () => {
-                dropdown.style.display = 'none'; // Hide dropdown
-              });
-        } else {
             const a = document.createElement('a');
             a.href = item.href;
-            a.textContent = item.text;
+            a.className = 'nav-link';
+
+            // Fetch and embed inline SVG
+            const svgContainer = document.createElement('span');
+            svgContainer.className = 'icon';
+            svgContainer.innerHTML = await this.fetchSvg(item.icon);
+
+            // Create span for text
+            const span = document.createElement('span');
+            span.className = 'link-text';
+            span.textContent = item.text;
+
+            // Append elements
+            a.appendChild(svgContainer);
+            a.appendChild(span);
             li.appendChild(a);
+            ul.appendChild(li);
         }
 
-        ul.appendChild(li);
-    });
-
-    container.appendChild(ul);
-    nav.appendChild(container);
-    document.body.appendChild(nav);
+        // Append everything to the navbar
+        nav.appendChild(ul);
+        document.body.appendChild(nav);
+    }
 }
 
-// Call the function to create the navbar
-createNavbar();
+// Navbar items
+const menuItems = [
+    { href: '/index.html', text: 'Home', icon: 'assets/img/icons/tabler/tabler--home.svg' },
+    { href: '/about.html', text: 'About', icon: 'assets/img/icons/tabler/tabler--info-circle.svg' },
+    { href: '/overview.html', text: 'Overview', icon: 'assets/img/icons/tabler/tabler--clipboard-list.svg' },
+    { href: '/music.html', text: 'Music', icon: 'assets/img/icons/tabler/tabler--music.svg' },
+    { href: '/games.html', text: 'Games', icon: 'assets/img/icons/tabler/tabler--device-gamepad.svg' },
+    { href: '/uc.html', text: 'Art', icon: 'assets/img/icons/tabler/tabler--pencil-code.svg' }
+];
+
+// Instantiate and create navbar
+const navbar = new Navbar(menuItems);
+navbar.createNav();

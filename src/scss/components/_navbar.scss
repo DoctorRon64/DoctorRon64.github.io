@@ -1,93 +1,121 @@
 ﻿@use "../abstracts/theme" as tm;
 
 .navbar {
+  position: fixed;
   background-color: tm.$navbar-background-color;
-  backdrop-filter: blur(10px);
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-  padding: 15px 0;
-  color: tm.$text-color;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
   z-index: 1000;
-  position: relative;
+}
 
-  & .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1300px;
-    margin-right: auto;
-    margin-left: auto;
+// Navigation List
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
 
-    @media (min-width: 576px) {
-      .container-sm, .container {
-        max-width: 540px;
-      }
+// Navigation Items
+.nav-item {
+  width: 100%;
+}
+
+// Navigation Links
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  padding: 0 1rem;
+  color: tm.$navbar-color-icons;
+  text-decoration: none;
+  font-family: tm.$font-family-primary;
+  font-size: tm.$font-size-text;
+  transition: background 0.3s ease-in-out, color 0.2s ease-in-out;
+
+  &:hover {
+    color: tm.$navbar-link-hover-color;
+    background: tm.$secondary-background-color;
+  }
+}
+
+// Link Text (Hidden on Default)
+.link-text {
+  display: none;
+  margin-left: 1rem;
+  color: tm.$text-color;
+  font-family: tm.$font-family-secondary;
+  font-size: tm.$font-size-title;
+  white-space: nowrap;
+}
+
+// Icon Styling
+.nav-link .icon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: tm.$navbar-color-icons;
+    //transition: fill 0.2s ease-in-out;
+
+    &:hover {
+      fill: tm.$navbar-link-hover-color;
     }
   }
+}
 
-  & ul {
-    list-style: none;
+// 🌐 **Responsive Design**
+@media only screen and (max-width: 760px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+    padding: 0 1rem;
+  }
+
+  .link-text {
+    display: none;
+  }
+
+  main {
     margin: 0;
-    position: relative; // Position for dropdown
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
   }
 
-  & li {
-    height: 50px;
-    display: inline-flex;
-    align-items: center;
-    position: relative; // Position for dropdown
-  }
+  .navbar:hover {
+    width: 12rem;
+    transition: width 0.3s ease-in-out;
 
-  & li:first-child {
-    margin-right: auto;
-  }
-
-  & a {
-    padding: 0 30px;
-    color: tm.$text-color;
-    font-family: tm.$font-family-secondary;
-    text-decoration: none;
-    font-size: tm.$font-size-large;
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-
-  & a:hover {
-    color: tm.$hover-text-color;
-    background-color: tm.$navbar-background-color;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border-radius: 2%;
-  }
-
-  & .dropdown {
-    display: none; // Hide dropdown initially
-    position: absolute; // Position the dropdown relative to the parent <li>
-    top: 100%; // Position the dropdown directly below the parent
-    left: 0;
-    padding: 0;
-    background-color: tm.$dropdown-background-color;
-    backdrop-filter: blur(10px); // Optional blur effect
-  }
-
-  & .dropdown li {
-    width: 100%; // Full width of dropdown
-  }
-
-  & .dropdown a {
-    padding: 10px 30px;
-  }
-
-  & .dropdown a:hover {
-    background-color: transparent;
-    color: tm.$hover-text-color;
-  }
-
-  & .logo {
-    font-size: 22px;
-    font-weight: bold;
+    & .link-text {
+      display: inline;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
   }
 }
