@@ -3,7 +3,7 @@
 .navbar {
   position: fixed;
   background-color: tm.$navbar-background-color;
-  transition: width 0.3s ease-in-out;
+  transition: width 0.15s ease-in-out;
   overflow: hidden;
   z-index: 1000;
 }
@@ -34,7 +34,7 @@
   text-decoration: none;
   font-family: tm.$font-family-primary;
   font-size: tm.$font-size-text;
-  transition: background 0.3s ease-in-out, color 0.2s ease-in-out;
+  transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
 
   &:hover {
     color: tm.$navbar-link-hover-color;
@@ -110,12 +110,12 @@
 
   .navbar:hover {
     width: 12rem;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.15s ease-in-out;
 
     & .link-text {
       display: inline;
       opacity: 1;
-      transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.15s ease-in-out;
     }
   }
 }

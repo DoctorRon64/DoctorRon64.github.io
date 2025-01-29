@@ -14,6 +14,10 @@
     color: tm.$text-color; /* White text */
 }
 
+.AboutIcon {
+    transform: translateY(5px);
+}
+
 .about-container {
     max-width: 800px; /* Center content */
     margin: 40px auto; /* Center horizontally and add top margin */
@@ -25,12 +29,15 @@
 }
 
 .about-container h1 {
+    font-family: tm.$font-family-secondary;
     font-size: 2.5em; /* Large heading size */
     color: tm.$text-color; /* Dark color for the heading */
     margin-bottom: 20px; /* Space below heading */
+    margin-top: 20px;
 }
 
 .profile-section {
+    font-family: tm.$font-family-thridly;
     display: flex;
     align-items: center;
 }
@@ -40,16 +47,21 @@
     margin-right: 20px; /* Space between image and text */
 }
 
+.content-section {
+    font-family: tm.$font-family-thridly;
+}
+
 .content-section h2 {
+    font-family: tm.$font-family-secondary;
     font-size: 2em; /* Section heading size */
     margin-top: 20px; /* Space above section heading */
     margin-bottom: .5rem;
     color: tm.$secondary-text-color; /* Highlight color */
-    font-weight: 500;
     line-height: 1.2;
 }
 
 .content-section p {
+    font-family: tm.$font-family-thridly;
     margin-top: 0;
     margin-bottom: 1rem;
 }
