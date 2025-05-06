@@ -7,6 +7,11 @@
     <title>Philip Portfolio</title>
     <link rel="icon" href="/assets/img/websiteicon.gif" type="image/x-icon" />
     <link rel="stylesheet" href="/assets/css/app.css">
+    <script>
+        if (sessionStorage.getItem("access_granted") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 
 <body class="homebody">
@@ -35,10 +40,13 @@
                         </a>
                     </p>
                 </div>
-                <script src="/assets/js/contact.js" footerclass="false"></script>
+                <div class="indexContactIcons">
+                    <script src="/assets/js/contact.js" footerclass="false"></script>
+                </div>
             </div>
         </div>
     </section>
-    
+
 </body>
+
 </html>

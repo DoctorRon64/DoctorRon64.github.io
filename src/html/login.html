@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <script>
+    // 🌀 Obfuscated password check
+    function checkPassword() {
+      const _0xhash='4a7f3832ca40640b1d02e1d7f183582f6e9382158706a8f68aef67238510e75f'; // hash of "mypassword"
+      const input = document.getElementById('pw').value;
+      const userHash = CryptoJS.SHA256(input).toString(CryptoJS.enc.Hex);
+      if (userHash === _0xhash) {
+        sessionStorage.setItem("access_granted", "true");
+        window.location.href = "index.html";
+      } else {
+        alert("Incorrect password.");
+      }
+    }
+  </script>
+</head>
+<body class="loginbody">
+  <div class="containerlogin">
+    <h2>Welcome Visitor</h2>
+    <p>Please enter password to continue</p>
+    <br>
+    <input type="password" id="pw" class="input-field" placeholder="Password" required>
+    <button class="button" onclick="checkPassword()">Login</button>
+    <div class="footer">&copy; 2024 Philipdeveloper</div>
+  </div>
+</body>
+</html>

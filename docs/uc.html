@@ -7,6 +7,11 @@
     <title>Under Construction</title>
     <link rel="icon" href="/assets/img/alarm.gif" type="image/x-icon" />
     <link rel="stylesheet" href="/assets/css/app.css">
+    <script>
+        if (sessionStorage.getItem("access_granted") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 
 <body class="uc-body">

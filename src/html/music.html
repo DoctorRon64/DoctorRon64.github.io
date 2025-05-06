@@ -7,6 +7,11 @@
     <title>Music Projects</title>
     <link rel="icon" href="/assets/img/websiteicon.gif" type="image/x-icon" />
     <link rel="stylesheet" href="/assets/css/app.css">
+    <script>
+      if (sessionStorage.getItem("access_granted") !== "true") {
+          window.location.href = "login.html";
+      }
+  </script>
 </head>
 
 <body class="labody">

@@ -57,3 +57,15 @@
   font-size: 18.7px;
   color: tm.$secondary-text-color;
 }
+
+
+@media only screen and (max-width: 760px) {
+  .intro-text {
+    text-align: center;
+  } 
+
+  .profile-img {
+    justify-content: center;
+  }
+
+}

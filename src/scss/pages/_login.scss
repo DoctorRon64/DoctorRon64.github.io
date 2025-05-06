@@ -1,0 +1,59 @@
+@use "../abstracts/theme" as tm;
+
+.containerlogin {
+    background-color: tm.$secondary-background-color;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+  }
+
+  .button {
+    width: 100%;
+    background: tm.$secondary-background-color;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .button:hover {
+    background: #5a4bcf;
+  }
+
+  .footer {
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.8;
+  }
+
+.loginbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: tm.$background-color;
+    //linear-gradient(135deg, #667eea, #764ba2)
+    color: #fff;
+  }
