@@ -21,12 +21,11 @@
   </script>
 </head>
 <body class="loginbody">
-  <div class="containerlogin">
-    <h2>Welcome Visitor</h2>
-    <p>Please enter password to continue</p>
-    <br>
-    <input type="password" id="pw" class="input-field" placeholder="Password" required>
-    <button class="button" onclick="checkPassword()">Login</button>
+  <div class="login-container">
+    <h2>🔒 Enter Password</h2>
+    <input type="password" id="pw" placeholder="Enter password">
+    <button onclick="checkPassword()">Login</button>
+    <p class="error" id="error-msg"></p>
     <div class="footer">&copy; 2024 Philipdeveloper</div>
   </div>
 </body>
