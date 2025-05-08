@@ -18,6 +18,10 @@
         alert("Incorrect password.");
       }
     }
+
+    if (sessionStorage.getItem("access_granted") == "true") {
+        window.location.href = "index.html";
+    }
   </script>
 </head>
 <body class="loginbody">
