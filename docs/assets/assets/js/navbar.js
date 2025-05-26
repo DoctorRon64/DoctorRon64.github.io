@@ -59,11 +59,10 @@ class Navbar {
 const menuItems = [
     { href: '/index.html', text: 'Home', icon: 'assets/img/icons/tabler/tabler--home.svg' },
     { href: '/about.html', text: 'About', icon: 'assets/img/icons/tabler/tabler--info-circle.svg' },
-    { href: '/uc.html', text: 'Skills', icon: 'assets/img/icons/tabler/tabler--tool.svg' },
     { href: '/overview.html', text: 'Overview', icon: 'assets/img/icons/tabler/tabler--clipboard-list.svg' },
     { href: '/music.html', text: 'Music', icon: 'assets/img/icons/tabler/tabler--music.svg' },
     { href: '/games.html', text: 'Games', icon: 'assets/img/icons/tabler/tabler--device-gamepad.svg' },
-    { href: '/uc.html', text: 'Art', icon: 'assets/img/icons/tabler/tabler--pencil-code.svg' }
+    { href: '/art.html', text: 'Art', icon: 'assets/img/icons/tabler/tabler--pencil-code.svg' }
 ];
 
 // Instantiate and create navbar

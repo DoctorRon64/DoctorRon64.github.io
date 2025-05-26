@@ -1,11 +1,23 @@
 ﻿@use "../abstracts/theme" as tm;
 
 .navbar {
+  left: 0;
+  right: 0;
   position: fixed;
   background-color: tm.$navbar-background-color;
   transition: width 0.15s ease-in-out;
   overflow: hidden;
   z-index: 1000;
+
+  // Scrollbar styling (moved here for clarity)
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
 }
 
 // Navigation List
@@ -17,11 +29,13 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
+  width: 100%; // Make sure ul fills navbar width
 }
 
 // Navigation Items
 .nav-item {
   width: 100%;
+  outline: 1px dashed limegreen;
 }
 
 // Navigation Links
@@ -61,43 +75,114 @@
   justify-content: center;
 
   svg {
-    width: 100%;
-    height: 100%;
+    width: 2rem;
+    height: 2rem;
+    display: block;
     fill: tm.$navbar-color-icons;
-    //transition: fill 0.2s ease-in-out;
+  }
 
-    &:hover {
-      fill: tm.$navbar-link-hover-color;
-    }
+  &:hover {
+    fill: tm.$navbar-link-hover-color;
   }
 }
 
-// 🌐 **Responsive Design**
 @media only screen and (max-width: 760px) {
   .navbar {
+    position: fixed;
     bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
     width: 100vw;
     height: 5rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 0 0.5rem;
+    scroll-behavior: smooth;
   }
 
   .navbar-nav {
     flex-direction: row;
+    width: max-content;
+    height: 100%; // Fix height so flex-items align properly
+  }
+
+  .nav-item {
+    flex: 0 0 auto;
+    width: auto; // Prevent stretching
+    height: 100%; // Make sure full height so flex aligns properly
   }
 
   .nav-link {
     justify-content: center;
-    padding: 0 1rem;
+    padding: 0 0.75rem;
+    min-width: 4rem;
+    height: 100%; // match nav-item height
   }
 
   .link-text {
     display: none;
   }
+}
 
-  main {
+@media only screen and (max-width: 600px) {
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto; // allow horizontal scroll
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 0 0.5rem;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+    }
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row; // horizontal items
+    width: max-content; // allow row to grow horizontally
+    height: 100%; // full height to align children properly
+    padding: 0;
     margin: 0;
+  }
+
+  .nav-item {
+    flex: 0 0 auto; // no shrinking, no growing
+    width: auto; // width fits content
+    height: 100%; // full height for vertical centering
+  }
+
+  .nav-link {
+    justify-content: center;
+    padding: 0 0.75rem;
+    min-width: 4rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .link-text {
+    display: none;
   }
 }
 
@@ -106,6 +191,11 @@
     top: 0;
     width: 5rem;
     height: 100vh;
+  }
+
+  .nav-item {
+    flex: 0 0 auto;
+    width: auto;
   }
 
   .navbar:hover {
