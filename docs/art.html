@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery</title>
+    <link rel="icon" href="/assets/img/websiteicon.gif" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/css/app.css">
+</head>
+
+<body class="artbody">
+    <script src="/assets/js/navbar.js"></script>
+
+    <div class="art-container">
+        <h1>Diffrent Art Projects</h1>
+        <div class="art-section">
+            <ul>
+                <li><button><img src="assets/img/sources/lowpoly-robot.png" alt="Lowpoly Robot"></button></li>
+                <li><button><img src="assets/img/sources/lowpoly-cars.png" alt="Lowpoly Cars"></button></li>
+                <li><button><img src="assets/img/sources/guns.gif" alt="Lowpoly Town"></button></li>
+                <li><button><img src="assets/img/sources/lowpoly-rig-spaceman.png" alt="Lowpoly Spaceman"></button></li>
+                <li><button><img src="assets/img/sources/lowpoly-spaceship.png" alt="Lowpoly Spaceship"></button></li>
+                <li><button><img src="assets/img/sources/lowpoly-human.png" alt="Lowpoly Human"></button></li>
+                <li><button><img src="assets/img/sources/lowpoly-town.png" alt="Lowpoly Town"></button></li>
+                <li><button><img src="assets/img/sources/UI_test2.png" alt="Lowpoly Town"></button></li>
+                <li><button><img src="assets/img/sources/electro-golem-fly.gif" alt="Lowpoly Town"></button></li>
+                <li><button><img src="assets/img/sources/drone.gif" alt="Lowpoly Town"></button></li>
+                <li><button><img src="assets/img/sources/electro-golem-walk.gif" alt="Lowpoly Town"></button></li>
+            </ul>
+        </div>
+
+        <!-- Modal popup -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeBtn = document.querySelector(".close");
+
+        document.querySelectorAll(".art-section button img").forEach(img => {
+            img.addEventListener("click", () => {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+            });
+        });
+
+        closeBtn.onclick = () => {
+            modal.style.display = "none";
+        };
+
+        window.onclick = (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+
+</html>
