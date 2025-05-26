@@ -21,11 +21,11 @@ async function createFooter(addSocialClass) {
     ul.className = 'social-icons';
 
     const socialLinks = [
-        { href: 'mailto:y2t1l3mt5@mozmail.com', title: 'Email me', svgSrc: '/assets/img/icons/social-icons/tabler--mail-plus.svg', alt: 'Email Icon', style: 'fill: white;' },
-        { href: 'https://github.com/DoctorRon64', title: 'GitHub', svgSrc: '/assets/img/icons/social-icons/tabler--brand-github.svg', alt: 'GitHub Icon', target: '_blank', style: 'fill: white;' },
-        { href: 'www.linkedin.com/in/gamedev-gamecomposer-84272130b', title: 'LinkedIn', svgSrc: '/assets/img/icons/social-icons/tabler--brand-linkedin.svg', alt: 'LinkedIn Icon', target: '_blank', style: 'fill: white;' },
-        { href: 'https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ', title: 'Spotify', svgSrc: '/assets/img/icons/social-icons/tabler--brand-spotify.svg', alt: 'Spotify Icon', target: '_blank', style: 'fill: white;' },
-        { href: 'https://doctor-ron.itch.io/', title: 'Itch.Io', svgSrc: '/assets/img/icons/social-icons/tabler--brand-itch.svg', alt: 'Itch.io Icon', target: '_blank', style: 'fill: white;' }
+        { href: 'mailto:y2t1l3mt5@mozmail.com', title: 'Email me', svgSrc: '/assets/img/icons/tabler/tabler--mail-plus.svg', alt: 'Email Icon', style: 'fill: white;' },
+        { href: 'https://github.com/DoctorRon64', title: 'GitHub', svgSrc: '/assets/img/icons/tabler/tabler--brand-github.svg', alt: 'GitHub Icon', target: '_blank', style: 'fill: white;' },
+        { href: 'www.linkedin.com/in/gamedev-gamecomposer-84272130b', title: 'LinkedIn', svgSrc: '/assets/img/icons/tabler/tabler--brand-linkedin.svg', alt: 'LinkedIn Icon', target: '_blank', style: 'fill: white;' },
+        { href: 'https://open.spotify.com/artist/6szCm5FAd4pBlQw6US2DPw?si=tF8kTzDnS-mFpSLxSeZKBQ', title: 'Spotify', svgSrc: '/assets/img/icons/tabler/tabler--brand-spotify.svg', alt: 'Spotify Icon', target: '_blank', style: 'fill: white;' },
+        { href: 'https://doctor-ron.itch.io/', title: 'Itch.Io', svgSrc: '/assets/img/icons/tabler/tabler--brand-itch.svg', alt: 'Itch.io Icon', target: '_blank', style: 'fill: white;' }
     ];
 
     // Loop through socialLinks and fetch SVG content
@@ -51,7 +51,7 @@ async function createFooter(addSocialClass) {
             svg.setAttribute('width', link.size || 70);  // Default to 40px if no size is provided
             svg.setAttribute('height', link.size || 70); // Default to 40px if no size is provided
         }
-        
+
         // Apply any custom styles
         if (link.style) {
             svgContainer.style.cssText = link.style;
