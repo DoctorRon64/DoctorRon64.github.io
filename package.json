@@ -15,7 +15,7 @@
     "watch:json": "onchange \"src/json/*\" -- npm run copy:json",
     "watch:assets": "onchange \"src/assets/**/*\" -- npm run copy:assets",
     "watch:html": "onchange \"src/html/*.html\" -- npm run copy:html",
-    "watch:sass": "sass --no-source-map --watch --style compressed src/scss:docs/assets/css",
+    "watch:sass": "sass --source-map --watch --style compressed src/scss:docs/assets/css",
     "watch:js": "onchange \"src/assets/js/**/*.js\" -- npm run copy:js",
     "watch": "npm-run-all --parallel watch:*",
     "serve": "browser-sync start --server docs --files docs",

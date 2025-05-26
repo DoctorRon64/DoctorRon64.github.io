@@ -1,150 +1,43 @@
 ﻿@use "../abstracts/theme" as tm;
 
 .navbar {
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  position: fixed;
+  width: 5rem;
+  height: 100vh;
   background-color: tm.$navbar-background-color;
   transition: width 0.15s ease-in-out;
   overflow: hidden;
   z-index: 1000;
 
-  // Scrollbar styling (moved here for clarity)
-  &::-webkit-scrollbar {
-    height: 6px;
+  // Desktop hover expansion
+  @media (min-width: 760px) {
+    &:hover {
+      width: 12rem;
+
+      .link-text {
+        display: inline;
+        opacity: 1;
+      }
+    }
   }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-  }
-}
-
-// Navigation List
-.navbar-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  width: 100%; // Make sure ul fills navbar width
-}
-
-// Navigation Items
-.nav-item {
-  width: 100%;
-  outline: 1px dashed limegreen;
-}
-
-// Navigation Links
-.nav-link {
-  display: flex;
-  align-items: center;
-  height: 5rem;
-  padding: 0 1rem;
-  color: tm.$navbar-color-icons;
-  text-decoration: none;
-  font-family: tm.$font-family-primary;
-  font-size: tm.$font-size-text;
-  transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
-
-  &:hover {
-    color: tm.$navbar-link-hover-color;
-    background: tm.$secondary-background-color;
-  }
-}
-
-// Link Text (Hidden on Default)
-.link-text {
-  display: none;
-  margin-left: 1rem;
-  color: tm.$text-color;
-  font-family: tm.$font-family-secondary;
-  font-size: tm.$font-size-title;
-  white-space: nowrap;
-}
-
-// Icon Styling
-.nav-link .icon {
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    width: 2rem;
-    height: 2rem;
-    display: block;
-    fill: tm.$navbar-color-icons;
-  }
-
-  &:hover {
-    fill: tm.$navbar-link-hover-color;
-  }
-}
-
-@media only screen and (max-width: 760px) {
-  .navbar {
-    position: fixed;
-    bottom: 0;
+  // Mobile layout
+  @media (max-width: 760px) {
     top: auto;
-    left: 0;
-    right: 0;
+    bottom: 0;
     width: 100vw;
     height: 5rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    flex-direction: row;
+    padding: 0 0.5rem;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    padding: 0 0.5rem;
-    scroll-behavior: smooth;
-  }
-
-  .navbar-nav {
-    flex-direction: row;
-    width: max-content;
-    height: 100%; // Fix height so flex-items align properly
-  }
-
-  .nav-item {
-    flex: 0 0 auto;
-    width: auto; // Prevent stretching
-    height: 100%; // Make sure full height so flex aligns properly
-  }
-
-  .nav-link {
-    justify-content: center;
-    padding: 0 0.75rem;
-    min-width: 4rem;
-    height: 100%; // match nav-item height
-  }
-
-  .link-text {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .navbar {
-    position: fixed;
-    bottom: 0;
-    top: auto;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    height: 5rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    overflow-x: auto; // allow horizontal scroll
-    overflow-y: hidden;
-    white-space: nowrap;
-    padding: 0 0.5rem;
     scroll-behavior: smooth;
 
     &::-webkit-scrollbar {
@@ -158,54 +51,91 @@
   }
 
   .navbar-nav {
-    display: flex;
-    flex-direction: row; // horizontal items
-    width: max-content; // allow row to grow horizontally
-    height: 100%; // full height to align children properly
+    list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: 760px) {
+      flex-direction: row;
+      justify-content: center;
+    }
   }
 
   .nav-item {
-    flex: 0 0 auto; // no shrinking, no growing
-    width: auto; // width fits content
-    height: 100%; // full height for vertical centering
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 760px) {
+      flex: 0 0 auto;
+      width: auto;
+      height: 100%;
+    }
   }
 
   .nav-link {
-    justify-content: center;
-    padding: 0 0.75rem;
-    min-width: 4rem;
-    height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 5rem;
+    padding: 0 1rem;
+    color: tm.$navbar-color-icons;
+    text-decoration: none;
+    font-family: tm.$font-family-primary;
+    font-size: tm.$font-size-text;
+    transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
+
+    @media (min-width: 760px) {
+      &:hover {
+        color: tm.$navbar-link-hover-color;
+        background: tm.$secondary-background-color;
+      }
+    }
+
+    @media (max-width: 760px) {
+      padding: 0 0.75rem;
+      min-width: 4rem;
+      height: 100%;
+    }
+
+    .icon {
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        display: block;
+        fill: tm.$navbar-color-icons;
+      }
+
+      &:hover {
+        fill: tm.$navbar-link-hover-color;
+      }
+    }
   }
 
   .link-text {
     display: none;
-  }
-}
+    opacity: 0;
+    margin-left: 1rem;
+    color: tm.$text-color;
+    font-family: tm.$font-family-secondary;
+    font-size: tm.$font-size-title;
+    white-space: nowrap;
+    transition: opacity 0.15s ease-in-out;
 
-@media only screen and (min-width: 760px) {
-  .navbar {
-    top: 0;
-    width: 5rem;
-    height: 100vh;
-  }
-
-  .nav-item {
-    flex: 0 0 auto;
-    width: auto;
-  }
-
-  .navbar:hover {
-    width: 12rem;
-    transition: width 0.15s ease-in-out;
-
-    & .link-text {
-      display: inline;
-      opacity: 1;
-      transition: opacity 0.15s ease-in-out;
+    @media (max-width: 760px) {
+      display: none !important;
     }
   }
 }
