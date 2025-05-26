@@ -5,13 +5,13 @@
     background-color: tm.$background-color;
     margin: 0;
     padding: 0;
-    color: tm.$text-color; /* Dark gray text */
+    color: tm.$text-color;
     line-height: 24px;
 }
 
 .aboutheader {
-    background-color: tm.$secondary-background-color; /* Dark background for the navbar */
-    color: tm.$text-color; /* White text */
+    background-color: tm.$secondary-background-color;
+    color: tm.$text-color;
 }
 
 .AboutIcon {
@@ -19,20 +19,24 @@
 }
 
 .about-container {
-    max-width: 800px; /* Center content */
-    margin: 40px auto; /* Center horizontally and add top margin */
+    max-width: 800px;
+    margin: 40px auto;
     padding: 20px;
-    background-color: tm.$secondary-background-color; /* White background for the content area */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: tm.$secondary-background-color;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     color: tm.$text-color;
+
+    @media (max-width: 600px) {
+        padding: 15px;
+    }
 }
 
 .about-container h1 {
     font-family: tm.$font-family-secondary;
-    font-size: 2.5em; /* Large heading size */
-    color: tm.$text-color; /* Dark color for the heading */
-    margin-bottom: 20px; /* Space below heading */
+    font-size: 2.5em;
+    color: tm.$text-color;
+    margin-bottom: 20px;
     margin-top: 20px;
 }
 
@@ -43,61 +47,46 @@
 }
 
 .profile-img {
-    border-radius: 50%; /* Circular image */
-    margin-right: 20px; /* Space between image and text */
+    border-radius: 50%;
+    margin-right: 20px;
 }
 
 .content-section {
     font-family: tm.$font-family-thridly;
-}
 
-.content-section h2 {
-    font-family: tm.$font-family-secondary;
-    font-size: 2em; /* Section heading size */
-    margin-top: 20px; /* Space above section heading */
-    margin-bottom: .5rem;
-    color: tm.$secondary-text-color; /* Highlight color */
-    line-height: 1.2;
-}
+    h2 {
+        font-family: tm.$font-family-secondary;
+        font-size: 2em;
+        margin-top: 20px;
+        margin-bottom: .5rem;
+        color: tm.$secondary-text-color;
+        line-height: 1.2;
+    }
 
-.content-section p {
-    font-family: tm.$font-family-thridly;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    p {
+        font-family: tm.$font-family-thridly;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
 }
 
 .quote-section {
     padding: 10px;
-    background-color: tm.$background-color; /* Light gray background for the quote */
-    border-left: 4px solid tm.$secondary-text-color; /* Left border for emphasis */
+    background-color: tm.$background-color;
+    border-left: 4px solid tm.$secondary-text-color;
 }
 
 blockquote {
-    font-style: italic; /* Italic style for the quote */
-    color: rgb(195, 195, 195); /* Darker gray for the quote text */
+    font-style: italic;
+    color: rgb(195, 195, 195);
 }
 
 .aboutfooter {
-    text-align: center; /* Center the footer text */
-    padding: 20px 0; /* Padding around footer */
-    background-color: tm.$background-color; /* Dark background for footer */
-    color: #ffffff; /* White text in footer */
-    position: relative; /* Ensure footer stays at the bottom */
+    text-align: center;
+    padding: 20px 0;
+    background-color: tm.$background-color;
+    color: #ffffff;
+    position: relative;
     bottom: 0;
-    width: 100%; /* Full width */
-}
-
-@media (max-width: 600px) {
-    .about-container {
-        padding: 15px; /* Smaller padding for mobile */
-    }
-
-    .navbar ul {
-        flex-direction: column; /* Stack links on mobile */
-    }
-
-    .navbar li {
-        margin-left: 0; /* Remove left margin */
-        margin-bottom: 10px; /* Space between links */
-    }
+    width: 100%;
 }
